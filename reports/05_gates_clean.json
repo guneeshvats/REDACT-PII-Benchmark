@@ -1,0 +1,2271 @@
+{
+  "summary": {
+    "n_records": 13427,
+    "n_total_entities": 324078,
+    "mean_entities_per_record": 24.136292544872273
+  },
+  "B1_offset_accuracy": {
+    "n_total": 324078,
+    "n_aligned": 322967,
+    "accuracy": 0.9965718129586087,
+    "target": 1.0,
+    "pass": false,
+    "n_records_with_failures": 717,
+    "failures": [
+      {
+        "record_id": 29,
+        "failures": [
+          {
+            "entity_index": 21,
+            "entity_type": "Full_Name",
+            "entity_string": "Mikkel Andersen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Address_Personal",
+            "entity_string": "Vesterbrogade 74, 3. tv., København V, 1620, DK",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 37,
+        "failures": [
+          {
+            "entity_index": 19,
+            "entity_type": "Allergy_Information",
+            "entity_string": "allergique aux produits laitiers et au soja",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 86,
+        "failures": [
+          {
+            "entity_index": 39,
+            "entity_type": "Address_Personal",
+            "entity_string": "Arcisstraße 21, 80333 München, Deutschland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Emergency_Contact_Details",
+            "entity_string": "Sabine Schneider-Hoffmann, Mutter, +49 89712345678",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "Emergency_Contact_Details",
+            "entity_string": "Felix Schneider-Hoffmann, Bruder, +49 1621234567",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 115,
+        "failures": [
+          {
+            "entity_index": 53,
+            "entity_type": "Professional_Background",
+            "entity_string": "Vedvarende energi / Vindkraft — 12 år (Vestas Wind Systems, Siemens Gamesa); Supply Chain & Logistik — 3 år (Maersk Line)",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 119,
+        "failures": [
+          {
+            "entity_index": 48,
+            "entity_type": "Full_Name",
+            "entity_string": "Jean-Philippe Lavoie",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Full_Name",
+            "entity_string": "David Nguyen",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Full_Name",
+            "entity_string": "Sophie Gagnon",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 126,
+        "failures": [
+          {
+            "entity_index": 23,
+            "entity_type": "Address_Work",
+            "entity_string": "Mannerheimintie 42 B, 00100 Helsinki",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 171,
+        "failures": [
+          {
+            "entity_index": 26,
+            "entity_type": "Full_Name",
+            "entity_string": "田中健一郎",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 169,
+        "failures": [
+          {
+            "entity_index": 20,
+            "entity_type": "Address_Work",
+            "entity_string": "Budapest, Andrássy út 45. 1061 Magyarország",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 198,
+        "failures": [
+          {
+            "entity_index": 18,
+            "entity_type": "Full_Name",
+            "entity_string": "Antti Virtanen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Address_Personal",
+            "entity_string": "Mannerheimintie 42 B 15, 00100 Helsinki",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 241,
+        "failures": [
+          {
+            "entity_index": 21,
+            "entity_type": "Full_Name",
+            "entity_string": "Mikkel Hansen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Full_Name",
+            "entity_string": "Aisha Khan",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 254,
+        "failures": [
+          {
+            "entity_index": 38,
+            "entity_type": "Org_Name",
+            "entity_string": "NTNU",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 308,
+        "failures": [
+          {
+            "entity_index": 41,
+            "entity_type": "Address_Personal",
+            "entity_string": "Keizersgracht 412, 1016 GC, Amsterdam, Noord-Holland, Nederland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 325,
+        "failures": [
+          {
+            "entity_index": 21,
+            "entity_type": "Address_Work",
+            "entity_string": "Av. Reforma 505, Piso 12, Col. Cuauhtémoc, Ciudad de México, C.P. 06500",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 357,
+        "failures": [
+          {
+            "entity_index": 15,
+            "entity_type": "Full_Name",
+            "entity_string": "Sarah Chen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Full_Name",
+            "entity_string": "David Park",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 382,
+        "failures": [
+          {
+            "entity_index": 13,
+            "entity_type": "Full_Name",
+            "entity_string": "Marie Dupont",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 432,
+        "failures": [
+          {
+            "entity_index": 27,
+            "entity_type": "Org_Name",
+            "entity_string": "Nemocnice Na Homolce",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 442,
+        "failures": [
+          {
+            "entity_index": 9,
+            "entity_type": "Account_Statements",
+            "entity_string": "Form 1099-DIV\nPayer: SecureFinance Brokerage\nBox 1a: $2,847.93 (Total Ordinary Dividends)\nBox 1b: $1,102.50 (Qualified Dividends)",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 446,
+        "failures": [
+          {
+            "entity_index": 41,
+            "entity_type": "Address_Personal",
+            "entity_string": "Keizersgracht 274, 1016 EV, Amsterdam, Nederland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Address_Personal",
+            "entity_string": "Herengracht 502, 1017 CB, Amsterdam, Nederland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 450,
+        "failures": [
+          {
+            "entity_index": 53,
+            "entity_type": "Address_Personal",
+            "entity_string": "88/12 ซอยลาดพร้าว 71 แขวงลาดพร้าว เขตลาดพร้าว กรุงเทพมหานคร 10230",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "Address_Personal",
+            "entity_string": "199/4 หมู่บ้านพฤกษา วิลเลจ แขวงบางกะปิ เขตบางกะปิ กรุงเทพมหานคร 10240",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 469,
+        "failures": [
+          {
+            "entity_index": 26,
+            "entity_type": "Org_Name",
+            "entity_string": "שליחויות ישראל בע\"מ",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 483,
+        "failures": [
+          {
+            "entity_index": 34,
+            "entity_type": "Full_Name",
+            "entity_string": "Simon Kristensen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 486,
+        "failures": [
+          {
+            "entity_index": 22,
+            "entity_type": "Full_Name",
+            "entity_string": "Eleanor Margaret Worthington-Clarke",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Professional_Background",
+            "entity_string": "Eleanor Margaret Worthington-Clarke Senior Civil Servant HM Revenue Customs 2019 Deputy Director International Tax Policy HM Treasury 2015 Head Financial Services Regulation DFID 2010 Senior Policy Adviser McKinsey 2005 Engagement Manager FCO 2002 Third Secretary Fast Stream 2000 Policy Trainee",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 493,
+        "failures": [
+          {
+            "entity_index": 41,
+            "entity_type": "Address_Personal",
+            "entity_string": "שדרות רוטשילד 45, תל אביב, 6688118, ישראל",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 499,
+        "failures": [
+          {
+            "entity_index": 21,
+            "entity_type": "Address_Personal",
+            "entity_string": "Av. Revolución 1842, Depto 5-B, Mixcoac, Ciudad de México, 03910, CDMX, México",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Geolocation_Data",
+            "entity_string": "19.4326, -99.1332",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Geolocation_Data",
+            "entity_string": "19.3712, -99.1894",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 503,
+        "failures": [
+          {
+            "entity_index": 60,
+            "entity_type": "Address_Personal",
+            "entity_string": "רחוב הרצל 47, רמת גן, 5252001",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 61,
+            "entity_type": "Allergy_Information",
+            "entity_string": "פניצילין – אנפילקסיס",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 62,
+            "entity_type": "Allergy_Information",
+            "entity_string": "אספירין – פריחה עורית",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 527,
+        "failures": [
+          {
+            "entity_index": 7,
+            "entity_type": "Address_Personal",
+            "entity_string": "Avenida da Liberdade, 220, 3.º Esq., 1250-148 Lisboa, Portugal",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 542,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "Full_Name",
+            "entity_string": "Alessandro Ferretti",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 540,
+        "failures": [
+          {
+            "entity_index": 46,
+            "entity_type": "Address_Work",
+            "entity_string": "Av. Universidad s/n, Ciudad Universitaria, San Nicolás de los Garza, Nuevo León, C.P. 66455",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 544,
+        "failures": [
+          {
+            "entity_index": 40,
+            "entity_type": "Date_Time",
+            "entity_string": "2024. február 3.",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 566,
+        "failures": [
+          {
+            "entity_index": 13,
+            "entity_type": "Full_Name",
+            "entity_string": "Ingrid Haugen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 568,
+        "failures": [
+          {
+            "entity_index": 50,
+            "entity_type": "Address_Personal",
+            "entity_string": "Kızılay Mahallesi, Atatürk Bulvarı, 142/7, Çankaya, Ankara, 06420",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 577,
+        "failures": [
+          {
+            "entity_index": 24,
+            "entity_type": "Address_Personal",
+            "entity_string": "רחוב הרצל 47, תל אביב, 6120101",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Org_Name",
+            "entity_string": "טכנולוגיות אלון בע\"מ",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 602,
+        "failures": [
+          {
+            "entity_index": 49,
+            "entity_type": "Address_Personal",
+            "entity_string": "Korunní 127, Praha 2, 12000",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Address_Work",
+            "entity_string": "Vinohradská 42, Praha 2, 12000",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 51,
+            "entity_type": "Full_Name",
+            "entity_string": "Petra Králová",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 52,
+            "entity_type": "Address_Personal",
+            "entity_string": "Na Pankráci 55, Praha 4, 14000",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 53,
+            "entity_type": "Full_Name",
+            "entity_string": "Jakub Dvořák",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "Address_Personal",
+            "entity_string": "Budějovická 12, Praha 4, 14000",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 55,
+            "entity_type": "Full_Name",
+            "entity_string": "Lucie Svobodová",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 56,
+            "entity_type": "Address_Personal",
+            "entity_string": "Štefánikova 88, Praha 5, 15000",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 57,
+            "entity_type": "Full_Name",
+            "entity_string": "Martin Procházka",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 58,
+            "entity_type": "Address_Personal",
+            "entity_string": "Revoluční 30, Praha 1, 11000",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 615,
+        "failures": [
+          {
+            "entity_index": 48,
+            "entity_type": "Address_Work",
+            "entity_string": "1500, rue Peel, bureau 800, Montréal (Québec) H3A 1S6",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Address_Work",
+            "entity_string": "3400, rue Sherbrooke Ouest, bureau 210, Montréal (Québec) H3Z 1A4",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 649,
+        "failures": [
+          {
+            "entity_index": 7,
+            "entity_type": "Full_Name",
+            "entity_string": "Klaus-Dieter Winterberg",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 665,
+        "failures": [
+          {
+            "entity_index": 27,
+            "entity_type": "Date_Time",
+            "entity_string": "令和五年六月三十日",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 666,
+        "failures": [
+          {
+            "entity_index": 58,
+            "entity_type": "Address_Personal",
+            "entity_string": "123, rue Sainte-Catherine Ouest, app. 4B, Montréal, QC H3B 1K5, Canada",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 59,
+            "entity_type": "Full_Name",
+            "entity_string": "Hassan Omar Al-Rashidi",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 679,
+        "failures": [
+          {
+            "entity_index": 18,
+            "entity_type": "PEP_Status",
+            "entity_string": "현직 국회의원으로 정치적 주요 인물 (PEP) Tier-2",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 708,
+        "failures": [
+          {
+            "entity_index": 9,
+            "entity_type": "Emergency_Contact_Details",
+            "entity_string": "hermana (sister) Rebecca Whitfield-Torres, +1-970-555-0147",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 720,
+        "failures": [
+          {
+            "entity_index": 33,
+            "entity_type": "Address_Personal",
+            "entity_string": "Schillerstraße 47, 80336 München, Deutschland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 750,
+        "failures": [
+          {
+            "entity_index": 20,
+            "entity_type": "Account_Statements",
+            "entity_string": "P60 End of Year Certificate 2023-24\n\nMedarbejder: Søren Kjeldgaard\nNI: QQ123456B\nBrutto løn: £52,340.00\nSkat fratrukket: £9,871.22\nArbejdsgiver: Northern Digital Solutions Ltd\nPAYE Reference: 123/AB45678",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 767,
+        "failures": [
+          {
+            "entity_index": 9,
+            "entity_type": "Full_Name",
+            "entity_string": "Marc Van Den Berg",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 10,
+            "entity_type": "Last_Family_Name",
+            "entity_string": "Van Den Berg",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 781,
+        "failures": [
+          {
+            "entity_index": 57,
+            "entity_type": "Allergy_Information",
+            "entity_string": "Penicillin (Hautausschlag), Kontrastmittel (anaphylaktische Reaktion)",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 786,
+        "failures": [
+          {
+            "entity_index": 20,
+            "entity_type": "Full_Name",
+            "entity_string": "Aleksander Bjørnstad",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 797,
+        "failures": [
+          {
+            "entity_index": 44,
+            "entity_type": "Address_Personal",
+            "entity_string": "Mannerheimintie 42 B 15, 00260 Helsinki, Finland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 839,
+        "failures": [
+          {
+            "entity_index": 26,
+            "entity_type": "Crime",
+            "entity_string": "Lopás BTK370§",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 856,
+        "failures": [
+          {
+            "entity_index": 42,
+            "entity_type": "Date_Time",
+            "entity_string": "2024. március 28.",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Date_Time",
+            "entity_string": "2015. június 1.",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 875,
+        "failures": [
+          {
+            "entity_index": 19,
+            "entity_type": "Address_Personal",
+            "entity_string": "Mannerheimintie 42 B 15, 00250 Helsinki, Finland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 880,
+        "failures": [
+          {
+            "entity_index": 31,
+            "entity_type": "Address_Personal",
+            "entity_string": "1054 Budapest, Kossuth Lajos tér 1-3.",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 936,
+        "failures": [
+          {
+            "entity_index": 41,
+            "entity_type": "Address_Work",
+            "entity_string": "〒100-0005 東京都千代田区丸の内一丁目９番２号グラントウキョウサウスタワー４２階",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      }
+    ]
+  },
+  "B2_zero_entity_rate": {
+    "n_zero_entity_records": 0,
+    "rate": 0.0,
+    "target_max": 0.005,
+    "pass": true
+  },
+  "B3_validation_dropped_rate": {
+    "status": "not_computable",
+    "reason": "schema does not include 'dropped'/'extracted' fields per record"
+  },
+  "B4_triple_name_rule": {
+    "n_full_names": 55549,
+    "n_compliant": 34596,
+    "compliance": 0.622801490575888,
+    "target": 1.0,
+    "pass": false,
+    "n_records_with_violations": 5867,
+    "violations": [
+      {
+        "record_id": 4,
+        "violations": [
+          {
+            "full_name": "Markétu Svobodovou",
+            "expected_first": "Markétu",
+            "expected_last": "Svobodovou",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 11,
+        "violations": [
+          {
+            "full_name": "राहुल शर्मा",
+            "expected_first": "राहुल",
+            "expected_last": "शर्मा",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "प्रिया गुप्ता",
+            "expected_first": "प्रिया",
+            "expected_last": "गुप्ता",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "अमित पटेल",
+            "expected_first": "अमित",
+            "expected_last": "पटेल",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 18,
+        "violations": [
+          {
+            "full_name": "Tremblay, Isabelle",
+            "expected_first": "Tremblay,",
+            "expected_last": "Isabelle",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 21,
+        "violations": [
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Anita Sharma",
+            "expected_first": "Anita",
+            "expected_last": "Sharma",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 20,
+        "violations": [
+          {
+            "full_name": "Dr. Annemarie de Vries",
+            "expected_first": "Dr.",
+            "expected_last": "Annemarie de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Prof. Willem Janssen",
+            "expected_first": "Prof.",
+            "expected_last": "Willem Janssen",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 23,
+        "violations": [
+          {
+            "full_name": "Szabó Katalin",
+            "expected_first": "Szabó",
+            "expected_last": "Katalin",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 28,
+        "violations": [
+          {
+            "full_name": "Rafael Mendes de Oliveira",
+            "expected_first": "Rafael",
+            "expected_last": "Mendes de Oliveira",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 25,
+        "violations": [
+          {
+            "full_name": "Lars Erik Moen",
+            "expected_first": "Lars",
+            "expected_last": "Erik Moen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ingrid Sofie Berntsen",
+            "expected_first": "Ingrid",
+            "expected_last": "Sofie Berntsen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Silje Karin Nordgård",
+            "expected_first": "Silje",
+            "expected_last": "Karin Nordgård",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Eirik Solberg",
+            "expected_first": "Dr.",
+            "expected_last": "Eirik Solberg",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 30,
+        "violations": [
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Elisabeth Bakker",
+            "expected_first": "Dr.",
+            "expected_last": "Elisabeth Bakker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Sophie de Vries",
+            "expected_first": "Sophie",
+            "expected_last": "de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marieke Visser",
+            "expected_first": "Marieke",
+            "expected_last": "Visser",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 32,
+        "violations": [
+          {
+            "full_name": "นายสมชาย วงศ์ประเสริฐ",
+            "expected_first": "นายสมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": true
+          },
+          {
+            "full_name": "พญ.กัลยา ศรีสุข",
+            "expected_first": "พญ.กัลยา",
+            "expected_last": "ศรีสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 31,
+        "violations": [
+          {
+            "full_name": "たなか ゆうこ",
+            "expected_first": "たなか",
+            "expected_last": "ゆうこ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "たなか ゆうこ",
+            "expected_first": "たなか",
+            "expected_last": "ゆうこ",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 36,
+        "violations": [
+          {
+            "full_name": "יוסף אברהם כהן",
+            "expected_first": "יוסף",
+            "expected_last": "אברהם כהן",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "פאטמה חסן אל-נאסר",
+            "expected_first": "פאטמה",
+            "expected_last": "חסן אל-נאסר",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 37,
+        "violations": [
+          {
+            "full_name": "Dr. Sanjay Patel",
+            "expected_first": "Dr.",
+            "expected_last": "Sanjay Patel",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dre. Isabelle Nguyen-Fournier",
+            "expected_first": "Dre.",
+            "expected_last": "Isabelle Nguyen-Fournier",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marc-André Bouchard",
+            "expected_first": "Marc-André",
+            "expected_last": "Bouchard",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 41,
+        "violations": [
+          {
+            "full_name": "Jean-François Bélanger",
+            "expected_first": "Jean-François",
+            "expected_last": "Bélanger",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Nathalie Côté",
+            "expected_first": "Nathalie",
+            "expected_last": "Côté",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 44,
+        "violations": [
+          {
+            "full_name": "ויקטור נובאק",
+            "expected_first": "ויקטור",
+            "expected_last": "נובאק",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 43,
+        "violations": [
+          {
+            "full_name": "Dr. Ananya Patel",
+            "expected_first": "Dr.",
+            "expected_last": "Ananya Patel",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 50,
+        "violations": [
+          {
+            "full_name": "Dr. Benoît Lefèvre",
+            "expected_first": "Dr.",
+            "expected_last": "Benoît Lefèvre",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 51,
+        "violations": [
+          {
+            "full_name": "João Pedro Ferreira",
+            "expected_first": "João",
+            "expected_last": "Pedro Ferreira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Sousa",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Sousa",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 53,
+        "violations": [
+          {
+            "full_name": "ד\"ר רונית שלום",
+            "expected_first": "ד\"ר",
+            "expected_last": "רונית שלום",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ד\"ר אמיר כהן",
+            "expected_first": "ד\"ר",
+            "expected_last": "אמיר כהן",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ד\"ר רונית שלום",
+            "expected_first": "ד\"ר",
+            "expected_last": "רונית שלום",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 52,
+        "violations": [
+          {
+            "full_name": "عبدالرحمن بن خالد المطيري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن خالد المطيري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "نورة بنت سعد الشمري",
+            "expected_first": "نورة",
+            "expected_last": "بنت سعد الشمري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "د. فهد بن عبدالله القحطاني",
+            "expected_first": "د.",
+            "expected_last": "فهد بن عبدالله القحطاني",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "سارة بنت محمد الزهراني",
+            "expected_first": "سارة",
+            "expected_last": "بنت محمد الزهراني",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 56,
+        "violations": [
+          {
+            "full_name": "Elif Yıldırım",
+            "expected_first": "Elif",
+            "expected_last": "Yıldırım",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Mehmet Kaya",
+            "expected_first": "Mehmet",
+            "expected_last": "Kaya",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Elif Yıldırım",
+            "expected_first": "Elif",
+            "expected_last": "Yıldırım",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 60,
+        "violations": [
+          {
+            "full_name": "MUDr. Jana Dvořáková",
+            "expected_first": "MUDr.",
+            "expected_last": "Jana Dvořáková",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 55,
+        "violations": [
+          {
+            "full_name": "Dr. Annemieke van der Berg",
+            "expected_first": "Dr.",
+            "expected_last": "Annemieke van der Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Pieter Janssen",
+            "expected_first": "Dr.",
+            "expected_last": "Pieter Janssen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. K.L. de Vries",
+            "expected_first": "Dr.",
+            "expected_last": "K.L. de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. R. Bakker",
+            "expected_first": "Dr.",
+            "expected_last": "R. Bakker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Sophie Mulder",
+            "expected_first": "Dr.",
+            "expected_last": "Sophie Mulder",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Hassan Yilmaz",
+            "expected_first": "Dr.",
+            "expected_last": "Hassan Yilmaz",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Annemieke van der Berg",
+            "expected_first": "Dr.",
+            "expected_last": "Annemieke van der Berg",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 62,
+        "violations": [
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 61,
+        "violations": [
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 57,
+        "violations": [
+          {
+            "full_name": "Kovács István Béla",
+            "expected_first": "Kovács",
+            "expected_last": "István Béla",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Kovács Mária",
+            "expected_first": "Kovács",
+            "expected_last": "Mária",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Tóth Katalin",
+            "expected_first": "Dr.",
+            "expected_last": "Tóth Katalin",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Szabó András",
+            "expected_first": "Dr.",
+            "expected_last": "Szabó András",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Németh Judit",
+            "expected_first": "Németh",
+            "expected_last": "Judit",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Kovács István Béla",
+            "expected_first": "Kovács",
+            "expected_last": "István Béla",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Farkas Ágnes",
+            "expected_first": "Farkas",
+            "expected_last": "Ágnes",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 64,
+        "violations": [
+          {
+            "full_name": "Dre Isabelle Fournier",
+            "expected_first": "Dre",
+            "expected_last": "Isabelle Fournier",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 63,
+        "violations": [
+          {
+            "full_name": "عبدالرحمن بن محمد الشهري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن محمد الشهري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "فهد بن سعود القحطاني",
+            "expected_first": "فهد",
+            "expected_last": "بن سعود القحطاني",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "عبدالرحمن بن محمد الشهري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن محمد الشهري",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 65,
+        "violations": [
+          {
+            "full_name": "Ковалёва Наталья Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Наталья Сергеевна",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Иванов Дмитрий Александрович",
+            "expected_first": "Иванов",
+            "expected_last": "Дмитрий Александрович",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Иванов Дмитрий Александрович",
+            "expected_first": "Иванов",
+            "expected_last": "Дмитрий Александрович",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ковалёва Наталья Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Наталья Сергеевна",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 67,
+        "violations": [
+          {
+            "full_name": "Giulia Ferrero",
+            "expected_first": "Giulia",
+            "expected_last": "Ferrero",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 71,
+        "violations": [
+          {
+            "full_name": "佐藤 美咲",
+            "expected_first": "佐藤",
+            "expected_last": "美咲",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 70,
+        "violations": [
+          {
+            "full_name": "Cláudia Ferreira",
+            "expected_first": "Cláudia",
+            "expected_last": "Ferreira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "António José Marques da Silva",
+            "expected_first": "António",
+            "expected_last": "José Marques da Silva",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "António José Marques da Silva",
+            "expected_first": "António",
+            "expected_last": "José Marques da Silva",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 72,
+        "violations": [
+          {
+            "full_name": "สมชาย วงศ์ประเสริฐ",
+            "expected_first": "สมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "นายวิทยา สุขสมบูรณ์",
+            "expected_first": "นายวิทยา",
+            "expected_last": "สุขสมบูรณ์",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "นายวิทยา สุขสมบูรณ์",
+            "expected_first": "นายวิทยา",
+            "expected_last": "สุขสมบูรณ์",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมชาย วงศ์ประเสริฐ",
+            "expected_first": "สมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 69,
+        "violations": [
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Eduardo Pinto",
+            "expected_first": "Carlos",
+            "expected_last": "Eduardo Pinto",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Fernanda Oliveira",
+            "expected_first": "Fernanda",
+            "expected_last": "Oliveira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Paulo Henrique Machado",
+            "expected_first": "Paulo",
+            "expected_last": "Henrique Machado",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marcos Vinícius Almeida",
+            "expected_first": "Marcos",
+            "expected_last": "Vinícius Almeida",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 74,
+        "violations": [
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 81,
+        "violations": [
+          {
+            "full_name": "Ковалёва Анна Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Анна Сергеевна",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 83,
+        "violations": [
+          {
+            "full_name": "Dra. Fernanda Oliveira",
+            "expected_first": "Dra.",
+            "expected_last": "Fernanda Oliveira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Henrique da Silva",
+            "expected_first": "Carlos",
+            "expected_last": "Henrique da Silva",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Henrique da Silva",
+            "expected_first": "Carlos",
+            "expected_last": "Henrique da Silva",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Dra. Fernanda Oliveira",
+            "expected_first": "Dra.",
+            "expected_last": "Fernanda Oliveira",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 87,
+        "violations": [
+          {
+            "full_name": "Сергеев Андрей",
+            "expected_first": "Сергеев",
+            "expected_last": "Андрей",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Петрова Ольга",
+            "expected_first": "Петрова",
+            "expected_last": "Ольга",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 84,
+        "violations": [
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 85,
+        "violations": [
+          {
+            "full_name": "นายสมชาย วงศ์ประเสริฐ",
+            "expected_first": "นายสมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "David Robert Fitzgerald-Montgomery",
+            "expected_first": "David",
+            "expected_last": "Robert Fitzgerald-Montgomery",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Eleanor Catherine Whitmore",
+            "expected_first": "Eleanor",
+            "expected_last": "Catherine Whitmore",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ร.ต.อ. ณัฐพล ศรีสุข",
+            "expected_first": "ร.ต.อ.",
+            "expected_last": "ณัฐพล ศรีสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 91,
+        "violations": [
+          {
+            "full_name": "Linda Chen",
+            "expected_first": "Linda",
+            "expected_last": "Chen",
+            "first_match": false,
+            "last_match": true
+          },
+          {
+            "full_name": "Patricia Owens",
+            "expected_first": "Patricia",
+            "expected_last": "Owens",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 92,
+        "violations": [
+          {
+            "full_name": "Alejandro Javier Mendoza Ríos",
+            "expected_first": "Alejandro",
+            "expected_last": "Javier Mendoza Ríos",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 88,
+        "violations": [
+          {
+            "full_name": "Dr. Friedrich Wilhelm Hartmann",
+            "expected_first": "Dr.",
+            "expected_last": "Friedrich Wilhelm Hartmann",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Margarethe Hartmann",
+            "expected_first": "Dr.",
+            "expected_last": "Margarethe Hartmann",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 86,
+        "violations": [
+          {
+            "full_name": "Prof. Dr. Claudia Becker",
+            "expected_first": "Prof.",
+            "expected_last": "Dr. Claudia Becker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Prof. Dr. Thomas Neumann",
+            "expected_first": "Prof.",
+            "expected_last": "Dr. Thomas Neumann",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Markus Weber",
+            "expected_first": "Dr.",
+            "expected_last": "Markus Weber",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 89,
+        "violations": [
+          {
+            "full_name": "أحمد بن سعيد المنصوري",
+            "expected_first": "أحمد",
+            "expected_last": "بن سعيد المنصوري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "نورة بنت عبدالرحمن الغامدي",
+            "expected_first": "نورة",
+            "expected_last": "بنت عبدالرحمن الغامدي",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "خالد بن محمد العتيبي",
+            "expected_first": "خالد",
+            "expected_last": "بن محمد العتيبي",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "أحمد بن سعيد المنصوري",
+            "expected_first": "أحمد",
+            "expected_last": "بن سعيد المنصوري",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 94,
+        "violations": [
+          {
+            "full_name": "David Lin",
+            "expected_first": "David",
+            "expected_last": "Lin",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 96,
+        "violations": [
+          {
+            "full_name": "Sophie Anne Tremblay",
+            "expected_first": "Sophie",
+            "expected_last": "Anne Tremblay",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 100,
+        "violations": [
+          {
+            "full_name": "Dr. med. Katharina Bauer",
+            "expected_first": "Dr.",
+            "expected_last": "med. Katharina Bauer",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Hoffmann, Elisabeth Marie",
+            "expected_first": "Hoffmann,",
+            "expected_last": "Elisabeth Marie",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Friedrich Meier",
+            "expected_first": "Dr.",
+            "expected_last": "Friedrich Meier",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. med. Katharina Bauer",
+            "expected_first": "Dr.",
+            "expected_last": "med. Katharina Bauer",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 101,
+        "violations": [
+          {
+            "full_name": "Francisco Javier López Navarro",
+            "expected_first": "Francisco",
+            "expected_last": "Javier López Navarro",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 103,
+        "violations": [
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Claudia Westhoff",
+            "expected_first": "Dr.",
+            "expected_last": "Claudia Westhoff",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Stefan Müller",
+            "expected_first": "Stefan",
+            "expected_last": "Müller",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      }
+    ],
+    "_note": "Baseline implementation assumes Western 'First Last' decomposition. Methodology R11 documents 8 decomposition cases (CJK, patronymic, double-surname, etc.) requiring per-language extension. Review violations to distinguish real failures from decomposition-rule gaps."
+  },
+  "B5_canonical_type_compliance": {
+    "n_total_entities": 324078,
+    "n_canonical": 324078,
+    "compliance": 1.0,
+    "target": 1.0,
+    "pass": true,
+    "non_canonical_types_seen": {},
+    "n_records_with_non_canonical": 0
+  },
+  "B6_multi_mention_completeness": {
+    "n_unique_string_per_record": 221445,
+    "n_complete": 220338,
+    "completeness": 0.9950010160536477,
+    "target": 0.95,
+    "pass": true,
+    "n_records_with_missing": 0,
+    "examples": []
+  },
+  "A2_per_entity_floor": {
+    "target_floor": 50,
+    "min_type_count": 227,
+    "pass": true,
+    "n_types_below_floor": 0,
+    "n_types_at_or_above_floor": 51,
+    "types_below_floor": {},
+    "all_type_counts": {
+      "Full_Name": 11912,
+      "Customer_Reference_Number": 10430,
+      "First_Given_Name": 10184,
+      "Last_Family_Name": 10134,
+      "Date_Time": 9382,
+      "Work_Email_Address": 7029,
+      "Org_Name": 6319,
+      "Date_of_Birth": 6183,
+      "Telephone_Numbers_Personal": 5686,
+      "City": 5572,
+      "Address_Personal": 5477,
+      "National_Identification_Number": 5063,
+      "Personal_Email_Address": 4310,
+      "Employee_ID_Number": 3900,
+      "Business_Title": 3851,
+      "Telephone_Numbers_Work": 2782,
+      "Compensation_and_Salary": 1973,
+      "Nationality": 1899,
+      "Address_Work": 1898,
+      "Medical_Information": 1725,
+      "Credit_Card_Numbers": 1549,
+      "Passport_Number": 1248,
+      "Marital_Status": 1041,
+      "Social_Media_Identifiers": 967,
+      "Allergy_Information": 960,
+      "Static_IP_Address": 941,
+      "Crime": 941,
+      "Location": 893,
+      "Gender": 835,
+      "Account_Statements": 673,
+      "Age": 635,
+      "Religion": 539,
+      "State": 535,
+      "PEP_Status": 343,
+      "Driving_License_Number": 318,
+      "Sex_Orientation": 294,
+      "Preferred_Name": 290,
+      "Sickness_Day_Records": 285,
+      "Performance_Assessment": 284,
+      "Citizenship_Status": 281,
+      "Place_of_Birth": 279,
+      "Tax_Reference_Number": 273,
+      "Password": 268,
+      "Country_of_Residence": 267,
+      "Geolocation_Data": 258,
+      "Building_Badge_Card_Number": 252,
+      "Emergency_Contact_Details": 252,
+      "Trade_Union_Membership": 249,
+      "Professional_Background": 246,
+      "Political_Party": 229,
+      "Disciplinary_Action": 227
+    }
+  },
+  "critical_gates_pass": false,
+  "critical_gates_breakdown": {
+    "B1_offset_accuracy": false,
+    "B2_zero_entity_rate": true,
+    "B4_triple_name_rule": false,
+    "B5_canonical_type_compliance": true,
+    "B6_multi_mention_completeness": true,
+    "A2_per_entity_floor": true
+  }
+}

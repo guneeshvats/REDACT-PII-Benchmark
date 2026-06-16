@@ -1,0 +1,189 @@
+{
+  "overall": {
+    "n_records": 13427,
+    "n_total_entities": 324078,
+    "mean_entities_per_record": 24.14,
+    "median_entities_per_record": 18,
+    "min_entities_per_record": 1,
+    "max_entities_per_record": 177
+  },
+  "per_entity_type": {
+    "Full_Name": 55549,
+    "First_Given_Name": 43930,
+    "Last_Family_Name": 42125,
+    "Customer_Reference_Number": 23530,
+    "Date_Time": 17874,
+    "Work_Email_Address": 13919,
+    "Org_Name": 12785,
+    "City": 12360,
+    "Telephone_Numbers_Personal": 8401,
+    "Date_of_Birth": 7989,
+    "National_Identification_Number": 7951,
+    "Employee_ID_Number": 7609,
+    "Address_Personal": 7122,
+    "Business_Title": 6631,
+    "Personal_Email_Address": 5858,
+    "Medical_Information": 4886,
+    "Telephone_Numbers_Work": 4107,
+    "Compensation_and_Salary": 3363,
+    "Nationality": 3230,
+    "Social_Media_Identifiers": 3057,
+    "Address_Work": 2600,
+    "Gender": 2190,
+    "Credit_Card_Numbers": 2032,
+    "State": 1785,
+    "Location": 1777,
+    "Passport_Number": 1764,
+    "Crime": 1736,
+    "Static_IP_Address": 1634,
+    "Marital_Status": 1545,
+    "Age": 1425,
+    "Allergy_Information": 1397,
+    "Preferred_Name": 1178,
+    "Religion": 938,
+    "Account_Statements": 864,
+    "Country_of_Residence": 729,
+    "Political_Party": 658,
+    "Citizenship_Status": 648,
+    "Geolocation_Data": 638,
+    "Building_Badge_Card_Number": 637,
+    "Place_of_Birth": 603,
+    "Sex_Orientation": 566,
+    "Tax_Reference_Number": 545,
+    "Sickness_Day_Records": 530,
+    "Trade_Union_Membership": 527,
+    "PEP_Status": 509,
+    "Performance_Assessment": 478,
+    "Driving_License_Number": 447,
+    "Password": 432,
+    "Emergency_Contact_Details": 359,
+    "Professional_Background": 349,
+    "Disciplinary_Action": 282
+  },
+  "per_language": {
+    "HE": 621,
+    "DA": 620,
+    "NO": 615,
+    "ZH_TW": 601,
+    "KO": 592,
+    "AR": 568,
+    "IT": 567,
+    "SV": 561,
+    "HI": 556,
+    "FR": 543,
+    "TR": 540,
+    "PT_BR": 540,
+    "FI": 537,
+    "EN": 534,
+    "FR_CA": 531,
+    "ES": 524,
+    "TH": 520,
+    "HU": 500,
+    "RU": 500,
+    "JA": 498,
+    "CS": 496,
+    "NL": 485,
+    "ZH_CN": 463,
+    "DE": 462,
+    "PT_EU": 453
+  },
+  "per_domain": {
+    "HR": 1249,
+    "e_commerce": 1239,
+    "finance": 1186,
+    "customer_service": 1139,
+    "education": 1130,
+    "government": 1117,
+    "legal": 1103,
+    "insurance": 1091,
+    "technology": 1064,
+    "law_enforcement": 1043,
+    "social_media": 1042,
+    "healthcare": 1024
+  },
+  "per_format": {
+    "ticket_worknotes": 2209,
+    "log_entry": 1955,
+    "key_value_pairs": 1918,
+    "plain_text": 1886,
+    "email": 1876,
+    "chat_transcript": 1808,
+    "json_record": 1775
+  },
+  "per_difficulty": {
+    "easy": 4707,
+    "hard": 4373,
+    "medium": 4347
+  },
+  "per_density": {
+    "low": 5184,
+    "medium": 4445,
+    "high": 3798
+  },
+  "per_length": {
+    "large": 3773,
+    "medium": 3341,
+    "small": 3328,
+    "very_large": 2985
+  },
+  "per_code_switching": {
+    "none": 4760,
+    "light": 4430,
+    "heavy": 4237
+  },
+  "per_adjacency": {
+    "tight": 4892,
+    "none": 4320,
+    "loose": 4215
+  },
+  "per_co_occurrence_pattern": {
+    "none": 8535,
+    "CO-010": 369,
+    "CO-011": 355,
+    "CO-005": 354,
+    "CO-002": 344,
+    "CO-007": 338,
+    "CO-001": 335,
+    "CO-008": 331,
+    "CO-004": 329,
+    "CO-012": 328,
+    "CO-003": 318,
+    "CO-009": 312,
+    "CO-006": 299,
+    "CO-014": 297,
+    "CO-015": 294,
+    "CO-013": 289
+  },
+  "per_behavioral_frame": {
+    "co_occurrence": 4892,
+    "isolation": 4052,
+    "partial": 1036,
+    "hypothetical": 979,
+    "negation": 959,
+    "instructional": 771,
+    "cross_sentence": 738
+  },
+  "per_sensitivity_tier": {
+    "MEDIUM": 203012,
+    "LOW": 65716,
+    "HIGH": 55350
+  },
+  "per_disclosure_form": {
+    "complete": 318538,
+    "partial": 5375,
+    "obfuscated": 165
+  },
+  "per_disclosed": {
+    "disclosed=true": 319937,
+    "disclosed=false": 4141
+  },
+  "per_direct_indirect": {
+    "direct": 120319,
+    "indirect": 113052
+  },
+  "article_9_summary": {
+    "article_9_entity_count": 10708,
+    "article_9_records_count": 3829,
+    "article_9_record_share": 0.285
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "n_records": 13427,
+  "sample_size_used": 300,
+  "C1_entity_type_shannon_entropy": 4.299,
+  "C1_max_possible_entropy": 5.6724,
+  "C1_normalized_entropy": 0.7579,
+  "C2_distinct_1": 0.0873,
+  "C2_distinct_2": 0.463,
+  "C2_distinct_3": 0.7265,
+  "C3_self_bleu_3": NaN,
+  "C3_self_bleu_4": NaN,
+  "C4_rouge_l_pairs_mean": 0.0305,
+  "C5_ttr": 0.0873,
+  "C6_vendi_score": 45.716,
+  "C7_sbert_semantic_diversity": 0.7507,
+  "C8_pattern_density": {
+    "global_unique_patterns_used": 2141,
+    "per_language_summary": {
+      "KO": {
+        "n_entity_types": 51,
+        "n_unique_patterns": 119
+      },
+      "TR": {
+        "n_entity_types": 51,
+        "n_unique_patterns": 122
+      },
+      "ES": {
+        "n_entity_types": 49,
+        "n_unique_patterns": 108
+      },
+      "DA": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 159
+      },
+      "NO": {
+        "n_entity_types": 51,
+        "n_unique_patterns": 169
+      },
+      "NL": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 121
+      },
+      "FR_CA": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 172
+      },
+      "CS": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 136
+      },
+      "ZH_TW": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 195
+      },
+      "DE": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 111
+      },
+      "HI": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 177
+      },
+      "JA": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 110
+      },
+      "PT_EU": {
+        "n_entity_types": 49,
+        "n_unique_patterns": 153
+      },
+      "FI": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 151
+      },
+      "PT_BR": {
+        "n_entity_types": 51,
+        "n_unique_patterns": 176
+      },
+      "HU": {
+        "n_entity_types": 49,
+        "n_unique_patterns": 129
+      },
+      "SV": {
+        "n_entity_types": 51,
+        "n_unique_patterns": 155
+      },
+      "TH": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 129
+      },
+      "EN": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 180
+      },
+      "HE": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 149
+      },
+      "FR": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 122
+      },
+      "ZH_CN": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 174
+      },
+      "AR": {
+        "n_entity_types": 49,
+        "n_unique_patterns": 138
+      },
+      "RU": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 137
+      },
+      "IT": {
+        "n_entity_types": 50,
+        "n_unique_patterns": 122
+      }
+    }
+  },
+  "_targets": {
+    "C1_target": ">= 4.0 bits",
+    "C3_self_bleu_3_target": "<= 0.35",
+    "C4_rouge_l_target": "<= 0.70"
+  }
+}

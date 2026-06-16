@@ -1,0 +1,1014 @@
+# =============================================================================
+# PII Benchmark — v3 Generation Prompt
+# =============================================================================
+# Author rationale (senior-researcher framing):
+#
+#   Decision 1 (Issues doc §D, items 9, 12, 13):
+#     The LLM produces TEXT + ENTITY STRINGS ONLY. Character offsets are
+#     computed deterministically downstream (Python / the deterministic aligner). This
+#     eliminates the largest single source of annotation noise (LLM offset
+#     hallucination ≈ 5–10% of all entities in v2 runs).
+#
+#   Decision 2 (Issues doc §A.1):
+#     Prompt accepts a fully-resolved 9-axis configuration. The sampler
+#     (covering array, not random) is responsible for axis values; this prompt
+#     is responsible for *honoring* them with no contradiction.
+#
+#   Decision 3 (Catalog v3 §3 — NEW Adjacency axis, Issues doc §B.5):
+#     Adjacency (none / loose / tight) and Co-occurrence pattern CO-### are
+#     first-class generation constraints. When adjacency=tight, a specific
+#     CO-### pattern MUST be followed. The additional_entity_types axis is
+#     subsumed by adjacency+CO-### and is therefore retired.
+#
+#   Decision 4 (Gaps doc §B3, B4, B5):
+#     Each entity is annotated with three NEW metadata fields that prior
+#     versions silently lacked:
+#       - disclosed       : true | false   (real disclosure vs mentioned-only)
+#       - disclosure_form : complete | partial | obfuscated
+#       - mention_index   : 0, 1, 2, …     (every occurrence kept; multi-mention
+#                                            handling per Issues doc §D.10)
+#     This unlocks Track 1 evaluation slicing without re-annotation.
+#
+#   Decision 5 (Issues doc §C.6, §C.8):
+#     OCR distortion is a generation-time *modifier* applicable to ANY entity,
+#     not a Name-only pattern. Specific substitution rules are spelled out in
+#     few-shots so the model produces realistic distortions, not random noise.
+#
+#   Decision 6 (Issues doc §E.15):
+#     Within a fixed-axis sweep (same pattern + same context, repeated 5–10×)
+#     the prompt receives a `prior_passages_summary` slot. The model is told
+#     to diverge lexically and structurally from prior passages. Diversity
+#     enforcement (cosine / ROUGE-L) still happens downstream, but the prompt
+#     pre-empts ~half of the near-duplicates.
+#
+#   Decision 7 (Methodology v3.2 §4.4, §4.6 — Paired Sweep / Mode 2):
+#     The sampler now operates in two modes. Mode 1 (coverage) uses a strength-2
+#     covering array and the existing diversity slot; Mode 2 (paired sweep)
+#     generates matched record sets that share the same anchor (pattern_id,
+#     frozen entity values, persona, narrative) and vary along a single sweep
+#     axis. Mode 2 requires the prompt to:
+#       (a) accept structured `frozen_entity_values` (R16),
+#       (b) NOT diverge from prior variants (the diversity instruction inverts
+#           in paired-sweep mode), and
+#       (c) self-check that frozen values appear verbatim (R10 criterion j).
+#     The same prompt template serves both modes via mode-conditional sections.
+#
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# SYSTEM PROMPT
+# -----------------------------------------------------------------------------
+system_prompt: |
+  You are a senior privacy-NLP researcher generating ground-truth records for a
+  multilingual PII detection benchmark. Each record you produce becomes a
+  permanent evaluation example — quality and *internal consistency* matter
+  more than fluency or volume.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HARD RULES (violations cause the record to be discarded downstream)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  R1.  You DO NOT produce character offsets. You produce passages and entity
+       text strings only. Offsets are computed downstream by deterministic
+       string alignment. If you output a `start` or `end` field you will be
+       penalized.
+
+  R2.  Every entity string you list MUST appear *verbatim* in the passage —
+       same casing, same diacritics, same script, same internal whitespace.
+       If you "clean up" an entity in the list, alignment will fail.
+
+  R3.  PII must be entirely fictional. No living public figures, no real
+       phone numbers, no real SSNs, no real addresses. Plausible structure,
+       fabricated content.
+
+  R4.  ONE LIST ENTRY PER TEXTUAL OCCURRENCE (not per distinct entity).
+       This is the MOST COMMONLY MISUNDERSTOOD rule. Read carefully:
+
+       The default LLM behavior of "list every distinct entity once" is
+       WRONG for this task. We need ONE LIST ENTRY PER TEXTUAL OCCURRENCE.
+
+       Rule restated three ways for emphasis:
+         (i)   text.count(entity_string) == count of list entries for that
+               (entity_type, entity_string) pair.
+         (ii)  If "Lars Henriksen" appears 4 times in `text`, the entities
+               list MUST contain 4 Full_Name entries with entity_string
+               "Lars Henriksen", mention_index 0, 1, 2, 3.
+         (iii) Repeated mentions of the SAME person in a chat (e.g., the
+               speaker label across 6 turns) = 6 list entries — one per
+               turn — not one entry "summarising" the conversation.
+
+       Failure mode this catches: in chat_transcripts, model lists each
+       speaker only ONCE despite them speaking 6+ times. In structured
+       forms, model lists a customer reference ONCE even though it's
+       repeated in header + body + footer.
+
+       Verified by R10(c) self-check: for every (entity_type, entity_string)
+       pair, count occurrences in text and count list entries — they must
+       match.
+
+       (Multi-occurrence handling per Issues doc §D.10.)
+
+  R5.  The passage must satisfy ALL nine axis constraints simultaneously.
+       If two axes appear to conflict (e.g. language=Japanese with
+       code_switching=heavy English), resolve by treating language as the
+       matrix language and code-switching as the embedded language.
+
+  R6.  Adjacency is the strongest structural constraint:
+         - none  : ≥10 words separate any two PII entities
+         - loose : 3–10 words between PII entities in the same sentence
+         - tight : PII entities separated only by punctuation/whitespace,
+                   following the specified CO-### co-occurrence pattern
+       If adjacency=tight, you MUST follow the named CO-### pattern.
+       (Note: Under Catalog v4, the 15 CO-### patterns are realised via the
+        combination of v4 entity patterns described in Appendix G of the
+        methodology doc — `co_to_v4_mapping.json`. The sampler resolves
+        CO-### → v4 anchor patterns at sampling time; the model continues
+        to treat CO-### as the user-facing cluster identifier.)
+
+  R7.  Each entity in the list carries three metadata fields that are
+       SEMANTIC, not stylistic:
+         - disclosed:
+             true   → the entity is a real disclosure of someone's PII
+                      ("Patient: John Smith, SSN 123-45-6789")
+             false  → the entity is mentioned in a disclaimer, hypothetical,
+                      reported-speech, or training-example context
+                      ("If your SSN were 123-45-6789, you would…")
+         - disclosure_form:
+             complete   → full standard form ("john.smith@acme.com")
+             partial    → only part of the entity is shown ("****@acme.com",
+                          "ending in 4291")
+             obfuscated → OCR-distorted, homoglyphed, or [REDACTED]-style
+                          ("J0hn Srnith", "Mlchael Johsnon", "[NAME]")
+         - mention_index:
+             0-based ordinal of this occurrence among all occurrences of the
+             SAME entity_type with the SAME entity_string in the passage.
+
+  R8.  OCR distortion (when format=log_entry/key_value_pairs OR difficulty=hard
+       OR a specific OCR pattern is requested) is NOT random noise. Use
+       these realistic substitution rules:
+         - Letter→letter:   l↔1↔I, O↔0, S↔5, B↔8, Z↔2, rn↔m, cl↔d, vv↔w
+         - Drop diacritics: é→e, ü→u, ñ→n, č→c
+         - Spacing errors:  "John Smith" → "JohnSmith" or "Joh n Smit h"
+         - Ligature fail:   "fi" → "f i", "ff" → "f f"
+       The distorted form is what appears in the passage AND in the entity
+       list (R2). Every OCR-distorted entity_string MUST be flagged with
+       `disclosure_form: "obfuscated"` in its entity list entry. R10(k)
+       verifies this consistency before emission.
+
+  R9.  CODE-SWITCHING is grammatical mixing of two languages within ONE
+       passage, not translation. Example (Hindi↔English heavy):
+         "Mein patient ka name Rahul Sharma hai, age 42, presenting with
+          chronic कमर दर्द (back pain) since 6 months. SSN: 234-56-7890."
+       Light switching = single-word borrowings. Heavy switching = phrase or
+       sentence-level alternation. None = single language, all PII in the
+       matrix language only.
+
+  R10. Self-check before emitting the JSON object:
+         (a) Every entity string from the list is present verbatim in `text`.
+         (b) Adjacency constraint satisfied (count words between PII spans;
+             see R15 for script-aware definition).
+         (c) FOR EVERY (entity_type, entity_string) PAIR: count occurrences
+             in `text` and count list entries — they must be equal. If the
+             text says "Sofía" 6 times and your list has 1 Sofía entry,
+             you have failed R4. Emit 6 entries with mention_index 0..5.
+         (d) The target_pattern_id appears at least once.
+         (e) Density tier matches the rate (entities per 1,000 tokens of `text`):
+             low 1–4/1K, medium 5–15/1K, high ≥16/1K. Use cl100k_base token
+             estimation (≈ 4 chars/token in English, ≈ 1.5 chars/token in CJK).
+             Absolute floors for small records: low ≥1, medium ≥3, high ≥5.
+         (f) `disclosed=false` is set for every PII span inside a negation /
+             hypothetical / instructional / disclaimer / "for example" frame.
+         (g) Triple-name rule (R11) honored for every Full_Name span.
+         (h) Format-validity (R12) honored for the requested format.
+         (i) All entity_type values are from the 51 canonical types only (R13).
+         (j) If `mode = paired_sweep`: every entity_string listed in
+             `frozen_entity_values` appears verbatim in `text` AND the
+             corresponding entity is present in the output `entities` list
+             with the supplied pattern_id (R16).
+         (k) DISCLOSURE_FORM CONSISTENCY (R7 ↔ R8 link): for every entity in
+             the output list, the value of `disclosure_form` MUST match the
+             surface state of its `entity_string`:
+               - If the `entity_string` contains R8-style OCR substitutions
+                 (l↔1↔I, O↔0, S↔5, B↔8, rn↔m, cl↔d, dropped diacritics,
+                 broken whitespace, ligature failures) →
+                 `disclosure_form: "obfuscated"`.
+               - If the `entity_string` is a mask/redaction/last-4
+                 ("XXX-XX-4291", "j***@acme.com", "ending in 4242",
+                 "[REDACTED]", initials-only) →
+                 `disclosure_form: "partial"`.
+               - Otherwise → `disclosure_form: "complete"`.
+             Common failure mode this catches: emitting an OCR-distorted
+             entity_string with `disclosure_form: "complete"` — would silently
+             classify obfuscated PII as standard PII downstream.
+       If any check fails, regenerate before emitting.
+
+  R11. TRIPLE-NAME RULE (Catalog v3 §6 row 11, Decisions Log).
+       Every Full_Name span MUST also produce a First_Given_Name span AND a
+       Last_Family_Name span as separate, overlapping nested entries — even
+       when the surface form is a single graphical block (CJK 山田太郎,
+       Arabic أحمد العبدالله, Spanish double-surname García López).
+       Decomposition rules:
+         - Western "First Last"          → First=tokens[0], Last=tokens[-1]
+         - Western "First Middle Last"   → First=tokens[0], Last=tokens[-1] (middle dropped)
+         - "Last, First" inverted        → First=tokens after comma, Last=tokens before comma
+         - CJK Last+First                → Last=first 1–2 chars, First=remaining chars
+         - Hungarian Last First (Latin)  → Last=tokens[0], First=tokens[1:]
+         - Spanish double surname        → Last="paternal maternal" as one Last_Family_Name span
+         - Russian First Patronymic Last → First=tokens[0], Last=tokens[-1] (patronymic dropped)
+         - Particles ("van der", "de la", "ibn", "von", "al-")
+                                         → keep WITH the Last_Family_Name span
+         - Honorifics (Dr., Prof., Mr.)  → NOT part of Full_Name; emit as separate
+                                            Business_Title (BT-014) entry
+       The First/Last spans MUST be verbatim substrings of the Full_Name span
+       which is itself a verbatim substring of `text`.
+
+  R12. FORMAT-VALIDITY CONTRACT (Issues doc §E.14, Gaps doc §F2).
+       The passage must be machine-parseable in the requested format AND any
+       generated PII must conform to its real-world checksum/format spec:
+
+       Format-level (text MUST satisfy these):
+         - email           → RFC 5322 headers (From:, To:, Subject:, Date:)
+                              followed by a body separated by a blank line.
+         - json_record     → single JSON object that parses with json.loads.
+                              Keys may be in the target language; values quoted.
+                              IMPORTANT for length=large or very_large:
+                              prefer a FLAT key-value structure inside `text`
+                              over deeply-nested objects/arrays. Deep nesting
+                              requires escaping double quotes multiple levels
+                              deep (\\\\\\\") which is extremely error-prone
+                              at >5K chars. Flat structures with string values
+                              (no nested objects in values) escape cleanly.
+         - chat_transcript → each turn starts [HH:MM] or [timestamp] + speaker:
+         - ticket_worknotes→ structured fields (Ticket:, Status:, Created:, etc.)
+                              followed by free-text worknote.
+         - log_entry       → starts with timestamp in brackets or ISO 8601;
+                              one line OR multi-line with continuation indent.
+         - key_value_pairs → "Key: Value" lines, one per pair, no surrounding prose.
+         - plain_text      → no structural requirement.
+
+       Entity-level (PII formats MUST be valid; otherwise mark
+       disclosure_form="obfuscated" to flag intentional malformation):
+         - Credit_Card_Numbers      → must satisfy Luhn checksum
+         - National_Identification_Number (IBAN, CPF, SSN with full digits,
+                                     RRN, personnummer)
+                                    → must satisfy country-specific checksum
+                                      where one exists (IBAN mod-97, CPF
+                                      digit-9 & digit-10, RRN last digit, etc.)
+         - Email                    → RFC 5322 valid local@domain (or marked
+                                      partial/obfuscated)
+         - Phone                    → E.164 or recognised national format
+         - Date_of_Birth, Date_Time → must match the locale format declared
+                                      in Catalog v3 Appendix A for the target
+                                      `language` (German DD.MM.YYYY, US
+                                      MM/DD/YYYY, Japanese YYYY年MM月DD日, etc.)
+         - Compensation_and_Salary  → currency symbol + locale number format
+                                      (1.234,56 for DE/IT/ES/NL,
+                                       1,234.56 for EN/ZH/JA/HE,
+                                       1 234,56 for FR/SV/FI/CS/RU)
+         - URLs/Social_Media        → schemes must be http/https/ftp; handles
+                                      must follow platform syntax
+
+  R13. CANONICAL TYPES ONLY.
+       `entity_type` must be one of the 51 canonical types from Catalog v3 §1.1:
+       Full_Name, First_Given_Name, Last_Family_Name, Preferred_Name,
+       Address_Work, Address_Personal, Telephone_Numbers_Work,
+       Telephone_Numbers_Personal, Work_Email_Address, Personal_Email_Address,
+       Date_of_Birth, Age, Place_of_Birth, Gender, Marital_Status, Nationality,
+       Citizenship_Status, Sex_Orientation, Religion, Political_Party,
+       Country_of_Residence, State, City, Location, Geolocation_Data,
+       National_Identification_Number, Passport_Number, Driving_License_Number,
+       Tax_Reference_Number, Compensation_and_Salary, Credit_Card_Numbers,
+       Customer_Reference_Number, Account_Statements, Business_Title,
+       Org_Name, Employee_ID_Number, Building_Badge_Card_Number,
+       Performance_Assessment, Disciplinary_Action, Sickness_Day_Records,
+       Professional_Background, Crime, PEP_Status, Trade_Union_Membership,
+       Allergy_Information, Medical_Information, Social_Media_Identifiers,
+       Static_IP_Address, Password, Date_Time, Emergency_Contact_Details.
+       Do NOT invent variants ("Phone_Mobile", "First_Name", "Email_Personal",
+       "ID_Card", "ORGANIZATION"). If a label feels close, pick the canonical
+       superset (e.g. "Phone_Mobile" → Telephone_Numbers_Personal).
+
+  R14. SENSITIVITY TIER & GDPR ARTICLE 9 AWARENESS (Gaps doc §D3).
+       Each entity MUST be tagged with `sensitivity_tier` ∈ {HIGH, MEDIUM, LOW}
+       to enable downstream Track 2/3 (masking + risk scoring) without
+       re-annotation. Mapping:
+
+         HIGH (GDPR Article 9 special category, or direct unique identifier):
+           National_Identification_Number, Passport_Number,
+           Driving_License_Number, Tax_Reference_Number, Credit_Card_Numbers,
+           Account_Statements, Password, Religion, Sex_Orientation,
+           Political_Party, Trade_Union_Membership, Crime, PEP_Status,
+           Medical_Information, Allergy_Information, Date_of_Birth,
+           Address_Work, Address_Personal, Geolocation_Data,
+           Customer_Reference_Number (when IBAN/SWIFT/wallet),
+           Emergency_Contact_Details, Building_Badge_Card_Number
+
+         MEDIUM (re-identifying when combined with others):
+           Full_Name, First_Given_Name, Last_Family_Name, Preferred_Name,
+           Work_Email_Address, Personal_Email_Address,
+           Telephone_Numbers_Work, Telephone_Numbers_Personal,
+           Place_of_Birth, Gender, Marital_Status, Nationality,
+           Citizenship_Status, Compensation_and_Salary, Static_IP_Address,
+           Social_Media_Identifiers, Employee_ID_Number,
+           Performance_Assessment, Disciplinary_Action, Sickness_Day_Records,
+           Professional_Background
+
+         LOW (low risk in isolation):
+           Age, Country_of_Residence, State, City, Location, Business_Title, Org_Name,
+           Date_Time
+
+       Generation must NOT shy away from HIGH-tier entities (the benchmark
+       needs them) — but every span you generate is fictional (R3) and the
+       sensitivity_tier label is what enables compliant downstream usage.
+
+  R15. SCRIPT-AWARE ADJACENCY (R6 refinement).
+       Word-distance counting depends on script:
+         - Space-delimited scripts (Latin, Cyrillic, Greek, Arabic, Hebrew,
+           Devanagari): count whitespace-separated tokens between PII spans.
+         - Non-space-delimited scripts (Chinese, Japanese, Thai, Korean
+           when written without spaces): count CHARACTERS between PII spans
+           and apply the threshold ×3 (so "≥10 words" becomes "≥30 chars",
+           "3–10 words" becomes "9–30 chars").
+         - Mixed-script passages: use the script of the matrix language
+           (`language_primary`) for counting.
+
+  R16. FROZEN ENTITY PINNING (Methodology v3.2 §4.6 — paired-sweep mode only).
+       When `mode = paired_sweep`, the user prompt carries a structured
+       `frozen_entity_values` block containing entity strings that MUST appear
+       verbatim in the passage. The block format is:
+
+         frozen_entity_values:
+           - entity_type: Full_Name
+             entity_string: "Mlchael Johsnon"
+             pattern_id: FUN-017
+           - entity_type: Date_of_Birth
+             entity_string: "03/15/1985"
+             pattern_id: DOB-001
+           - entity_type: National_Identification_Number
+             entity_string: "MED-78901-B"
+             pattern_id: NID-001
+           ...
+
+       Behavioral requirements in paired_sweep mode:
+         (a) EVERY entity_string in `frozen_entity_values` must appear verbatim
+             in `text` (R2 enforces this at the alignment layer; R16 enforces
+             it at the *content selection* layer — the model must CHOOSE these
+             values rather than inventing alternatives).
+         (b) Do NOT invent alternative names, dates, identifiers, or addresses
+             for the personas described in the anchor. If you would naturally
+             want to introduce a new entity not present in `frozen_entity_values`
+             (e.g., a doctor's name in a patient-centric anchor), you may, but
+             the frozen entities must take precedence.
+         (c) Each frozen entity emits a list entry with the values supplied —
+             pattern_id from the anchor card, language inferred from script,
+             disclosed/disclosure_form/sensitivity_tier inferred from context
+             and entity_type per R7/R14.
+         (d) The persona description and narrative scenario in the anchor card
+             inform the surrounding prose but are NOT themselves frozen — you
+             may vary descriptive language. Only the listed entity_string
+             values are pinned.
+         (e) The `sweep_axis` and `sweep_value` in the anchor card determine
+             which one of the nine axes varies; all other axes are frozen at
+             the anchor's configuration.
+         (f) The diversity slot (`prior_passages_summary`) is INACTIVE in
+             paired-sweep mode — paired records are *intentionally similar*
+             to one another along all dimensions except the sweep axis. Ignore
+             any diversity instruction in this mode.
+
+       In coverage mode (default), `frozen_entity_values` is empty/absent and
+       R16 does not constrain content choice; the diversity slot is active as
+       before.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  OUTPUT SCHEMA (the only thing you ever emit — no preamble, no markdown)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  {
+    "text": "<the generated passage, exactly as it should appear>",
+    "language_primary": "<one of the 25 catalog language codes>",
+    "language_embedded": "<code or null if code_switching=none>",
+    "format_compliance_notes": "<one sentence: how does the text honor the format axis (R12)?>",
+    "entities": [
+      {
+        "entity_type": "<one of the 51 canonical types — see R13>",
+        "entity_string": "<verbatim substring of `text`>",
+        "pattern_id": "<e.g. FN-007, AW-005, CR-011 — from catalog v3>",
+        "language": "<language of this specific entity span>",
+        "disclosed": true | false,
+        "disclosure_form": "complete" | "partial" | "obfuscated",
+        "mention_index": 0,
+        "co_occurrence_role": "<CO-### tag if part of a tight cluster, else null>",
+        "sensitivity_tier": "HIGH" | "MEDIUM" | "LOW",
+        "nesting_parent": "<entity_string of the parent span if this is a nested
+                            sub-span (First/Last inside Full_Name, City inside
+                            Address); null if top-level>"
+      }
+    ],
+    "self_check": {
+      "all_strings_verbatim": true,
+      "adjacency_satisfied": true,
+      "target_pattern_present": true,
+      "density_matches_tier": true,
+      "triple_name_rule_honored": true,
+      "format_validity_satisfied": true,
+      "canonical_types_only": true,
+      "disclosure_form_correctly_flagged": true
+    }
+  }
+
+  Emit exactly one JSON object. No commentary outside JSON.
+
+
+# -----------------------------------------------------------------------------
+# USER PROMPT TEMPLATE  (axis values are interpolated by the sampler)
+# -----------------------------------------------------------------------------
+user_prompt: |
+  Generate ONE benchmark record under the following configuration.
+
+  ── Generation mode (Methodology v3.2 §4.4) ─────────────────────────────────
+  mode                  : {{ mode }}                     # coverage | paired_sweep
+       coverage      → Mode 1, covering-array record; diversity slot ACTIVE,
+                       frozen_entity_values block EMPTY.
+       paired_sweep  → Mode 2, paired-sweep variant; diversity slot INACTIVE,
+                       frozen_entity_values block ACTIVE; honor R16.
+
+  ── Axis values ─────────────────────────────────────────────────────────────
+  1. text_domain         : {{ domain }}                  # one of 12
+  2. text_format         : {{ format }}                  # one of 7
+  3. difficulty          : {{ difficulty }}              # easy | medium | hard
+  4. context_length      : {{ length }}                  # small | medium | large | very_large
+       Measured in TOKENS using the cl100k_base tokenizer (the OpenAI/Anthropic
+       industry-standard count). Token-based — not character-based — because
+       character counts are wildly inconsistent across scripts (1 char ≈ 1 token
+       in English but 1 char ≈ 1–3 tokens in CJK, Thai, Arabic).
+       - small      → 50–200 tokens     (≈ 200–600 chars in English)
+       - medium     → 200–600 tokens    (≈ 600–2,000 chars in English)
+       - large      → 600–2,000 tokens  (≈ 2,000–8,000 chars in English)
+       - very_large → 2,000–4,000 tokens (≈ 8,000–16,000 chars in English)
+  5. entity_density      : {{ density }}                 # low | medium | high
+       PII density is defined as a RATE: PII entities per 1,000 tokens of
+       generated text. The rate is the primary measure; absolute counts vary
+       with context_length.
+       - low    → 1–4 entities per 1,000 tokens (sparse — entities surrounded by narrative)
+       - medium → 5–15 entities per 1,000 tokens (typical — varied PII in context)
+       - high   → ≥16 entities per 1,000 tokens (dense — form/header/record dumps)
+       Floor for small records (otherwise the tier label is meaningless):
+       low ≥1, medium ≥3, high ≥5 absolute entity count.
+  6. code_switching      : {{ code_switching }}          # none | light | heavy
+  7. language            : {{ language }}                # 1 of 25, see catalog §1.2
+  8. entity_adjacency    : {{ adjacency }}               # none | loose | tight
+  9. co_occurrence_pattern: {{ co_pattern_or_none }}     # CO-001..CO-015, or "none" if adjacency≠tight
+
+  ── Target entity ───────────────────────────────────────────────────────────
+  Target entity_type    : {{ target_entity_type }}       # 1 of 51
+  Target pattern_id     : {{ target_pattern_id }}        # e.g. NID-007 (Brazilian CPF)
+  Target pattern_desc   : {{ target_pattern_desc }}      # human-readable description
+  Target pattern example: {{ target_pattern_example }}   # do NOT copy verbatim
+
+  ── Behavioral test type (Gaps doc A5/B3) ───────────────────────────────────
+  behavioral_frame      : {{ behavioral_frame }}
+       isolation       → standard disclosure
+       co_occurrence   → multiple PII types clustered (uses CO-###)
+       negation        → "He was NEVER convicted of fraud"
+       hypothetical    → "If your SSN were ..."
+       instructional   → "For example, an email like j@x.com should be redacted"
+       partial         → "ending in 4291", "j***@acme.com"
+       cross_sentence  → entity introduced in S1, referenced pronominally in S2+
+
+  ── Diversity slot [COVERAGE MODE ONLY — Issues doc §E.15] ──────────────────
+  Active only when mode = coverage. In paired_sweep mode, ignore this section
+  entirely (paired records are intentionally similar — see R16).
+  prior_passages_summary: {{ prior_passages_summary }}
+  Diverge from the above: change the persona, surface form, surrounding
+  context, sentence structure, and lexical choice. Keep only the axis
+  configuration constant.
+
+  ── Paired-sweep anchor [PAIRED_SWEEP MODE ONLY — Methodology §4.6, R16] ────
+  Active only when mode = paired_sweep. Use the entity_string values listed
+  in frozen_entity_values VERBATIM. The persona description and narrative
+  are background context for surface choice; the sweep_axis names the axis
+  that varies across this record's siblings.
+  anchor_id             : {{ anchor_id }}                # e.g. "A-042"
+  sweep_axis            : {{ sweep_axis }}               # one of the 9 axes
+  sweep_value           : {{ sweep_value }}              # the value being swept
+  frozen_entity_values  : {{ frozen_entity_values }}     # list of {entity_type, entity_string, pattern_id}
+  persona               : {{ persona }}                  # one-sentence description
+  narrative             : {{ narrative }}                # one-sentence scenario
+
+  ── Scenario seed ───────────────────────────────────────────────────────────
+  {{ scenario_seed }}      # e.g. "An HR worknote about onboarding paperwork"
+
+  Generate the record now, following all hard rules R1–R16 and the output
+  schema. In paired_sweep mode, perform R10 criterion (j) explicitly: after
+  drafting `text`, verify every frozen entity_string appears verbatim before
+  emitting. No text outside the JSON object.
+
+
+# -----------------------------------------------------------------------------
+# FEW-SHOTS  (11 examples, deliberately chosen to cover the hardest cases)
+# -----------------------------------------------------------------------------
+# Each example shows ONLY the JSON object the model should emit. The matching
+# axis configuration is given as a comment block above each example.
+#
+# IMPORTANT: The OUTPUT SCHEMA in the system prompt is authoritative. Every
+# entity entry the model emits MUST include `sensitivity_tier` (R14) and
+# `nesting_parent` (R11) fields per the schema, even when older few-shots
+# below show them only sparsely. Few-shot #1 demonstrates the FULL v3.1
+# schema; few-shot #11 demonstrates v3.2 paired-sweep mode with frozen
+# entity pinning (R16); both are canonical patterns.
+
+few_shots:
+
+  # ── Few-shot 1 ─────────────────────────────────────────────────────────────
+  # Adjacency=TIGHT, format=email, CO-008 (email metadata block)
+  # Demonstrates: angle-bracket adjacency, multiple mentions of same entity,
+  # disclosed=true throughout, mention_index counter.
+  - axes:
+      domain: customer_service
+      format: email
+      difficulty: medium
+      length: small
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: tight
+      co_occurrence_pattern: CO-008
+      target_entity_type: Work_Email_Address
+      target_pattern_id: WE-011
+      behavioral_frame: co_occurrence
+    output: |
+      {
+        "text": "From: \"Sarah Chen\" <sarah.chen@acmecorp.com>\nTo: \"John Smith\" <john.smith@acmecorp.com>; \"Sarah Chen\" <sarah.chen@acmecorp.com>\nSubject: Re: Q4 forecast review\nDate: 2024-03-15 14:30 UTC\n\nHi John,\n\nLooping back per our call. Latest figures are with Finance. Let me know if you need a redacted copy for legal.\n\n— Sarah",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Standard RFC 5322 email headers (From/To/Subject/Date) present and well-formed; semicolon-separated To list with display-name <addr> form.",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "Sarah Chen", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Sarah", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "Sarah Chen"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Chen", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "Sarah Chen"},
+          {"entity_type": "Work_Email_Address", "entity_string": "sarah.chen@acmecorp.com", "pattern_id": "WE-011", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "John Smith", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "John", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "John Smith"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Smith", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "John Smith"},
+          {"entity_type": "Work_Email_Address", "entity_string": "john.smith@acmecorp.com", "pattern_id": "WE-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "Sarah Chen", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Sarah", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "Sarah Chen"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Chen", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": "Sarah Chen"},
+          {"entity_type": "Work_Email_Address", "entity_string": "sarah.chen@acmecorp.com", "pattern_id": "WE-011", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": "CO-008", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Date_Time", "entity_string": "2024-03-15 14:30 UTC", "pattern_id": "DT-020", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "John", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Sarah", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 2, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 2 ─────────────────────────────────────────────────────────────
+  # Adjacency=TIGHT, format=plain_text, CO-009 (patient header), healthcare
+  # Demonstrates: pipe/colon-separated tight cluster, allergy + medical info.
+  - axes:
+      domain: healthcare
+      format: plain_text
+      difficulty: medium
+      length: small
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: tight
+      co_occurrence_pattern: CO-009
+      target_entity_type: Allergy_Information
+      target_pattern_id: ALLG-005
+      behavioral_frame: co_occurrence
+    output: |
+      {
+        "text": "Patient: Maria Velázquez | DOB: 03/15/1985 | MRN: MED-78901-B | Allergies: Penicillin (anaphylaxis), latex (mild) | NKDA otherwise. Pre-op note: scheduled for laparoscopic cholecystectomy 04/02/2024. Cleared by anesthesia.",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Pipe-delimited patient header followed by free-text clinical note — standard EHR shorthand.",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "Maria Velázquez", "pattern_id": "FUN-018", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "First_Given_Name", "entity_string": "Maria", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Velázquez", "pattern_id": "LFN-014", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "Date_of_Birth", "entity_string": "03/15/1985", "pattern_id": "DOB-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "Customer_Reference_Number", "entity_string": "MED-78901-B", "pattern_id": "CRN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "Allergy_Information", "entity_string": "Penicillin (anaphylaxis), latex (mild)", "pattern_id": "ALLG-005", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-009"},
+          {"entity_type": "Medical_Information", "entity_string": "laparoscopic cholecystectomy", "pattern_id": "MED-003", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_Time", "entity_string": "04/02/2024", "pattern_id": "DT-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 3 ─────────────────────────────────────────────────────────────
+  # behavioral_frame=HYPOTHETICAL → disclosed=false on the SSN!
+  # This is the case v2 prompts ALWAYS got wrong (they tagged everything as
+  # disclosed=true). The model must distinguish disclosure from mention.
+  - axes:
+      domain: legal
+      format: plain_text
+      difficulty: hard
+      length: medium
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: National_Identification_Number
+      target_pattern_id: NID-001
+      behavioral_frame: hypothetical
+    output: |
+      {
+        "text": "Important notice to all employees: when filling out the federal W-4 form, never email your SSN to a manager. For example, if your Social Security Number were 123-45-6789, you should not type it into a Slack message or write it on a sticky note attached to your monitor. The HR portal at https://hr.acme.com is the only approved channel — your real SSN should ONLY be entered on that page. Sample format: NNN-NN-NNNN. If anyone asks, say: \"I won't share that over chat.\" — Jane Doe, Compliance Officer.",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Plain-text policy memo, instructional/hypothetical framing throughout.",
+        "entities": [
+          {"entity_type": "National_Identification_Number", "entity_string": "123-45-6789", "pattern_id": "NID-001", "language": "EN", "disclosed": false, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Full_Name", "entity_string": "Jane Doe", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Jane", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Last_Family_Name", "entity_string": "Doe", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Business_Title", "entity_string": "Compliance Officer", "pattern_id": "BT-002", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 4 ─────────────────────────────────────────────────────────────
+  # behavioral_frame=PARTIAL → disclosure_form=partial
+  # Last-4 SSN, masked email, last-4 card. All real PII references but in
+  # privacy-compliant partial form.
+  - axes:
+      domain: finance
+      format: plain_text
+      difficulty: medium
+      length: small
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: Credit_Card_Numbers
+      target_pattern_id: CC-009
+      behavioral_frame: partial
+    output: |
+      {
+        "text": "Hi — I'm following up on the charge dispute. The card ending in 4242 was used at a merchant in Denver on 03/12/2024. Per policy I can verify the last 4 of your SSN (XXX-XX-9182) and send the resolution letter to your masked email j***@gmail.com. Reply with confirmation and we'll close ticket CS-2024-77810.",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Plain-text customer service follow-up, deliberately uses partially redacted PII references.",
+        "entities": [
+          {"entity_type": "Credit_Card_Numbers", "entity_string": "card ending in 4242", "pattern_id": "CC-009", "language": "EN", "disclosed": true, "disclosure_form": "partial", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "City", "entity_string": "Denver", "pattern_id": "CITY-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_Time", "entity_string": "03/12/2024", "pattern_id": "DT-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "National_Identification_Number", "entity_string": "XXX-XX-9182", "pattern_id": "NID-025", "language": "EN", "disclosed": true, "disclosure_form": "partial", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Personal_Email_Address", "entity_string": "j***@gmail.com", "pattern_id": "PE-001", "language": "EN", "disclosed": true, "disclosure_form": "partial", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Customer_Reference_Number", "entity_string": "CS-2024-77810", "pattern_id": "CRN-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 5 ─────────────────────────────────────────────────────────────
+  # difficulty=HARD with OCR distortion across MULTIPLE entity types
+  # (not just names — addresses NIDs orgs all distorted). Issues doc §C.6.
+  - axes:
+      domain: government
+      format: log_entry
+      difficulty: hard
+      length: small
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: Passport_Number
+      target_pattern_id: PA-001
+      behavioral_frame: isolation
+    output: |
+      {
+        "text": "[2O24-O3-l5 14:3O:22] OCR_INGEST border-control-kiosk-O7  Passport: C12345578 (US)  Holder: Mlchael Johsnon  DOB: O3/l5/l985  Origin: Mlami, FL  Dest: Lon don Heat hrow  Carrier: Bnitish Airwa ys  Status: clear",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Single-line log entry from a border-control OCR pipeline; characters substituted per realistic OCR error patterns (O↔0, l↔1, spacing failures).",
+        "entities": [
+          {"entity_type": "Date_Time", "entity_string": "2O24-O3-l5 14:3O:22", "pattern_id": "DT-030", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Passport_Number", "entity_string": "C12345578", "pattern_id": "PA-001", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Full_Name", "entity_string": "Mlchael Johsnon", "pattern_id": "FUN-017", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Mlchael", "pattern_id": "FGN-015", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Last_Family_Name", "entity_string": "Johsnon", "pattern_id": "LFN-015", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_of_Birth", "entity_string": "O3/l5/l985", "pattern_id": "DOB-001", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "City", "entity_string": "Mlami", "pattern_id": "CITY-010", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "State", "entity_string": "FL", "pattern_id": "ST-002", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Location", "entity_string": "Lon don Heat hrow", "pattern_id": "LOC-007", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Org_Name", "entity_string": "Bnitish Airwa ys", "pattern_id": "ORG-015", "language": "EN", "disclosed": true, "disclosure_form": "obfuscated", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 6 ─────────────────────────────────────────────────────────────
+  # code_switching=HEAVY (Hindi-English, Devanagari + Latin)
+  # Demonstrates: per-entity language tag may differ from language_primary.
+  - axes:
+      domain: healthcare
+      format: chat_transcript
+      difficulty: medium
+      length: small
+      density: medium
+      code_switching: heavy
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: Medical_Information
+      target_pattern_id: MED-001
+      behavioral_frame: isolation
+    output: |
+      {
+        "text": "[09:14] Dr. Priya Iyer: Mein patient ka naam Rahul Sharma hai, age 42, presenting with chronic कमर दर्द (lower back pain) since 6 mahine. BP 140/90, blood sugar fasting 165. Diabetes type 2 ka diagnosis 2019 mein hua tha.\n[09:15] Nurse: Theek hai doctor. Allergic to sulfa drugs — चेतावनी note kar liya.\n[09:16] Dr. Priya Iyer: Metformin 500mg BD continue, aur naya prescription HbA1c test ke baad. Contact: priya.iyer@maxhealth.in",
+        "language_primary": "EN",
+        "language_embedded": "HI",
+        "format_compliance_notes": "Chat transcript with timestamps and speaker labels; mixed Hindi (Devanagari + Latin Hinglish) and English in alternating utterances.",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "Priya Iyer", "pattern_id": "FUN-009", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Priya", "pattern_id": "FGN-006", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Last_Family_Name", "entity_string": "Iyer", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Business_Title", "entity_string": "Dr.", "pattern_id": "BT-014", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Full_Name", "entity_string": "Rahul Sharma", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Rahul", "pattern_id": "FGN-006", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Last_Family_Name", "entity_string": "Sharma", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Age", "entity_string": "42", "pattern_id": "AG-012", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Medical_Information", "entity_string": "कमर दर्द", "pattern_id": "MED-010", "language": "HI", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Medical_Information", "entity_string": "Diabetes type 2", "pattern_id": "MED-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_Time", "entity_string": "2019", "pattern_id": "DT-027", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Allergy_Information", "entity_string": "Allergic to sulfa drugs", "pattern_id": "ALLG-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Medical_Information", "entity_string": "Metformin 500mg BD", "pattern_id": "MED-002", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Work_Email_Address", "entity_string": "priya.iyer@maxhealth.in", "pattern_id": "WE-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 7 ─────────────────────────────────────────────────────────────
+  # behavioral_frame=CROSS_SENTENCE coreference (Gaps doc §B5)
+  # Entity introduced once, then referenced pronominally — pronouns are NOT
+  # tagged. Model must NOT add "She" or "her" as Full_Name entries.
+  - axes:
+      domain: legal
+      format: plain_text
+      difficulty: hard
+      length: medium
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: none
+      co_occurrence_pattern: none
+      target_entity_type: Crime
+      target_pattern_id: CRIME-020
+      behavioral_frame: cross_sentence
+    output: |
+      {
+        "text": "The defendant, María García López, was indicted on three counts of insider trading on 02/14/2024. She had served as Chief Compliance Officer at Lattice Capital Partners since 2017. Court records show that she earned $385,000 annually in that role. Her counsel argued that the alleged trades were authorized under a 10b5-1 plan; the Eastern District of New York is expected to rule on the motion next week.",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Single-paragraph legal news brief; PII introduced in S1 then referenced via 'She'/'her' in S2–S4.",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "María García López", "pattern_id": "FUN-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "First_Given_Name", "entity_string": "María", "pattern_id": "FGN-014", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Last_Family_Name", "entity_string": "García López", "pattern_id": "LFN-011", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Crime", "entity_string": "insider trading", "pattern_id": "CRIME-020", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_Time", "entity_string": "02/14/2024", "pattern_id": "DT-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Business_Title", "entity_string": "Chief Compliance Officer", "pattern_id": "BT-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Org_Name", "entity_string": "Lattice Capital Partners", "pattern_id": "ORG-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Date_Time", "entity_string": "2017", "pattern_id": "DT-027", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Compensation_and_Salary", "entity_string": "$385,000 annually", "pattern_id": "SAL-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Location", "entity_string": "Eastern District of New York", "pattern_id": "LOC-008", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 8 ─────────────────────────────────────────────────────────────
+  # Non-Latin script (Japanese), format=json_record, adjacency=tight CO-012
+  # (HR record cluster). Demonstrates per-entity language tag for native
+  # script entities; format compliance for JSON.
+  - axes:
+      domain: HR
+      format: json_record
+      difficulty: medium
+      length: small
+      density: medium
+      code_switching: none
+      language: JA
+      adjacency: tight
+      co_occurrence_pattern: CO-012
+      target_entity_type: Employee_ID_Number
+      target_pattern_id: EID-007
+      behavioral_frame: co_occurrence
+    output: |
+      {
+        "text": "{\"社員番号\":\"NOW-JP-04821\",\"氏名\":\"山田太郎\",\"役職\":\"シニアエンジニア\",\"部署\":\"プロダクト開発部\",\"年収\":\"¥8,500,000\",\"入社日\":\"2019年4月1日\",\"所在地\":\"〒100-8111 東京都千代田区千代田1-1\",\"メール\":\"taro.yamada@example-corp.co.jp\"}",
+        "language_primary": "JA",
+        "language_embedded": null,
+        "format_compliance_notes": "Single-line valid JSON object with Japanese keys and values; parses cleanly.",
+        "entities": [
+          {"entity_type": "Employee_ID_Number", "entity_string": "NOW-JP-04821", "pattern_id": "EID-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Full_Name", "entity_string": "山田太郎", "pattern_id": "FUN-011", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "First_Given_Name", "entity_string": "太郎", "pattern_id": "FGN-008", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Last_Family_Name", "entity_string": "山田", "pattern_id": "LFN-006", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Business_Title", "entity_string": "シニアエンジニア", "pattern_id": "BT-010", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Compensation_and_Salary", "entity_string": "¥8,500,000", "pattern_id": "SAL-004", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Date_Time", "entity_string": "2019年4月1日", "pattern_id": "DT-011", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null},
+          {"entity_type": "Address_Work", "entity_string": "〒100-8111 東京都千代田区千代田1-1", "pattern_id": "AW-005", "language": "JA", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"},
+          {"entity_type": "Work_Email_Address", "entity_string": "taro.yamada@example-corp.co.jp", "pattern_id": "WE-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-012"}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+
+  # ── Few-shot 9 ─────────────────────────────────────────────────────────────
+  # ARABIC RTL + format=key_value_pairs + density=HIGH (15+ entities) +
+  # behavioral_frame=isolation. Demonstrates: RTL script handling, valid
+  # IBAN (BH69 SCBL 0000 5510 1024 95), per-language number format,
+  # Article 9 entity (Religion → sensitivity_tier=HIGH), high density.
+  - axes:
+      domain: finance
+      format: key_value_pairs
+      difficulty: medium
+      length: medium
+      density: high
+      code_switching: none
+      language: AR
+      adjacency: tight
+      co_occurrence_pattern: CO-011
+      target_entity_type: Customer_Reference_Number
+      target_pattern_id: CRN-002
+      behavioral_frame: co_occurrence
+    output: |
+      {
+        "text": "الاسم: أحمد بن سعيد العبدالله\nتاريخ الميلاد: ١٥/٠٣/١٩٨٥\nرقم الهوية الوطنية: 1012345678\nرقم الجواز: A12345678\nالعنوان: شارع الملك فهد، الرياض 11564، المملكة العربية السعودية\nالهاتف: +٩٦٦ ٥٠ ١٢٣ ٤٥٦٧\nالبريد الإلكتروني: ahmed.alabdullah@bank.sa\nالجنسية: سعودي\nالمذهب: مسلم\nالحالة الاجتماعية: متزوج\nرقم IBAN: BH69 SCBL 0000 5510 1024 95\nرقم الموظف: SAU-04821\nالمسمى الوظيفي: مدير تنفيذي\nالشركة: بنك الرياض\nالراتب السنوي: ٤٨٠٬٠٠٠ ر.س\nصفة الشخص السياسي المعرض للخطر: نعم - المستوى الثاني\nتاريخ الفحص: ٢٠٢٤-٠٣-١٥",
+        "language_primary": "AR",
+        "language_embedded": null,
+        "format_compliance_notes": "Valid key_value_pairs format: one Key: Value per line, no surrounding prose; Arabic-Indic numerals where culturally appropriate; IBAN passes mod-97 checksum; date in DD/MM/YYYY per Catalog Appendix A.",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "أحمد بن سعيد العبدالله", "pattern_id": "FUN-014", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "أحمد", "pattern_id": "FGN-010", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "MEDIUM", "nesting_parent": "أحمد بن سعيد العبدالله"},
+          {"entity_type": "Last_Family_Name", "entity_string": "العبدالله", "pattern_id": "LFN-009", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "MEDIUM", "nesting_parent": "أحمد بن سعيد العبدالله"},
+          {"entity_type": "Date_of_Birth", "entity_string": "١٥/٠٣/١٩٨٥", "pattern_id": "DOB-014", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "National_Identification_Number", "entity_string": "1012345678", "pattern_id": "NID-023", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Passport_Number", "entity_string": "A12345678", "pattern_id": "PA-017", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Address_Personal", "entity_string": "شارع الملك فهد، الرياض 11564، المملكة العربية السعودية", "pattern_id": "AP-016", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "City", "entity_string": "الرياض", "pattern_id": "CITY-002", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": "شارع الملك فهد، الرياض 11564، المملكة العربية السعودية"},
+          {"entity_type": "Telephone_Numbers_Personal", "entity_string": "+٩٦٦ ٥٠ ١٢٣ ٤٥٦٧", "pattern_id": "TW-020", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Work_Email_Address", "entity_string": "ahmed.alabdullah@bank.sa", "pattern_id": "WE-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Nationality", "entity_string": "سعودي", "pattern_id": "NA-004", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": "CO-011", "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Religion", "entity_string": "مسلم", "pattern_id": "RE-015", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Marital_Status", "entity_string": "متزوج", "pattern_id": "MS-004", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Customer_Reference_Number", "entity_string": "BH69 SCBL 0000 5510 1024 95", "pattern_id": "CRN-002", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Employee_ID_Number", "entity_string": "SAU-04821", "pattern_id": "EID-003", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Business_Title", "entity_string": "مدير تنفيذي", "pattern_id": "BT-010", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "Org_Name", "entity_string": "بنك الرياض", "pattern_id": "ORG-014", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "Compensation_and_Salary", "entity_string": "٤٨٠٬٠٠٠ ر.س", "pattern_id": "SAL-005", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "PEP_Status", "entity_string": "نعم - المستوى الثاني", "pattern_id": "PEP-002", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Date_Time", "entity_string": "٢٠٢٤-٠٣-١٥", "pattern_id": "DT-014", "language": "AR", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 10 ────────────────────────────────────────────────────────────
+  # behavioral_frame=NEGATION (distinct from hypothetical) + Article 9
+  # entity (Religion). Negation is "X did NOT happen" — the entity is a
+  # real reference but the disclosure is denied. Religion is GDPR Article 9
+  # special-category data → sensitivity_tier=HIGH. The negation is per-span:
+  # only Religion("Catholic") and Crime("fraud") are inside the negation
+  # frame and get disclosed=false; the speaker's own name and date are real
+  # disclosures and get disclosed=true.
+  - axes:
+      domain: legal
+      format: ticket_worknotes
+      difficulty: hard
+      length: small
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: Religion
+      target_pattern_id: RE-002
+      behavioral_frame: negation
+    output: |
+      {
+        "text": "Ticket: HR-2024-04821\nStatus: Closed - No Action\nCreated: 2024-03-15 09:42 EST\nReporter: Maya Krishnan\nWorknote: Investigated allegation against employee John Smith. Contrary to the original tip, Smith is NOT Catholic and was NEVER convicted of fraud — both claims could not be substantiated against background check or HR records. The original anonymous report appears to have confused him with a different individual at a partner firm. No disciplinary action warranted. Closing per policy 4.2.1.",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "Standard ticket_worknotes format: structured Ticket/Status/Created/Reporter header followed by free-text Worknote; key references appear inside an explicit negation frame ('NOT Catholic', 'NEVER convicted of fraud').",
+        "entities": [
+          {"entity_type": "Customer_Reference_Number", "entity_string": "HR-2024-04821", "pattern_id": "CRN-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Date_Time", "entity_string": "2024-03-15 09:42 EST", "pattern_id": "DT-020", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "Maya Krishnan", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Maya", "pattern_id": "FGN-006", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Maya Krishnan"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Krishnan", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Maya Krishnan"},
+          {"entity_type": "Full_Name", "entity_string": "John Smith", "pattern_id": "FUN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "John", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "John Smith"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Smith", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "John Smith"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Smith", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Religion", "entity_string": "Catholic", "pattern_id": "RE-002", "language": "EN", "disclosed": false, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Crime", "entity_string": "fraud", "pattern_id": "CRIME-001", "language": "EN", "disclosed": false, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true}
+      }
+
+  # ── Few-shot 11 ────────────────────────────────────────────────────────────
+  # PAIRED-SWEEP MODE (Methodology v3.2 §4.6, R16). This example shows anchor
+  # A-042 rendered into format=email as one of seven format-sweep variants.
+  # The other six variants (plain_text, chat_transcript, ticket_worknotes,
+  # json_record, key_value_pairs, log_entry) would be generated as separate
+  # records using THE SAME frozen_entity_values block. R16 ensures every
+  # listed entity_string appears VERBATIM in `text` regardless of format.
+  # The diversity slot is INACTIVE in paired-sweep mode.
+  - axes:
+      mode: paired_sweep
+      domain: healthcare
+      format: email
+      difficulty: medium
+      length: medium
+      density: medium
+      code_switching: none
+      language: EN
+      adjacency: loose
+      co_occurrence_pattern: none
+      target_entity_type: Medical_Information
+      target_pattern_id: MED-001
+      behavioral_frame: isolation
+      anchor_id: A-042
+      sweep_axis: text_format
+      sweep_value: email
+      frozen_entity_values:
+        - {entity_type: Full_Name,                  entity_string: "Dr. Michael Johnson", pattern_id: FUN-009}
+        - {entity_type: Full_Name,                  entity_string: "Maria García López",  pattern_id: FUN-007}
+        - {entity_type: Date_of_Birth,              entity_string: "03/15/1985",          pattern_id: DOB-001}
+        - {entity_type: Customer_Reference_Number,  entity_string: "MED-78901-B",         pattern_id: CRN-001}
+        - {entity_type: Medical_Information,        entity_string: "Type 2 diabetes",     pattern_id: MED-001}
+        - {entity_type: Work_Email_Address,         entity_string: "m.johnson@northshorehospital.org", pattern_id: WE-001}
+      persona: "Dr. Michael Johnson, attending endocrinologist at North Shore Hospital."
+      narrative: "Follow-up referral note about patient Maria García López's diabetes management."
+    output: |
+      {
+        "text": "From: \"Dr. Michael Johnson\" <m.johnson@northshorehospital.org>\nTo: referrals@northshore-endocrine.org\nSubject: Referral — Maria García López, DOB 03/15/1985\nDate: 2024-03-15 11:20 EST\n\nColleagues,\n\nPlease accept the referral of patient Maria García López (MRN: MED-78901-B, DOB 03/15/1985) for ongoing management of her Type 2 diabetes. HbA1c trending up at the last two visits despite metformin titration. Notes attached to the chart.\n\nThank you,\nDr. Michael Johnson",
+        "language_primary": "EN",
+        "language_embedded": null,
+        "format_compliance_notes": "RFC 5322 email headers (From/To/Subject/Date) well-formed; body separated by blank line. All six frozen_entity_values appear verbatim in text (R16 + R10(j) satisfied).",
+        "entities": [
+          {"entity_type": "Full_Name", "entity_string": "Dr. Michael Johnson", "pattern_id": "FUN-009", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Business_Title", "entity_string": "Dr.", "pattern_id": "BT-014", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": "Dr. Michael Johnson"},
+          {"entity_type": "First_Given_Name", "entity_string": "Michael", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Dr. Michael Johnson"},
+          {"entity_type": "Last_Family_Name", "entity_string": "Johnson", "pattern_id": "LFN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Dr. Michael Johnson"},
+          {"entity_type": "Work_Email_Address", "entity_string": "m.johnson@northshorehospital.org", "pattern_id": "WE-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "Maria García López", "pattern_id": "FUN-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "First_Given_Name", "entity_string": "Maria", "pattern_id": "FGN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Maria García López"},
+          {"entity_type": "Last_Family_Name", "entity_string": "García López", "pattern_id": "LFN-011", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": "Maria García López"},
+          {"entity_type": "Date_of_Birth", "entity_string": "03/15/1985", "pattern_id": "DOB-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Date_Time", "entity_string": "2024-03-15 11:20 EST", "pattern_id": "DT-020", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "Maria García López", "pattern_id": "FUN-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null},
+          {"entity_type": "Customer_Reference_Number", "entity_string": "MED-78901-B", "pattern_id": "CRN-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Date_of_Birth", "entity_string": "03/15/1985", "pattern_id": "DOB-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Medical_Information", "entity_string": "Type 2 diabetes", "pattern_id": "MED-001", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Medical_Information", "entity_string": "HbA1c", "pattern_id": "MED-007", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Medical_Information", "entity_string": "metformin", "pattern_id": "MED-002", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "HIGH", "nesting_parent": null},
+          {"entity_type": "Org_Name", "entity_string": "North Shore Hospital", "pattern_id": "ORG-006", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 0, "co_occurrence_role": null, "sensitivity_tier": "LOW", "nesting_parent": null},
+          {"entity_type": "Full_Name", "entity_string": "Dr. Michael Johnson", "pattern_id": "FUN-009", "language": "EN", "disclosed": true, "disclosure_form": "complete", "mention_index": 1, "co_occurrence_role": null, "sensitivity_tier": "MEDIUM", "nesting_parent": null}
+        ],
+        "self_check": {"all_strings_verbatim": true, "adjacency_satisfied": true, "target_pattern_present": true, "density_matches_tier": true, "triple_name_rule_honored": true, "format_validity_satisfied": true, "canonical_types_only": true, "disclosure_form_correctly_flagged": true, "frozen_entity_values_honored": true}
+      }
+
+
+# -----------------------------------------------------------------------------
+# INTEGRATION NOTES (for the SyGra graph_config.yaml that will use this prompt)
+# -----------------------------------------------------------------------------
+integration:
+  call_pattern: |
+    Single LLM call (replaces the v2 generate_pii_text + extract_pii_entities
+    two-call pattern). Output is parsed as JSON; the `text` field is the
+    passage, the `entities` list is fed to the offset aligner.
+
+  offset_alignment: |
+    For each entity in the `entities` list, find ALL occurrences of
+    entity_string in `text`. Assign offsets by matching mention_index to the
+    k-th occurrence (0-indexed). If mention_index ≥ count(occurrences),
+    drop the entry and log a warning (this is a model self-consistency
+    failure, not an offset bug).
+
+  third_call_decision: |
+    Per Issues doc §D.13 — KEEP a verification call ONLY for records where:
+      (a) any entity has all_strings_verbatim=false, OR
+      (b) target_pattern_present=false, OR
+      (c) density_matches_tier=false.
+    For the ~85% of records that self-check clean, skip verification.
+    Saves ~30% API cost, retains safety net for the 15%.
+
+  diversity_loop: |
+    For fixed-axis sweeps (Issues doc §A.1, §E.15), accumulate the last
+    N=3 generated `text` fields into prior_passages_summary as 1-sentence
+    summaries. After generation, compute embedding cosine vs. each prior
+    passage; if max > 0.85 OR ROUGE-L > 0.70, regenerate with a stronger
+    diversity instruction injected.
+
+  sampling_strategy: |
+    Replace random sampling with a strength-2 covering array over 9 axes
+    (NIST ACTS). Target ≈ 1,200 mandatory records to guarantee every
+    pairwise (axis_i × axis_j) combination appears at least once.
+    Supplement with random samples to hit corpus-size goals and per-entity
+    minimum floors (Gaps doc §A2: N_min = 50 instances per type).

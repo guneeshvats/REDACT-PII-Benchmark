@@ -1,0 +1,458 @@
+{
+  "input_records": 13471,
+  "kept_records": 13427,
+  "dropped_records": 44,
+  "drop_rate": 0.0033,
+  "thresholds": {
+    "rouge_l": 0.7,
+    "sbert_cosine": 0.85
+  },
+  "method_citations": [
+    "ROUGE-L threshold: Self-Instruct (Wang et al., ACL 2023)",
+    "SBERT embeddings: Sentence-BERT (Reimers & Gurevych, EMNLP 2019)",
+    "Cosine threshold rationale: Gao et al., SimCSE, EMNLP 2021"
+  ],
+  "n_near_duplicate_pairs": 44,
+  "example_dropped_pairs": [
+    {
+      "kept_record_id": 107,
+      "kept_index": 102,
+      "dropped_record_id": 107,
+      "dropped_index": 3495,
+      "cosine_similarity": 0.9642,
+      "rouge_l": 0.8475,
+      "kept_language": "KO",
+      "dropped_language": "KO"
+    },
+    {
+      "kept_record_id": 302,
+      "kept_index": 285,
+      "dropped_record_id": 302,
+      "dropped_index": 8702,
+      "cosine_similarity": 0.9216,
+      "rouge_l": 0.7368,
+      "kept_language": "KO",
+      "dropped_language": "KO"
+    },
+    {
+      "kept_record_id": 546,
+      "kept_index": 504,
+      "dropped_record_id": 546,
+      "dropped_index": 3898,
+      "cosine_similarity": 0.9144,
+      "rouge_l": 0.8197,
+      "kept_language": "CS",
+      "dropped_language": "CS"
+    },
+    {
+      "kept_record_id": 624,
+      "kept_index": 579,
+      "dropped_record_id": 624,
+      "dropped_index": 3972,
+      "cosine_similarity": 0.9247,
+      "rouge_l": 0.7132,
+      "kept_language": "DA",
+      "dropped_language": "DA"
+    },
+    {
+      "kept_record_id": 883,
+      "kept_index": 818,
+      "dropped_record_id": 883,
+      "dropped_index": 4207,
+      "cosine_similarity": 0.9417,
+      "rouge_l": 0.7317,
+      "kept_language": "PT_EU",
+      "dropped_language": "PT_EU"
+    },
+    {
+      "kept_record_id": 883,
+      "kept_index": 818,
+      "dropped_record_id": 883,
+      "dropped_index": 9234,
+      "cosine_similarity": 0.9571,
+      "rouge_l": 0.7561,
+      "kept_language": "PT_EU",
+      "dropped_language": "PT_EU"
+    },
+    {
+      "kept_record_id": 1170,
+      "kept_index": 1077,
+      "dropped_record_id": 1170,
+      "dropped_index": 9502,
+      "cosine_similarity": 0.9308,
+      "rouge_l": 0.7467,
+      "kept_language": "NL",
+      "dropped_language": "NL"
+    },
+    {
+      "kept_record_id": 1442,
+      "kept_index": 1322,
+      "dropped_record_id": 1442,
+      "dropped_index": 9749,
+      "cosine_similarity": 0.8908,
+      "rouge_l": 0.75,
+      "kept_language": "IT",
+      "dropped_language": "IT"
+    },
+    {
+      "kept_record_id": 1450,
+      "kept_index": 1328,
+      "dropped_record_id": 1450,
+      "dropped_index": 9756,
+      "cosine_similarity": 0.9084,
+      "rouge_l": 0.8874,
+      "kept_language": "DE",
+      "dropped_language": "DE"
+    },
+    {
+      "kept_record_id": 1478,
+      "kept_index": 1354,
+      "dropped_record_id": 1478,
+      "dropped_index": 4742,
+      "cosine_similarity": 0.9439,
+      "rouge_l": 0.8393,
+      "kept_language": "HU",
+      "dropped_language": "HU"
+    },
+    {
+      "kept_record_id": 1499,
+      "kept_index": 1372,
+      "dropped_record_id": 1499,
+      "dropped_index": 4764,
+      "cosine_similarity": 0.8938,
+      "rouge_l": 0.72,
+      "kept_language": "FR",
+      "dropped_language": "FR"
+    },
+    {
+      "kept_record_id": 1555,
+      "kept_index": 1422,
+      "dropped_record_id": 1555,
+      "dropped_index": 4812,
+      "cosine_similarity": 0.9754,
+      "rouge_l": 0.8485,
+      "kept_language": "AR",
+      "dropped_language": "AR"
+    },
+    {
+      "kept_record_id": 1689,
+      "kept_index": 1546,
+      "dropped_record_id": 1689,
+      "dropped_index": 4937,
+      "cosine_similarity": 0.9767,
+      "rouge_l": 0.8085,
+      "kept_language": "ES",
+      "dropped_language": "ES"
+    },
+    {
+      "kept_record_id": 1840,
+      "kept_index": 1679,
+      "dropped_record_id": 1840,
+      "dropped_index": 10116,
+      "cosine_similarity": 0.9916,
+      "rouge_l": 0.9153,
+      "kept_language": "NO",
+      "dropped_language": "NO"
+    },
+    {
+      "kept_record_id": 1898,
+      "kept_index": 1732,
+      "dropped_record_id": 1898,
+      "dropped_index": 5129,
+      "cosine_similarity": 0.9596,
+      "rouge_l": 0.7778,
+      "kept_language": "FR",
+      "dropped_language": "FR"
+    },
+    {
+      "kept_record_id": 2144,
+      "kept_index": 1955,
+      "dropped_record_id": 2144,
+      "dropped_index": 10386,
+      "cosine_similarity": 0.9633,
+      "rouge_l": 0.8308,
+      "kept_language": "PT_BR",
+      "dropped_language": "PT_BR"
+    },
+    {
+      "kept_record_id": 2197,
+      "kept_index": 2007,
+      "dropped_record_id": 2197,
+      "dropped_index": 5404,
+      "cosine_similarity": 0.9974,
+      "rouge_l": 0.9725,
+      "kept_language": "HI",
+      "dropped_language": "HI"
+    },
+    {
+      "kept_record_id": 2475,
+      "kept_index": 2254,
+      "dropped_record_id": 2475,
+      "dropped_index": 5654,
+      "cosine_similarity": 0.9572,
+      "rouge_l": 0.7568,
+      "kept_language": "CS",
+      "dropped_language": "CS"
+    },
+    {
+      "kept_record_id": 2541,
+      "kept_index": 2310,
+      "dropped_record_id": 2541,
+      "dropped_index": 5715,
+      "cosine_similarity": 0.9368,
+      "rouge_l": 0.7077,
+      "kept_language": "SV",
+      "dropped_language": "SV"
+    },
+    {
+      "kept_record_id": 2584,
+      "kept_index": 2353,
+      "dropped_record_id": 2584,
+      "dropped_index": 10779,
+      "cosine_similarity": 0.9465,
+      "rouge_l": 0.7037,
+      "kept_language": "HU",
+      "dropped_language": "HU"
+    },
+    {
+      "kept_record_id": 2807,
+      "kept_index": 2553,
+      "dropped_record_id": 2807,
+      "dropped_index": 5963,
+      "cosine_similarity": 0.9727,
+      "rouge_l": 0.7246,
+      "kept_language": "HI",
+      "dropped_language": "HI"
+    },
+    {
+      "kept_record_id": 2922,
+      "kept_index": 2663,
+      "dropped_record_id": 2922,
+      "dropped_index": 11096,
+      "cosine_similarity": 0.947,
+      "rouge_l": 0.7018,
+      "kept_language": "NO",
+      "dropped_language": "NO"
+    },
+    {
+      "kept_record_id": 2956,
+      "kept_index": 2690,
+      "dropped_record_id": 2956,
+      "dropped_index": 11129,
+      "cosine_similarity": 0.8979,
+      "rouge_l": 0.7805,
+      "kept_language": "JA",
+      "dropped_language": "JA"
+    },
+    {
+      "kept_record_id": 3215,
+      "kept_index": 2923,
+      "dropped_record_id": 3215,
+      "dropped_index": 6336,
+      "cosine_similarity": 0.9856,
+      "rouge_l": 0.7959,
+      "kept_language": "HE",
+      "dropped_language": "HE"
+    },
+    {
+      "kept_record_id": 3215,
+      "kept_index": 2923,
+      "dropped_record_id": 3215,
+      "dropped_index": 11363,
+      "cosine_similarity": 0.9711,
+      "rouge_l": 0.8842,
+      "kept_language": "HE",
+      "dropped_language": "HE"
+    },
+    {
+      "kept_record_id": 3975,
+      "kept_index": 3000,
+      "dropped_record_id": 3975,
+      "dropped_index": 12060,
+      "cosine_similarity": 0.9332,
+      "rouge_l": 0.7143,
+      "kept_language": "DE",
+      "dropped_language": "DE"
+    },
+    {
+      "kept_record_id": 4109,
+      "kept_index": 3122,
+      "dropped_record_id": 4109,
+      "dropped_index": 7142,
+      "cosine_similarity": 0.9811,
+      "rouge_l": 0.8636,
+      "kept_language": "TR",
+      "dropped_language": "TR"
+    },
+    {
+      "kept_record_id": 4165,
+      "kept_index": 3174,
+      "dropped_record_id": 4165,
+      "dropped_index": 12235,
+      "cosine_similarity": 0.9464,
+      "rouge_l": 0.8372,
+      "kept_language": "HE",
+      "dropped_language": "HE"
+    },
+    {
+      "kept_record_id": 146,
+      "kept_index": 3528,
+      "dropped_record_id": 146,
+      "dropped_index": 8555,
+      "cosine_similarity": 0.8984,
+      "rouge_l": 0.7188,
+      "kept_language": "FI",
+      "dropped_language": "FI"
+    },
+    {
+      "kept_record_id": 529,
+      "kept_index": 3883,
+      "dropped_record_id": 529,
+      "dropped_index": 8907,
+      "cosine_similarity": 0.9785,
+      "rouge_l": 0.7752,
+      "kept_language": "TH",
+      "dropped_language": "TH"
+    },
+    {
+      "kept_record_id": 1039,
+      "kept_index": 4344,
+      "dropped_record_id": 1039,
+      "dropped_index": 9380,
+      "cosine_similarity": 0.9663,
+      "rouge_l": 0.8862,
+      "kept_language": "HI",
+      "dropped_language": "HI"
+    },
+    {
+      "kept_record_id": 1247,
+      "kept_index": 4533,
+      "dropped_record_id": 1247,
+      "dropped_index": 9573,
+      "cosine_similarity": 0.9729,
+      "rouge_l": 0.7467,
+      "kept_language": "JA",
+      "dropped_language": "JA"
+    },
+    {
+      "kept_record_id": 1326,
+      "kept_index": 4603,
+      "dropped_record_id": 1326,
+      "dropped_index": 9643,
+      "cosine_similarity": 0.9958,
+      "rouge_l": 0.7778,
+      "kept_language": "CS",
+      "dropped_language": "CS"
+    },
+    {
+      "kept_record_id": 1478,
+      "kept_index": 4742,
+      "dropped_record_id": 1478,
+      "dropped_index": 9781,
+      "cosine_similarity": 0.8953,
+      "rouge_l": 0.7018,
+      "kept_language": "HU",
+      "dropped_language": "HU"
+    },
+    {
+      "kept_record_id": 1669,
+      "kept_index": 4919,
+      "dropped_record_id": 1669,
+      "dropped_index": 9957,
+      "cosine_similarity": 0.9768,
+      "rouge_l": 0.781,
+      "kept_language": "TH",
+      "dropped_language": "TH"
+    },
+    {
+      "kept_record_id": 1898,
+      "kept_index": 5129,
+      "dropped_record_id": 1898,
+      "dropped_index": 10170,
+      "cosine_similarity": 0.9431,
+      "rouge_l": 0.7143,
+      "kept_language": "FR",
+      "dropped_language": "FR"
+    },
+    {
+      "kept_record_id": 1940,
+      "kept_index": 5168,
+      "dropped_record_id": 1940,
+      "dropped_index": 10207,
+      "cosine_similarity": 0.9297,
+      "rouge_l": 0.7419,
+      "kept_language": "ZH_TW",
+      "dropped_language": "ZH_TW"
+    },
+    {
+      "kept_record_id": 4091,
+      "kept_index": 7126,
+      "dropped_record_id": 4091,
+      "dropped_index": 12163,
+      "cosine_similarity": 0.9852,
+      "rouge_l": 0.902,
+      "kept_language": "ES",
+      "dropped_language": "ES"
+    },
+    {
+      "kept_record_id": 4219,
+      "kept_index": 7245,
+      "dropped_record_id": 4219,
+      "dropped_index": 12285,
+      "cosine_similarity": 0.9365,
+      "rouge_l": 0.7246,
+      "kept_language": "HI",
+      "dropped_language": "HI"
+    },
+    {
+      "kept_record_id": 4418,
+      "kept_index": 7427,
+      "dropped_record_id": 4418,
+      "dropped_index": 12467,
+      "cosine_similarity": 0.9796,
+      "rouge_l": 0.8,
+      "kept_language": "CS",
+      "dropped_language": "CS"
+    },
+    {
+      "kept_record_id": 4520,
+      "kept_index": 7520,
+      "dropped_record_id": 4520,
+      "dropped_index": 12559,
+      "cosine_similarity": 0.9432,
+      "rouge_l": 0.7895,
+      "kept_language": "HE",
+      "dropped_language": "HE"
+    },
+    {
+      "kept_record_id": 4964,
+      "kept_index": 7924,
+      "dropped_record_id": 4964,
+      "dropped_index": 12969,
+      "cosine_similarity": 0.9184,
+      "rouge_l": 0.7527,
+      "kept_language": "DE",
+      "dropped_language": "DE"
+    },
+    {
+      "kept_record_id": 5157,
+      "kept_index": 8103,
+      "dropped_record_id": 5157,
+      "dropped_index": 13142,
+      "cosine_similarity": 0.9471,
+      "rouge_l": 0.716,
+      "kept_language": "AR",
+      "dropped_language": "AR"
+    },
+    {
+      "kept_record_id": 5364,
+      "kept_index": 8288,
+      "dropped_record_id": 5364,
+      "dropped_index": 13330,
+      "cosine_similarity": 0.8833,
+      "rouge_l": 0.7182,
+      "kept_language": "NL",
+      "dropped_language": "NL"
+    }
+  ]
+}

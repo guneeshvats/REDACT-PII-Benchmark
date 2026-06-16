@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "purpose": "Maps TAB (Text Anonymization Benchmark) entity labels to the 51-type PII Benchmark taxonomy",
+    "tab_source": "Pilán et al., 'The Text Anonymization Benchmark (TAB)', Computational Linguistics, 2022",
+    "tab_github": "https://github.com/NorskRegnesentral/text-anonymization-benchmark",
+    "tab_label_set": [
+      "PERSON",
+      "CODE",
+      "LOC",
+      "ORG",
+      "DEM",
+      "DATETIME",
+      "QUANTITY",
+      "MISC"
+    ],
+    "mapping_confidence_scale": "high | medium | low | none",
+    "usage": "Used by compute_kendall_tau.py when scoring detectors on TAB against the 51-type gold taxonomy. Low-confidence mappings should be excluded from K1 ranking computation, or treated with care in the discussion section.",
+    "limitations": [
+      "TAB is legal-domain English only — DEM and QUANTITY are coarse buckets that contain multiple of our types",
+      "TAB does not have direct equivalents for our metadata-rich types (sensitivity tier, disclosure form)",
+      "TAB's MISC is a catch-all that we cannot safely map"
+    ]
+  },
+
+  "PERSON": {
+    "our_types": ["Full_Name", "First_Given_Name", "Last_Family_Name", "Preferred_Name"],
+    "primary_mapping": "Full_Name",
+    "mapping_confidence": "high",
+    "notes": "TAB PERSON is at the full-name granularity. We map to Full_Name as primary; First/Last Name decomposition is benchmarks-specific to our taxonomy and not in TAB."
+  },
+
+  "CODE": {
+    "our_types": [
+      "National_Identification_Number",
+      "Passport_Number",
+      "Driving_License_Number",
+      "Tax_Reference_Number",
+      "Employee_ID_Number",
+      "Customer_Reference_Number",
+      "Credit_Card_Numbers",
+      "Account_Statements",
+      "Building_Badge_Card_Number",
+      "Social_Media_Identifiers",
+      "Static_IP_Address"
+    ],
+    "primary_mapping": "National_Identification_Number",
+    "mapping_confidence": "medium",
+    "notes": "TAB CODE is alphanumeric identifiers. Maps to many of our identifier types. For Kendall's τ computation, fold all the our-types into a single 'identifier' bucket when scoring."
+  },
+
+  "LOC": {
+    "our_types": [
+      "Country_of_Residence",
+      "State",
+      "City",
+      "Location",
+      "Address_Work",
+      "Address_Personal",
+      "Geolocation_Data"
+    ],
+    "primary_mapping": "Location",
+    "mapping_confidence": "high",
+    "notes": "TAB LOC covers all location granularities. For F1 computation, fold our location-family entities into a single 'location' bucket when comparing against TAB."
+  },
+
+  "ORG": {
+    "our_types": ["Org_Name"],
+    "primary_mapping": "Org_Name",
+    "mapping_confidence": "high",
+    "notes": "Direct mapping."
+  },
+
+  "DEM": {
+    "our_types": [
+      "Gender",
+      "Marital_Status",
+      "Nationality",
+      "Religion",
+      "Sex_Orientation",
+      "Political_Party",
+      "Place_of_Birth",
+      "Citizenship_Status",
+      "Ethnicity",
+      "Trade_Union_Membership",
+      "Medical_Information",
+      "Allergy_Information",
+      "Business_Title",
+      "Professional_Background",
+      "Age"
+    ],
+    "primary_mapping": "Nationality",
+    "mapping_confidence": "low",
+    "notes": "TAB DEM is a coarse demographic bucket. Contains both Article 9 sensitive entities and benign ones. For paper claims about Article 9 detection we cannot use TAB DEM directly. Recommend folding all our demographic types into a 'demographic' bucket for K1 only."
+  },
+
+  "DATETIME": {
+    "our_types": ["Date_of_Birth", "Date_Time"],
+    "primary_mapping": "Date_Time",
+    "mapping_confidence": "high",
+    "notes": "TAB DATETIME doesn't distinguish DOB from other dates. Fold our two date types when comparing."
+  },
+
+  "QUANTITY": {
+    "our_types": ["Compensation_and_Salary"],
+    "primary_mapping": "Compensation_and_Salary",
+    "mapping_confidence": "medium",
+    "notes": "TAB QUANTITY contains all numeric quantities (salary, age, monetary amounts, etc.). Imperfect mapping. Recommend excluding from K1 unless we restrict comparison to salary-only contexts."
+  },
+
+  "MISC": {
+    "our_types": [],
+    "primary_mapping": null,
+    "mapping_confidence": "none",
+    "notes": "EXCLUDE FROM K1 — TAB MISC is a catch-all bucket with no consistent semantic content. Do not attempt to map."
+  },
+
+  "_our_types_not_in_tab": {
+    "list": [
+      "Work_Email_Address",
+      "Personal_Email_Address",
+      "Telephone_Numbers_Work",
+      "Telephone_Numbers_Personal",
+      "Sickness_Day_Records",
+      "Performance_Assessment",
+      "Disciplinary_Action",
+      "Emergency_Contact_Details",
+      "PEP_Status",
+      "Password",
+      "Crime"
+    ],
+    "notes": "These types either don't appear in TAB legal documents or are not annotated as separate entities in TAB. Exclude these from K1 computation. Mention in §5.5 as 'limited TAB coverage for [these types] is acknowledged; cross-domain comparison is partial.'"
+  },
+
+  "_k1_computation_recommendation": {
+    "approach": "Compute K1 only over the high-confidence mappings: PERSON, LOC, ORG, DATETIME.",
+    "fold_strategy": "For these 4 high-confidence categories, compute F1 by folding our multi-type categories into the TAB single-type. E.g., a detector's F1 on 'location' = TP/FP/FN aggregated across all our location-family types where the gold belongs to LOC.",
+    "exclusions": [
+      "MISC — no mapping",
+      "DEM, QUANTITY, CODE — low or medium confidence; mention as future work for improved cross-corpus comparison"
+    ],
+    "n_categories_for_ranking": 4,
+    "honest_framing": "We compute K1 over the 4 entity categories where TAB and our taxonomy align with high confidence (PERSON, LOC, ORG, DATETIME). Bootstrap CI is reported for this 4-category ranking. Extension to a finer-grained comparison is future work pending a richer real-data benchmark."
+  }
+}

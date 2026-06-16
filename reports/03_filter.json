@@ -1,0 +1,1425 @@
+{
+  "input_files": [
+    "../input_corpora/run1.json",
+    "../input_corpora/run2.json",
+    "../input_corpora/run3.json"
+  ],
+  "total_loaded": 14285,
+  "total_kept": 13471,
+  "total_dropped": 814,
+  "drop_rate": 0.056982849142457125,
+  "drop_category_counts": {
+    "F4_non_canonical_type": 728,
+    "F5_invalid_disclosure_form": 85,
+    "F3_invalid_sensitivity": 1
+  },
+  "repair_stats": {
+    "records_repaired": 13471,
+    "multi_mention_groups_expanded": 124,
+    "new_entity_entries_added": 202,
+    "residual_offset_mismatches": 1114
+  },
+  "final_corpus_size": 13471,
+  "drop_details": [
+    {
+      "record_id": 2,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 34,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:SWIFT_BIC_Code"
+      ]
+    },
+    {
+      "record_id": 182,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 197,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 316,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 331,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration"
+      ]
+    },
+    {
+      "record_id": 343,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_Identifier"
+      ]
+    },
+    {
+      "record_id": 348,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID"
+      ]
+    },
+    {
+      "record_id": 360,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Unique_Identifier"
+      ]
+    },
+    {
+      "record_id": 374,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 377,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 385,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 392,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviation'"
+      ]
+    },
+    {
+      "record_id": 410,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 412,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 415,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Business_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 439,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Security_Question_Answer"
+      ]
+    },
+    {
+      "record_id": 448,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 456,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Zip_Postal_Code"
+      ]
+    },
+    {
+      "record_id": 471,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'vague'"
+      ]
+    },
+    {
+      "record_id": 500,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Education"
+      ]
+    },
+    {
+      "record_id": 508,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 534,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 552,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'initial'"
+      ]
+    },
+    {
+      "record_id": 571,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 634,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Union_Membership"
+      ]
+    },
+    {
+      "record_id": 658,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:MAC_Address"
+      ]
+    },
+    {
+      "record_id": 651,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Information"
+      ]
+    },
+    {
+      "record_id": 663,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Gender_Identity"
+      ]
+    },
+    {
+      "record_id": 669,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 678,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Political_Affiliation"
+      ]
+    },
+    {
+      "record_id": 681,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Digital_Profile_URL"
+      ]
+    },
+    {
+      "record_id": 694,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 692,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'implicit'"
+      ]
+    },
+    {
+      "record_id": 707,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Performance_Rating"
+      ]
+    },
+    {
+      "record_id": 764,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 840,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 832,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration"
+      ]
+    },
+    {
+      "record_id": 881,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 882,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Education"
+      ]
+    },
+    {
+      "record_id": 890,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID"
+      ]
+    },
+    {
+      "record_id": 901,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 988,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'implicit_join'"
+      ]
+    },
+    {
+      "record_id": 1009,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1028,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 1035,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID_Number"
+      ]
+    },
+    {
+      "record_id": 1043,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1047,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Online_Username_Handle"
+      ]
+    },
+    {
+      "record_id": 1064,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1069,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 1070,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Transaction_Amount"
+      ]
+    },
+    {
+      "record_id": 1072,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Union_Membership"
+      ]
+    },
+    {
+      "record_id": 1077,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 1073,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID"
+      ]
+    },
+    {
+      "record_id": 1115,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_Identifier"
+      ]
+    },
+    {
+      "record_id": 1116,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 1166,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Physical_Description"
+      ]
+    },
+    {
+      "record_id": 1162,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Education"
+      ]
+    },
+    {
+      "record_id": 1175,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 1203,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 1212,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Digital_Identifier"
+      ]
+    },
+    {
+      "record_id": 1221,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Nickname"
+      ]
+    },
+    {
+      "record_id": 1243,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Amount"
+      ]
+    },
+    {
+      "record_id": 1244,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1241,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 1258,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Transaction_Amount"
+      ]
+    },
+    {
+      "record_id": 1255,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 1273,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1295,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 1300,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1311,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1312,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1328,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Asset"
+      ]
+    },
+    {
+      "record_id": 1357,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 1392,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 1418,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Digital_Identifier"
+      ]
+    },
+    {
+      "record_id": 1441,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Physical_Characteristic"
+      ]
+    },
+    {
+      "record_id": 1472,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Zip_Postal_Code"
+      ]
+    },
+    {
+      "record_id": 1477,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Professional_License_Number"
+      ]
+    },
+    {
+      "record_id": 1493,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Information"
+      ]
+    },
+    {
+      "record_id": 1505,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 1513,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 1523,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 1545,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 1554,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Education_Record"
+      ]
+    },
+    {
+      "record_id": 1563,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Education"
+      ]
+    },
+    {
+      "record_id": 1559,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 1575,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Gender_Sex"
+      ]
+    },
+    {
+      "record_id": 1576,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 1589,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1595,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Online_Handle"
+      ]
+    },
+    {
+      "record_id": 1677,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Monetary_Amount"
+      ]
+    },
+    {
+      "record_id": 1688,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 1691,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID"
+      ]
+    },
+    {
+      "record_id": 1694,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 1701,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1704,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration"
+      ]
+    },
+    {
+      "record_id": 1721,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration"
+      ]
+    },
+    {
+      "record_id": 1727,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 1739,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1815,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Cryptocurrency_Wallet_Address"
+      ]
+    },
+    {
+      "record_id": 1836,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 1839,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 1854,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Student_ID_Number"
+      ]
+    },
+    {
+      "record_id": 1851,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Physical_Description"
+      ]
+    },
+    {
+      "record_id": 1899,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 1897,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Union_Membership"
+      ]
+    },
+    {
+      "record_id": 1929,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 1933,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Monetary_Amount"
+      ]
+    },
+    {
+      "record_id": 1942,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Information"
+      ]
+    },
+    {
+      "record_id": 1949,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 1958,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Online_Username"
+      ]
+    },
+    {
+      "record_id": 1998,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 2108,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 2110,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 2113,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 2128,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 2133,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 2163,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Gender_Sexuality"
+      ]
+    },
+    {
+      "record_id": 2166,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Caste"
+      ]
+    },
+    {
+      "record_id": 2179,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 2185,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration"
+      ]
+    },
+    {
+      "record_id": 2210,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 2221,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'hypothetical_range'"
+      ]
+    },
+    {
+      "record_id": 2232,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 2238,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Substance_Use_Information"
+      ]
+    },
+    {
+      "record_id": 2245,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Zip_Postal_Code"
+      ]
+    },
+    {
+      "record_id": 2254,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'implicit'"
+      ]
+    },
+    {
+      "record_id": 2264,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Information"
+      ]
+    },
+    {
+      "record_id": 2268,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Dietary_Restriction"
+      ]
+    },
+    {
+      "record_id": 2270,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 2311,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 2317,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 2328,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 2382,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 2386,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 2407,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Transaction_Amount"
+      ]
+    },
+    {
+      "record_id": 2403,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 2430,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 2438,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 2480,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Amount"
+      ]
+    },
+    {
+      "record_id": 2497,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 2504,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Bank_Routing_Number"
+      ]
+    },
+    {
+      "record_id": 2521,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Plate"
+      ]
+    },
+    {
+      "record_id": 2544,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID"
+      ]
+    },
+    {
+      "record_id": 2610,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:MAC_Address"
+      ]
+    },
+    {
+      "record_id": 2617,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 2634,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Transaction_Amount"
+      ]
+    },
+    {
+      "record_id": 2650,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:URL"
+      ]
+    },
+    {
+      "record_id": 2665,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 2668,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 2699,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 2708,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Reg_Number"
+      ]
+    },
+    {
+      "record_id": 2711,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 2707,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 2721,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Amount"
+      ]
+    },
+    {
+      "record_id": 2732,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 2788,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 2841,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 2862,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_ID"
+      ]
+    },
+    {
+      "record_id": 2882,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 2891,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Political_Affiliation"
+      ]
+    },
+    {
+      "record_id": 2918,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Military_Service"
+      ]
+    },
+    {
+      "record_id": 2919,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Sexual_Orientation"
+      ]
+    },
+    {
+      "record_id": 2930,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 2948,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_ID_Number"
+      ]
+    },
+    {
+      "record_id": 2965,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'redacted'"
+      ]
+    },
+    {
+      "record_id": 2990,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 3015,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Relationship_Status"
+      ]
+    },
+    {
+      "record_id": 3026,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Medical_License_Number"
+      ]
+    },
+    {
+      "record_id": 3031,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 3058,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 3066,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 3098,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:URL"
+      ]
+    },
+    {
+      "record_id": 3106,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 3107,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 3122,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 3139,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Amount"
+      ]
+    },
+    {
+      "record_id": 3152,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Registration_Number"
+      ]
+    },
+    {
+      "record_id": 3154,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Crypto_Wallet_Address"
+      ]
+    },
+    {
+      "record_id": 3208,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'nickname'"
+      ]
+    },
+    {
+      "record_id": 3214,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Financial_Transaction"
+      ]
+    },
+    {
+      "record_id": 3211,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Physical_Characteristics"
+      ]
+    },
+    {
+      "record_id": 3948,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 3962,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Middle_Name"
+      ]
+    },
+    {
+      "record_id": 3964,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Tax_Identification_Number"
+      ]
+    },
+    {
+      "record_id": 4024,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_License_Number"
+      ]
+    },
+    {
+      "record_id": 4027,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Union_Membership"
+      ]
+    },
+    {
+      "record_id": 4060,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 4106,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 4104,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 4114,
+      "source_file": "run1.json",
+      "reasons": [
+        "F5_invalid_disclosure_form:'abbreviated'"
+      ]
+    },
+    {
+      "record_id": 4132,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Username_Handle"
+      ]
+    },
+    {
+      "record_id": 4153,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Physical_Attribute"
+      ]
+    },
+    {
+      "record_id": 4156,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate"
+      ]
+    },
+    {
+      "record_id": 4176,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:License_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 4309,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Country"
+      ]
+    },
+    {
+      "record_id": 4305,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Device_ID_Number"
+      ]
+    },
+    {
+      "record_id": 4318,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Vehicle_Plate_Number"
+      ]
+    },
+    {
+      "record_id": 4336,
+      "source_file": "run1.json",
+      "reasons": [
+        "F4_non_canonical_type:Insurance_Number"
+      ]
+    }
+  ]
+}

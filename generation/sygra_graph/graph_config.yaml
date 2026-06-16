@@ -1,0 +1,274 @@
+# =============================================================================
+# PII Benchmark v3.2 — SyGra Graph Configuration (Track 1)
+# =============================================================================
+# Implements the v3.2 methodology pipeline using SyGra's graph executor.
+#
+# Architecture changes vs v2:
+#   v2 (3 LLM calls per record):
+#     diversity_sampler → generate_pii_text → extract_pii_entities → verify_entities
+#                                                                  → validate_offsets
+#   v3.2 (1 LLM call per record):
+#     [plan loaded from disk] → generate_record (validated v3.2 prompt)
+#                              → self_check (R10 a–k criteria)
+#                              → conditional_verify (only if self-check fails)
+#
+# The plan is pre-computed by build_generation_plan.py (covering-array sampler)
+# and build_paired_sweep_plan.py (paired-sweep sampler). No diversity_sampler
+# node — axes are baked into each plan row.
+#
+# Companion artefacts:
+#   - generation_prompt_v3.yaml         — the validated v3.2 prompt (loaded by task_executor)
+#   - pattern_seed_data_v4.json         — v4 pattern catalog (4,127 patterns)
+#   - generation_plan.jsonl             — coverage-mode plan (5,510 records)
+#   - paired_sweep_plan.jsonl           — Mode 2 paired-sweep plan (890 records)
+#   - tasks/pii_generation_v3/task_executor.py — Python node implementations
+# =============================================================================
+
+data_config:
+  source:
+    type: "disk"
+    file_path: "tasks/pii_generation/generation_plan.jsonl"   # OR paired_sweep_plan.jsonl
+    file_format: "jsonl"
+  sink:
+    type: "jsonl"
+    file_path: "tasks/pii_generation/outputs/v3_2_corpus.jsonl"
+
+schema_config:
+  fields:
+    - name: record_id
+      type: int
+      is_greater_than: -1
+    - name: mode
+      type: str
+    - name: source
+      type: str
+    - name: axes
+      type: dict[str, any]
+    - name: target_entity_type
+      type: str
+    - name: target_pattern_id
+      type: str
+    - name: behavioral_frame
+      type: str
+    - name: scenario_seed
+      type: str
+    - name: text
+      type: str
+    - name: entities
+      type: list[dict[str, any]]
+    - name: entity_count
+      type: int
+      is_greater_than: -1
+    - name: self_check_passed
+      type: bool
+    - name: self_check_failures
+      type: list[any]
+    - name: generation_status
+      type: str
+
+graph_config:
+  nodes:
+
+    # ------------------------------------------------------------------
+    # Step 1: Single-call generation using the v3.2 prompt (R1–R16)
+    # ------------------------------------------------------------------
+    # The full system prompt + 11 few-shots + user prompt template are
+    # loaded from generation_prompt_v3.yaml by the pre-processor.
+    # Output: { text, entities[], self_check{}, ... } per the schema.
+    #
+    # Per R1 the LLM does NOT produce character offsets. Offsets are computed
+    # downstream by deterministic alignment (Stage 3) OR deferred entirely
+    # to a post-corpus alignment pass.
+    generate_record:
+      node_type: llm
+      pre_process: tasks.pii_generation_v3.task_executor.PiiV32PromptBuilder
+      prompt:
+        - system: "{system_prompt}"
+      output_keys:
+        - text
+        - entities
+        - entity_count
+        - self_check_emitted
+        - language_primary
+        - language_embedded
+        - format_compliance_notes
+        - generation_status
+      post_process: tasks.pii_generation_v3.task_executor.PiiV32RecordPostProcessor
+      model:
+        name: claude_opus
+        parameters:
+          temperature: 0.7
+          maxTokens: 8192
+
+    # ------------------------------------------------------------------
+    # Step 2: Deterministic self-check (Python, no LLM)
+    # ------------------------------------------------------------------
+    # Validates R10 criteria (a)–(k):
+    #   (a) entity_string verbatim in text
+    #   (b) adjacency constraint satisfied (R15 script-aware)
+    #   (c) multi-mention with distinct mention_index
+    #   (d) target_pattern_id present
+    #   (e) density tier matches rate per 1K tokens
+    #   (f) disclosed=false on negation/hypothetical/instructional frames
+    #   (g) triple-name rule honored (R11)
+    #   (h) format-validity (R12)
+    #   (i) canonical types only (R13)
+    #   (j) paired_sweep frozen_entity_values present (R16)
+    #   (k) disclosure_form consistency (R7↔R8)
+    #
+    # Sets self_check_passed=true if all applicable criteria pass.
+    self_check:
+      node_type: lambda
+      lambda: tasks.pii_generation_v3.task_executor.run_self_check
+      output_keys:
+        - self_check_passed
+        - self_check_failures
+
+    # ------------------------------------------------------------------
+    # Step 3: Conditional verifier (only on self-check failures)
+    # ------------------------------------------------------------------
+    # Per methodology §4.4 Stage 4 — only ~15% of records reach this node.
+    # GPT-4o-mini cross-checks the failed-criterion fields and produces a
+    # corrected entity list. Saves ~30% API cost vs unconditional verification.
+    conditional_verify:
+      node_type: llm
+      pre_process: tasks.pii_generation_v3.task_executor.PiiV32VerifyPromptBuilder
+      prompt:
+        - system: "{verify_system_prompt}"
+        - user: "{verify_user_prompt}"
+      output_keys:
+        - entities_verified
+        - verify_status
+      post_process: tasks.pii_generation_v3.task_executor.PiiV32VerifyPostProcessor
+      model:
+        name: gpt-4o-mini
+        parameters:
+          temperature: 0.0
+          max_tokens: 4096
+
+    # ------------------------------------------------------------------
+    # Step 4: Conditional repair (only for zero-entity records)
+    # ------------------------------------------------------------------
+    # Per methodology §4.4 Stage 5 — records that end up with no entities
+    # after verify go through assistant-prefilling repair. Target: <0.5%.
+    repair_zero_entities:
+      node_type: lambda
+      lambda: tasks.pii_generation_v3.task_executor.repair_zero_entities
+      output_keys:
+        - entities_repaired
+        - repair_status
+
+    # ------------------------------------------------------------------
+    # Step 5: Latent schema enrichment (Python)
+    # ------------------------------------------------------------------
+    # Adds direct/indirect identifier classification + disclosure_policy
+    # derived from sensitivity_tier (R14) and entity_type (R13).
+    # Note: sensitivity_tier is emitted by the LLM (R14); we only add the
+    # downstream derivations here.
+    enrich_latent_schema:
+      node_type: lambda
+      lambda: tasks.pii_generation_v3.task_executor.enrich_latent_schema
+      output_keys:
+        - direct_indirect_classification
+        - disclosure_policy
+
+    # ------------------------------------------------------------------
+    # Step 6: (DEFERRED) Deterministic offset aligner
+    # ------------------------------------------------------------------
+    # Per the methodology §4.4 Stage 3, offsets are computed by deterministic
+    # substring search. This node is DEFERRED — offsets are added in a
+    # post-corpus pass via align_offsets.py rather than mid-pipeline. The
+    # record JSON contains entity_string + mention_index, which is sufficient
+    # for alignment to be added later without regeneration.
+    #
+    # When alignment is enabled, uncomment:
+    # align_offsets:
+    #   node_type: lambda
+    #   lambda: tasks.pii_generation_v3.task_executor.align_offsets
+    #   output_keys:
+    #     - entities_aligned
+
+  edges:
+    - from: START
+      to: generate_record
+    - from: generate_record
+      to: self_check
+    - from: self_check
+      condition: tasks.pii_generation_v3.task_executor.SelfCheckRoute
+      path_map:
+        verify: conditional_verify
+        enrich: enrich_latent_schema
+    - from: conditional_verify
+      condition: tasks.pii_generation_v3.task_executor.VerifyRoute
+      path_map:
+        repair: repair_zero_entities
+        enrich: enrich_latent_schema
+    - from: repair_zero_entities
+      to: enrich_latent_schema
+    - from: enrich_latent_schema
+      to: END
+
+output_config:
+  output_map:
+    record_id:
+      from: "record_id"
+    mode:
+      from: "mode"
+    source:
+      from: "source"
+    axes:
+      from: "axes"
+    target_entity_type:
+      from: "target_entity_type"
+    target_pattern_id:
+      from: "target_pattern_id"
+    target_pattern_desc:
+      from: "target_pattern_desc"
+    target_pattern_example:
+      from: "target_pattern_example"
+    behavioral_frame:
+      from: "behavioral_frame"
+    scenario_seed:
+      from: "scenario_seed"
+    text:
+      from: "text"
+    entities:
+      from: "entities"
+    entity_count:
+      from: "entity_count"
+    self_check_passed:
+      from: "self_check_passed"
+    self_check_failures:
+      from: "self_check_failures"
+    generation_status:
+      from: "generation_status"
+    verify_status:
+      from: "verify_status"
+    repair_status:
+      from: "repair_status"
+    direct_indirect_classification:
+      from: "direct_indirect_classification"
+    disclosure_policy:
+      from: "disclosure_policy"
+
+# =============================================================================
+# Notes on SyGra integration
+# =============================================================================
+# 1. PRE_PROCESS hooks (PiiV32PromptBuilder) construct the full message list
+#    by loading generation_prompt_v3.yaml at module load. This avoids
+#    embedding the 80-KB prompt + 11 few-shots inline in this YAML.
+#
+# 2. Conditional routing is implemented using EdgeCondition classes in
+#    tasks/pii_generation_v3/task_executor.py:
+#      - SelfCheckRoute  (verify vs enrich)
+#      - VerifyRoute     (repair vs enrich)
+#
+# 3. STANDALONE RUNNER: For development and Phase 1 smoke testing, see
+#    tasks/pii_generation/run_phase1_pipeline.py which executes this same
+#    pipeline without SyGra's graph engine. Useful for validating end-to-end
+#    behavior before committing to full SyGra integration.
+#
+# 4. PROMPT CACHING: The system prompt + 11 few-shots constitute ≈11K cached
+#    tokens. With Anthropic prompt caching enabled (5-min TTL), records 2+ in
+#    each batch hit the cache, reducing per-record cost from ~$0.018 to
+#    ~$0.005 on Claude Opus.

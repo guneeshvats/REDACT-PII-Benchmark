@@ -1,0 +1,6028 @@
+{
+  "summary": {
+    "n_records": 3600,
+    "n_total_entities": 89411,
+    "mean_entities_per_record": 24.836388888888887
+  },
+  "B1_offset_accuracy": {
+    "n_total": 89411,
+    "n_aligned": 82005,
+    "accuracy": 0.917169028419322,
+    "target": 1.0,
+    "pass": false,
+    "n_records_with_failures": 1573,
+    "failures": [
+      {
+        "record_id": 1,
+        "failures": [
+          {
+            "entity_index": 13,
+            "entity_type": "State",
+            "entity_string": "Comunidad de Madrid",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 6,
+        "failures": [
+          {
+            "entity_index": 6,
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "0,8 dage pr. måned",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Date_Time",
+            "entity_string": "01-08-2021",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "3 sygedage i indeværende kvartal (registreret 2024-02-05, 2024-03-11, 2024-03-12)",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "resterende saldo bør være 11,25 dage",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 7,
+        "failures": [
+          {
+            "entity_index": 1,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:18Z",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 5,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:19Z",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 6,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:20Z",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 4,
+        "failures": [
+          {
+            "entity_index": 30,
+            "entity_type": "Date_Time",
+            "entity_string": "22. 8. 2029",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 11,
+        "failures": [
+          {
+            "entity_index": 10,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FIN-2024-88292-X",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 11,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-IN-40955",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Business_Title",
+            "entity_string": "Associate Vice President",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹24,00,000/annum",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "PriyaGuptaEMP40955Sick2Days",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FIN-2024-88293-X",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-IN-41102",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Business_Title",
+            "entity_string": "Manager",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹21,75,000/annum",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "AmitPatelEMP41102Sick8Days",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-IN-41102",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 14,
+        "failures": [
+          {
+            "entity_index": 7,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+886-2-2729-8801",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Org_Name",
+            "entity_string": "法務部調查局臺北市調查處",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MJIB-TW-10587",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "chen.meiling@mjib.gov.tw",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TPE-2019-CR-01234",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Crime",
+            "entity_string": "組織犯罪防制條例第三條",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Account_Statements",
+            "entity_string": "0127-0034-8821-55",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1985年11月03日",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 44,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "F234567890",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 45,
+            "entity_type": "Address_Personal",
+            "entity_string": "高雄市前鎮區中華五路789號11樓",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 46,
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市內湖區成功路四段167號3樓",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 47,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+886-922-876-543",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 48,
+            "entity_type": "Personal_Email_Address",
+            "entity_string": "yating.chang85@yahoo.com.tw",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Crime",
+            "entity_string": "商業會計法第七十一條",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Account_Statements",
+            "entity_string": "7021-1045-3398-72",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1990年02月14日",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 55,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "B345678901",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 56,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+886-933-456-789",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 57,
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市中山區林森北路310號6樓",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 58,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年04月10日",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 67,
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市大安區忠孝東路四段201號8樓之2",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 72,
+            "entity_type": "Address_Work",
+            "entity_string": "臺北市松山區南京東路五段88號15樓",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 80,
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市內湖區成功路四段167號3樓",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 21,
+        "failures": [
+          {
+            "entity_index": 10,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹22,00,000",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 10,
+        "failures": [
+          {
+            "entity_index": 4,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月1日",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月10日",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TK-2024-0038455",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月5日",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月7日",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Org_Name",
+            "entity_string": "警視庁渋谷警察署",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Full_Name",
+            "entity_string": "山本裕子",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Business_Title",
+            "entity_string": "巡査部長",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MPD-11287",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "y.yamamoto@keishicho.metro.tokyo.jp",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1958年11月3日",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 29,
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都渋谷区恵比寿南三丁目5番12号 グランドメゾン恵比寿402号室",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "080-7732-1145",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Full_Name",
+            "entity_string": "木村太一",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "050-3188-9921",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月14日",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月18日",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 37,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TK-2024-0038612",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 38,
+            "entity_type": "Crime",
+            "entity_string": "暴行",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月8日",
+            "mention_index": 7,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Org_Name",
+            "entity_string": "警視庁池袋警察署",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "Full_Name",
+            "entity_string": "高橋誠",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MPD-05693",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "m.takahashi@keishicho.metro.tokyo.jp",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 45,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1995年4月18日",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 46,
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都豊島区東池袋一丁目12番5号",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 47,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "070-9981-2234",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 48,
+            "entity_type": "Nationality",
+            "entity_string": "中国",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "AB12345678CD",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Full_Name",
+            "entity_string": "中村浩二",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 51,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1988年9月30日",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 52,
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都豊島区南池袋二丁目3番8号 コーポ南池袋201号室",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 53,
+            "entity_type": "Crime",
+            "entity_string": "傷害罪",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月12日",
+            "mention_index": 8,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 55,
+            "entity_type": "Full_Name",
+            "entity_string": "伊藤雅彦",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 56,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年2月1日",
+            "mention_index": 9,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 57,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月15日",
+            "mention_index": 10,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 66,
+            "entity_type": "Crime",
+            "entity_string": "詐欺",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 67,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月5日",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 72,
+            "entity_type": "Account_Statements",
+            "entity_string": "8901234",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 73,
+            "entity_type": "Crime",
+            "entity_string": "暴行",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 74,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月8日",
+            "mention_index": 8,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 75,
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月8日",
+            "mention_index": 9,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 77,
+            "entity_type": "Full_Name",
+            "entity_string": "中村浩二",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 20,
+        "failures": [
+          {
+            "entity_index": 4,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "p.vandenberg@student.hr.nl",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 11,
+            "entity_type": "Date_Time",
+            "entity_string": "18 maart 2024",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Org_Name",
+            "entity_string": "Oranje Fonds",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "OF-2023-4412",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Org_Name",
+            "entity_string": "Hogeschool Rotterdam",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Org_Name",
+            "entity_string": "TU Delft",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 24,
+        "failures": [
+          {
+            "entity_index": 26,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 48 00",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 48 12",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "LU-EMP-12207",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 31 90",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "anders.bergstrom@svet.lu.se",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 37,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "EDU-2024-09200",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 00 00",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 25,
+        "failures": [
+          {
+            "entity_index": 11,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-310562",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Fagforbundet (member of LO – Landsorganisasjonen)",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "220790-XXXXX",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1990-07-22",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Address_Personal",
+            "entity_string": "Fjordveien 88B, 9020 Tromsdalen",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-118734",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Norsk Radiografforbund (NRF)",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "091292-XXXXX",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1992-12-09",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Address_Personal",
+            "entity_string": "Kvaløyvegen 3, 9100 Kvaløysletta",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "INC-2024-04821",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-095217",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Norsk Psykologforening",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "280586-XXXXX",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1986-05-28",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Address_Personal",
+            "entity_string": "Sjøgata 21, 9006 Tromsø",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-227643",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "NITO (Norges Ingeniør- og Teknologorganisasjon)",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "040694-XXXXX",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1994-06-04",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Address_Personal",
+            "entity_string": "Dramsvegen 7, 9009 Tromsø",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 32,
+        "failures": [
+          {
+            "entity_index": 7,
+            "entity_type": "Full_Name",
+            "entity_string": "พญ.กัลยา ศรีสุข",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 29,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Full_Name",
+            "entity_string": "Mikkel Andersen",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 1,
+            "entity_type": "Address_Personal",
+            "entity_string": "Vesterbrogade 74, 3. tv., København V, 1620, DK",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 4,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "CUST-DK-991204",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 12,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "MPAY-7482910356",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "DK-PN-00391827465",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-18",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Last_Family_Name",
+            "entity_string": "Jensen",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Full_Name",
+            "entity_string": "Louise Mortensen",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "First_Given_Name",
+            "entity_string": "Louise",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Last_Family_Name",
+            "entity_string": "Mortensen",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 31,
+        "failures": [
+          {
+            "entity_index": 14,
+            "entity_type": "Address_Personal",
+            "entity_string": "Av. da Liberdade, 220, 1250-148 Lisboa, Portugal",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 36,
+        "failures": [
+          {
+            "entity_index": 10,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:43:05Z",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "3 ביוני 1992",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Nationality",
+            "entity_string": "ירדנית",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Gender",
+            "entity_string": "נקבה",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 37,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Allergy_Information",
+            "entity_string": "allergique aux produits laitiers et au soja",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 39,
+        "failures": [
+          {
+            "entity_index": 8,
+            "entity_type": "Address_Work",
+            "entity_string": "Kurtul*** Cad. No:**",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Address_Work",
+            "entity_string": "Atatürk Mah., Çankaya/Ankara",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Address_Work",
+            "entity_string": "Atatürk Mah., Çankaya/Ankara",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Crime",
+            "entity_string": "bid rigging",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Org_Name",
+            "entity_string": "Kamu İhale Kurumu",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 50,
+        "failures": [
+          {
+            "entity_index": 2,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-02 08:22",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 46,
+        "failures": [
+          {
+            "entity_index": 40,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "17/07/1992",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Marital_Status",
+            "entity_string": "soltero",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-10 09:32:47 CST",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 49,
+        "failures": [
+          {
+            "entity_index": 25,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-17 22:03 KST",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1992년 7월 23일",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 52,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "STU-2024-09134",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 13,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "n.alshamri@ksu.edu.sa",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Age",
+            "entity_string": "٢٠ سنة",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٢٣/١١/٢٠٠٣",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Nationality",
+            "entity_string": "سعودية",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FAC-2019-00412",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "f.alqahtani@ksu.edu.sa",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Age",
+            "entity_string": "٤٥ سنة",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٠٢/٠٣/١٩٧٩",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "registrar@ksu.edu.sa",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "STU-2023-07650",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "s.alzahrani@ksu.edu.sa",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Age",
+            "entity_string": "٢٤ سنة",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٠٨/٠٥/١٩٩٩",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 55,
+        "failures": [
+          {
+            "entity_index": 4,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "p.janssen@lumc.nl",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 5,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "ns-oncologie@erasmusmc.nl",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Medical_Information",
+            "entity_string": "adenocarcinoom van de rechter bovenkwab, EGFR-mutatie positief (exon 19 deletie)",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Date_Time",
+            "entity_string": "03-11-2021",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Medical_Information",
+            "entity_string": "erlotinib 150 mg 1dd",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Medical_Information",
+            "entity_string": "cerebrale metastasen",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Medical_Information",
+            "entity_string": "osimertinib 80 mg 1dd",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Medical_Information",
+            "entity_string": "T790M-resistentiemutatie",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Medical_Information",
+            "entity_string": "diabetes mellitus type 2",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Medical_Information",
+            "entity_string": "hypertensie",
+            "mention_index": 7,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Medical_Information",
+            "entity_string": "hypothyreoïdie",
+            "mention_index": 8,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "ZV-2024-881204",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "49123456701",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 37,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "ERS-2024-00587",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "39876543201",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 57,
+        "failures": [
+          {
+            "entity_index": 11,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "8471029356",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 12,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "072-819-453",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+36 20 318 5642",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Date_Time",
+            "entity_string": "2015. január 5.",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Org_Name",
+            "entity_string": "Nemzeti Adó- és Vámhivatal (NAV)",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Business_Title",
+            "entity_string": "Adóellenőr",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Org_Name",
+            "entity_string": "Debreceni Önkormányzat, Pénzügyi Osztály",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Org_Name",
+            "entity_string": "PricewaterhouseCoopers Magyarország Kft.",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Org_Name",
+            "entity_string": "Debreceni Egyetem, Közgazdaságtudományi Kar",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Date_Time",
+            "entity_string": "2001. június 8.",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Business_Title",
+            "entity_string": "Főosztályvezető-helyettes",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "EB-2024/041782",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Full_Name",
+            "entity_string": "Dr. Tóth Katalin",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Full_Name",
+            "entity_string": "Dr. Szabó András",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 37,
+            "entity_type": "Full_Name",
+            "entity_string": "Németh Judit",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 38,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+36 52 411 8300",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "nemeth.judit@nav.gov.hu",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Full_Name",
+            "entity_string": "Farkas Ágnes",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "KÖZSZOLG-REG-2024-04-12-00047",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-15T14:32:07+02:00",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 66,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "sofie.kristensen@telekomdk.dk",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Address_Personal",
+            "entity_string": "Hovedgaden 14, 2800 Kongens Lyngby",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "First_Given_Name",
+            "entity_string": "LarsAndersen",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 70,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "City",
+            "entity_string": "3000-100Coimbra",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "City",
+            "entity_string": "Coimbra",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 69,
+        "failures": [
+          {
+            "entity_index": 23,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551130454502",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "23/11/1982",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Address_Personal",
+            "entity_string": "Alameda Santos, 890, Apt. 1501, Cerqueira César, São Paulo - SP, CEP 01418-002",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+55 11 97654-3210",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551130454503",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551132225500",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551150808000",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551131506000",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+551130001234",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Date_Time",
+            "entity_string": "15/03/2024",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 76,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "Medical_Information",
+            "entity_string": "본태성 고혈압",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Medical_Information",
+            "entity_string": "암로디핀 5mg",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Allergy_Information",
+            "entity_string": "조영제 (발진)",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-9932-5541",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Org_Name",
+            "entity_string": "분당서울대학교병원",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Sex_Orientation",
+            "entity_string": "이성애자",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 81,
+        "failures": [
+          {
+            "entity_index": 12,
+            "entity_type": "Date_Time",
+            "entity_string": "07.11.2019",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 86,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Address_Personal",
+            "entity_string": "Arcisstraße 21, 80333 München, Deutschland",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Emergency_Contact_Details",
+            "entity_string": "Sabine Schneider-Hoffmann, Mutter, +49 89712345678",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Emergency_Contact_Details",
+            "entity_string": "Felix Schneider-Hoffmann, Bruder, +49 1621234567",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Full_Name",
+            "entity_string": "Maximilian Schneider-Hoffmann",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "claudia.becker@tum.de",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "1.800 EUR",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "markus.weber@siemens-healthineers.com",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "LIB-TUM-5598213",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 89,
+        "failures": [
+          {
+            "entity_index": 19,
+            "entity_type": "Performance_Assessment",
+            "entity_string": "تقييم الزملاء: ٣.٢/٥",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "٠٥٥٩٨٧٦٥٤٣",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 95,
+        "failures": [
+          {
+            "entity_index": 6,
+            "entity_type": "Business_Title",
+            "entity_string": "Direttore Generale",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Business_Title",
+            "entity_string": "Vicepresidente Esecutivo",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Business_Title",
+            "entity_string": "Consigliere Delegato",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 16,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T14:32:08Z",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T14:33:01Z",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 93,
+        "failures": [
+          {
+            "entity_index": 24,
+            "entity_type": "Date_Time",
+            "entity_string": "every Tuesday at 03:00 CET",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Date_Time",
+            "entity_string": "every month",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 96,
+        "failures": [
+          {
+            "entity_index": 21,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "28/11/1989",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 99,
+        "failures": [
+          {
+            "entity_index": 6,
+            "entity_type": "Date_Time",
+            "entity_string": "2018-06-12T09:00:00Z",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 9,
+            "entity_type": "Nationality",
+            "entity_string": "Finnish",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 10,
+            "entity_type": "Nationality",
+            "entity_string": "Finnish",
+            "mention_index": 7,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Nationality",
+            "entity_string": "Japanese",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Nationality",
+            "entity_string": "Colombian",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Nationality",
+            "entity_string": "Indian",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Nationality",
+            "entity_string": "Danish",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Nationality",
+            "entity_string": "Finnish",
+            "mention_index": 8,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Nationality",
+            "entity_string": "Finnish",
+            "mention_index": 9,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 47,
+            "entity_type": "Nationality",
+            "entity_string": "Swedish",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Nationality",
+            "entity_string": "Japanese",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 53,
+            "entity_type": "Nationality",
+            "entity_string": "Colombian",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 56,
+            "entity_type": "Nationality",
+            "entity_string": "Indian",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 59,
+            "entity_type": "Nationality",
+            "entity_string": "Danish",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 101,
+        "failures": [
+          {
+            "entity_index": 16,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-2020-0512",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "23.456.789-W",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 18,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "03/11/1991",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Business_Title",
+            "entity_string": "Analista de Datos",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "48.500 €",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 21,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+34 612 894 037",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 22,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "c.delgado@techsolutions.es",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Address_Personal",
+            "entity_string": "Avenida de la Constitución 12, 1ºA, 28014 Madrid",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-2017-0198",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "78.123.456-M",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 29,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "25/02/1985",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Business_Title",
+            "entity_string": "Director Técnico",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "89.000 €",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+34 691 452 768",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "fj.lopez@techsolutions.es",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Address_Personal",
+            "entity_string": "Paseo de la Castellana 87, 5ºD, 28046 Madrid",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-2022-0891",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "56.789.234-T",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "19/09/1995",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "32.000 €",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 43,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+34 634 719 582",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 44,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "l.sanchez@techsolutions.es",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 45,
+            "entity_type": "Address_Personal",
+            "entity_string": "Calle Alcalá 210, 2ºC, 28028 Madrid",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-2018-0265",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "34.567.891-L",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 51,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "08/04/1987",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 52,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "58.000 €",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 53,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+34 678 345 921",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "r.garcia@techsolutions.es",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 55,
+            "entity_type": "Address_Personal",
+            "entity_string": "Calle Serrano 156, 4ºA, 28006 Madrid",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 59,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+34 655 012 384",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 60,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "i.montero@techsolutions.es",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 61,
+            "entity_type": "Business_Title",
+            "entity_string": "Directora de Recursos Humanos",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 63,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "B-12345678",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 104,
+        "failures": [
+          {
+            "entity_index": 9,
+            "entity_type": "Last_Family_Name",
+            "entity_string": "山田",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 105,
+        "failures": [
+          {
+            "entity_index": 1,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+33 6 12 34 56 78",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 2,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+212 6 61 23 45 67",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 3,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+509 34 12 5678",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 4,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+213 5 51 23 45 67",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 107,
+        "failures": [
+          {
+            "entity_index": 11,
+            "entity_type": "Gender",
+            "entity_string": "남성",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 106,
+        "failures": [
+          {
+            "entity_index": 5,
+            "entity_type": "Gender",
+            "entity_string": "M",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 10,
+            "entity_type": "Gender",
+            "entity_string": "F",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 13,
+            "entity_type": "Gender",
+            "entity_string": "男性",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 19,
+            "entity_type": "Business_Title",
+            "entity_string": "人力资源总监",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "qiang.liu@techcorp.com.cn",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 29,
+            "entity_type": "Gender",
+            "entity_string": "M",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 117,
+        "failures": [
+          {
+            "entity_index": 11,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "sunilbhatt@urbandev.gov.in",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 13,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "anilksharma@mha.gov.in",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 113,
+        "failures": [
+          {
+            "entity_index": 43,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "...2847",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 114,
+        "failures": [
+          {
+            "entity_index": 18,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "15. März 1978",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 20,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "15/03/1978",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 66,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "15/03/1978",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 115,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Professional_Background",
+            "entity_string": "Vedvarende energi / Vindkraft — 12 år (Vestas Wind Systems, Siemens Gamesa); Supply Chain & Logistik — 3 år (Maersk Line)",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Business_Title",
+            "entity_string": "Logistics Manager",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "94.000",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Business_Title",
+            "entity_string": "Operations Analyst",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "620.000",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Business_Title",
+            "entity_string": "Junior Procurement Officer",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 29,
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "485.000",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Business_Title",
+            "entity_string": "VP Operations",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "h.sorensen@vestas-wind.dk",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Business_Title",
+            "entity_string": "Head of Logistics",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+34 612 44 78 03",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "i.fernandez@siemensgamesa.com",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 44,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "BIO-DK-20240310-5581",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 121,
+        "failures": [
+          {
+            "entity_index": 16,
+            "entity_type": "Place_of_Birth",
+            "entity_string": "né à Dakar, Sénégal",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 17,
+            "entity_type": "Place_of_Birth",
+            "entity_string": "né à Dakar, République du Sénégal",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 46,
+            "entity_type": "Place_of_Birth",
+            "entity_string": "né à Dakar, République du Sénégal",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 119,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Full_Name",
+            "entity_string": "Jean-Philippe Lavoie",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 1,
+            "entity_type": "Full_Name",
+            "entity_string": "David Nguyen",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 2,
+            "entity_type": "Full_Name",
+            "entity_string": "Sophie Gagnon",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 6,
+            "entity_type": "Crime",
+            "entity_string": "voies de fait armées",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 8,
+            "entity_type": "Full_Name",
+            "entity_string": "Marc-André Bélanger",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 13,
+            "entity_type": "Full_Name",
+            "entity_string": "Isabelle Tremblay",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 14,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "SPVQ-5512",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "i.tremblay@ville.quebec.qc.ca",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 23,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1994-11-08",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Address_Personal",
+            "entity_string": "88, rue des Érables, Lévis, QC G6V 2M4",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "N0148-081194-06",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1978-02-14",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Address_Personal",
+            "entity_string": "302, avenue Cartier, Québec, QC G1R 2R5",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Org_Name",
+            "entity_string": "Caisse Desjardins de Sainte-Foy",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Credit_Card_Numbers",
+            "entity_string": "**** 7830",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 44,
+            "entity_type": "Business_Title",
+            "entity_string": "Caporal",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 130,
+        "failures": [
+          {
+            "entity_index": 5,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "talent@company.co.il",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 126,
+        "failures": [
+          {
+            "entity_index": 0,
+            "entity_type": "Address_Work",
+            "entity_string": "Mannerheimintie 42 B, 00100 Helsinki",
+            "mention_index": 0,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 127,
+        "failures": [
+          {
+            "entity_index": 14,
+            "entity_type": "Country_of_Residence",
+            "entity_string": "거주국대한민국",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 15,
+            "entity_type": "Address_Personal",
+            "entity_string": "서울특별시 강남구 테헤란로 152, 삼성빌딩 1502호",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1965년 3월 22일",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "650322-2345678",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Address_Personal",
+            "entity_string": "경기도 성남시 분당구 판교로 256",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 27,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-2345-6789",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 28,
+            "entity_type": "Org_Name",
+            "entity_string": "분당서울대학교병원",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 30,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1980년 11월 3일",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 31,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "801103-1567890",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 32,
+            "entity_type": "Address_Personal",
+            "entity_string": "서울특별시 서초구 반포대로 58",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 33,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-3456-7890",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 34,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "minho.jang@samsung.com",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 35,
+            "entity_type": "Org_Name",
+            "entity_string": "삼성전자",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 38,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1990년 7월 15일",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 39,
+            "entity_type": "Passport_Number",
+            "entity_string": "523456789",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 40,
+            "entity_type": "Country_of_Residence",
+            "entity_string": "거주국Korea",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 41,
+            "entity_type": "Address_Personal",
+            "entity_string": "서울특별시 용산구 이태원로 45",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 42,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-4567-8901",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 44,
+            "entity_type": "Org_Name",
+            "entity_string": "서울국제학교",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 45,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "900715-5678901",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 47,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1972년 9월 8일",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 48,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "720908-1890123",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 49,
+            "entity_type": "Address_Personal",
+            "entity_string": "부산광역시 해운대구 마린시티로 33",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 50,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-5678-9012",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 51,
+            "entity_type": "Org_Name",
+            "entity_string": "(주)부산테크",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 53,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1988년 12월 1일",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 54,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "881201-2901234",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 55,
+            "entity_type": "Address_Personal",
+            "entity_string": "대전광역시 유성구 대학로 99",
+            "mention_index": 6,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 56,
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "010-6789-0123",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 57,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "hana.lee@kaist.ac.kr",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 58,
+            "entity_type": "Org_Name",
+            "entity_string": "한국과학기술원",
+            "mention_index": 5,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 62,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "ujin.jung@spo.go.kr",
+            "mention_index": 3,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 63,
+            "entity_type": "Work_Email_Address",
+            "entity_string": "seungho.lee@kimchang.com",
+            "mention_index": 4,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 134,
+        "failures": [
+          {
+            "entity_index": 20,
+            "entity_type": "Address_Personal",
+            "entity_string": "Šlikova 18/247, 169 00 Praha 6",
+            "mention_index": 2,
+            "reason": "not_found_in_text"
+          }
+        ]
+      },
+      {
+        "record_id": 131,
+        "failures": [
+          {
+            "entity_index": 20,
+            "entity_type": "National_Identification_Number",
+            "entity_string": "891 234 567",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 24,
+            "entity_type": "Date_of_Birth",
+            "entity_string": "03 janvier 1965",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 25,
+            "entity_type": "Passport_Number",
+            "entity_string": "15AB77201",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 26,
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "CH93 0076 2011 6238 5295 7",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 36,
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "CPA-LY-0087",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          },
+          {
+            "entity_index": 37,
+            "entity_type": "Date_Time",
+            "entity_string": "15/03/2024 14:32:07 CET",
+            "mention_index": 1,
+            "reason": "not_found_in_text"
+          }
+        ]
+      }
+    ]
+  },
+  "B2_zero_entity_rate": {
+    "n_zero_entity_records": 0,
+    "rate": 0.0,
+    "target_max": 0.005,
+    "pass": true
+  },
+  "B3_validation_dropped_rate": {
+    "status": "not_computable",
+    "reason": "schema does not include 'dropped'/'extracted' fields per record"
+  },
+  "B4_triple_name_rule": {
+    "n_full_names": 15234,
+    "n_compliant": 9360,
+    "compliance": 0.6144151240645923,
+    "target": 1.0,
+    "pass": false,
+    "n_records_with_violations": 1622,
+    "violations": [
+      {
+        "record_id": 4,
+        "violations": [
+          {
+            "full_name": "Markétu Svobodovou",
+            "expected_first": "Markétu",
+            "expected_last": "Svobodovou",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 11,
+        "violations": [
+          {
+            "full_name": "राहुल शर्मा",
+            "expected_first": "राहुल",
+            "expected_last": "शर्मा",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "प्रिया गुप्ता",
+            "expected_first": "प्रिया",
+            "expected_last": "गुप्ता",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "अमित पटेल",
+            "expected_first": "अमित",
+            "expected_last": "पटेल",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 18,
+        "violations": [
+          {
+            "full_name": "Tremblay, Isabelle",
+            "expected_first": "Tremblay,",
+            "expected_last": "Isabelle",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 21,
+        "violations": [
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Anita Sharma",
+            "expected_first": "Anita",
+            "expected_last": "Sharma",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Rajesh Kumar Singh",
+            "expected_first": "Rajesh",
+            "expected_last": "Kumar Singh",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 20,
+        "violations": [
+          {
+            "full_name": "Dr. Annemarie de Vries",
+            "expected_first": "Dr.",
+            "expected_last": "Annemarie de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Prof. Willem Janssen",
+            "expected_first": "Prof.",
+            "expected_last": "Willem Janssen",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 23,
+        "violations": [
+          {
+            "full_name": "Szabó Katalin",
+            "expected_first": "Szabó",
+            "expected_last": "Katalin",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 28,
+        "violations": [
+          {
+            "full_name": "Rafael Mendes de Oliveira",
+            "expected_first": "Rafael",
+            "expected_last": "Mendes de Oliveira",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 25,
+        "violations": [
+          {
+            "full_name": "Lars Erik Moen",
+            "expected_first": "Lars",
+            "expected_last": "Erik Moen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ingrid Sofie Berntsen",
+            "expected_first": "Ingrid",
+            "expected_last": "Sofie Berntsen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Silje Karin Nordgård",
+            "expected_first": "Silje",
+            "expected_last": "Karin Nordgård",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Eirik Solberg",
+            "expected_first": "Dr.",
+            "expected_last": "Eirik Solberg",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 30,
+        "violations": [
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Elisabeth Bakker",
+            "expected_first": "Dr.",
+            "expected_last": "Elisabeth Bakker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Sophie de Vries",
+            "expected_first": "Sophie",
+            "expected_last": "de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marieke Visser",
+            "expected_first": "Marieke",
+            "expected_last": "Visser",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Pieter van den Berg",
+            "expected_first": "Pieter",
+            "expected_last": "van den Berg",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 32,
+        "violations": [
+          {
+            "full_name": "นายสมชาย วงศ์ประเสริฐ",
+            "expected_first": "นายสมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": true
+          },
+          {
+            "full_name": "พญ.กัลยา ศรีสุข",
+            "expected_first": "พญ.กัลยา",
+            "expected_last": "ศรีสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 31,
+        "violations": [
+          {
+            "full_name": "たなか ゆうこ",
+            "expected_first": "たなか",
+            "expected_last": "ゆうこ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "たなか ゆうこ",
+            "expected_first": "たなか",
+            "expected_last": "ゆうこ",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 36,
+        "violations": [
+          {
+            "full_name": "יוסף אברהם כהן",
+            "expected_first": "יוסף",
+            "expected_last": "אברהם כהן",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "פאטמה חסן אל-נאסר",
+            "expected_first": "פאטמה",
+            "expected_last": "חסן אל-נאסר",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 37,
+        "violations": [
+          {
+            "full_name": "Dr. Sanjay Patel",
+            "expected_first": "Dr.",
+            "expected_last": "Sanjay Patel",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dre. Isabelle Nguyen-Fournier",
+            "expected_first": "Dre.",
+            "expected_last": "Isabelle Nguyen-Fournier",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marc-André Bouchard",
+            "expected_first": "Marc-André",
+            "expected_last": "Bouchard",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 41,
+        "violations": [
+          {
+            "full_name": "Jean-François Bélanger",
+            "expected_first": "Jean-François",
+            "expected_last": "Bélanger",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Nathalie Côté",
+            "expected_first": "Nathalie",
+            "expected_last": "Côté",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 44,
+        "violations": [
+          {
+            "full_name": "ויקטור נובאק",
+            "expected_first": "ויקטור",
+            "expected_last": "נובאק",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 43,
+        "violations": [
+          {
+            "full_name": "Dr. Ananya Patel",
+            "expected_first": "Dr.",
+            "expected_last": "Ananya Patel",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 50,
+        "violations": [
+          {
+            "full_name": "Dr. Benoît Lefèvre",
+            "expected_first": "Dr.",
+            "expected_last": "Benoît Lefèvre",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 51,
+        "violations": [
+          {
+            "full_name": "João Pedro Ferreira",
+            "expected_first": "João",
+            "expected_last": "Pedro Ferreira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Sousa",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Sousa",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 53,
+        "violations": [
+          {
+            "full_name": "ד\"ר רונית שלום",
+            "expected_first": "ד\"ר",
+            "expected_last": "רונית שלום",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ד\"ר רונית שלום",
+            "expected_first": "ד\"ר",
+            "expected_last": "רונית שלום",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ד\"ר אמיר כהן",
+            "expected_first": "ד\"ר",
+            "expected_last": "אמיר כהן",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 52,
+        "violations": [
+          {
+            "full_name": "عبدالرحمن بن خالد المطيري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن خالد المطيري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "نورة بنت سعد الشمري",
+            "expected_first": "نورة",
+            "expected_last": "بنت سعد الشمري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "د. فهد بن عبدالله القحطاني",
+            "expected_first": "د.",
+            "expected_last": "فهد بن عبدالله القحطاني",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "سارة بنت محمد الزهراني",
+            "expected_first": "سارة",
+            "expected_last": "بنت محمد الزهراني",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 56,
+        "violations": [
+          {
+            "full_name": "Elif Yıldırım",
+            "expected_first": "Elif",
+            "expected_last": "Yıldırım",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Elif Yıldırım",
+            "expected_first": "Elif",
+            "expected_last": "Yıldırım",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Mehmet Kaya",
+            "expected_first": "Mehmet",
+            "expected_last": "Kaya",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 60,
+        "violations": [
+          {
+            "full_name": "MUDr. Jana Dvořáková",
+            "expected_first": "MUDr.",
+            "expected_last": "Jana Dvořáková",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 55,
+        "violations": [
+          {
+            "full_name": "Dr. Annemieke van der Berg",
+            "expected_first": "Dr.",
+            "expected_last": "Annemieke van der Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Annemieke van der Berg",
+            "expected_first": "Dr.",
+            "expected_last": "Annemieke van der Berg",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Pieter Janssen",
+            "expected_first": "Dr.",
+            "expected_last": "Pieter Janssen",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. K.L. de Vries",
+            "expected_first": "Dr.",
+            "expected_last": "K.L. de Vries",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. R. Bakker",
+            "expected_first": "Dr.",
+            "expected_last": "R. Bakker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Sophie Mulder",
+            "expected_first": "Dr.",
+            "expected_last": "Sophie Mulder",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Hassan Yilmaz",
+            "expected_first": "Dr.",
+            "expected_last": "Hassan Yilmaz",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 62,
+        "violations": [
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beltrán",
+            "expected_first": "Ana",
+            "expected_last": "Beltrán",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 61,
+        "violations": [
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Erik Lindqvist",
+            "expected_first": "Dr.",
+            "expected_last": "Erik Lindqvist",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 57,
+        "violations": [
+          {
+            "full_name": "Kovács István Béla",
+            "expected_first": "Kovács",
+            "expected_last": "István Béla",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Kovács István Béla",
+            "expected_first": "Kovács",
+            "expected_last": "István Béla",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Kovács Mária",
+            "expected_first": "Kovács",
+            "expected_last": "Mária",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Tóth Katalin",
+            "expected_first": "Dr.",
+            "expected_last": "Tóth Katalin",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Szabó András",
+            "expected_first": "Dr.",
+            "expected_last": "Szabó András",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Németh Judit",
+            "expected_first": "Németh",
+            "expected_last": "Judit",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Farkas Ágnes",
+            "expected_first": "Farkas",
+            "expected_last": "Ágnes",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 64,
+        "violations": [
+          {
+            "full_name": "Dre Isabelle Fournier",
+            "expected_first": "Dre",
+            "expected_last": "Isabelle Fournier",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 63,
+        "violations": [
+          {
+            "full_name": "عبدالرحمن بن محمد الشهري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن محمد الشهري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "عبدالرحمن بن محمد الشهري",
+            "expected_first": "عبدالرحمن",
+            "expected_last": "بن محمد الشهري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "فهد بن سعود القحطاني",
+            "expected_first": "فهد",
+            "expected_last": "بن سعود القحطاني",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 65,
+        "violations": [
+          {
+            "full_name": "Ковалёва Наталья Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Наталья Сергеевна",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Иванов Дмитрий Александрович",
+            "expected_first": "Иванов",
+            "expected_last": "Дмитрий Александрович",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ковалёва Наталья Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Наталья Сергеевна",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Иванов Дмитрий Александрович",
+            "expected_first": "Иванов",
+            "expected_last": "Дмитрий Александрович",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 67,
+        "violations": [
+          {
+            "full_name": "Giulia Ferrero",
+            "expected_first": "Giulia",
+            "expected_last": "Ferrero",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 71,
+        "violations": [
+          {
+            "full_name": "佐藤 美咲",
+            "expected_first": "佐藤",
+            "expected_last": "美咲",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 70,
+        "violations": [
+          {
+            "full_name": "Cláudia Ferreira",
+            "expected_first": "Cláudia",
+            "expected_last": "Ferreira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "António José Marques da Silva",
+            "expected_first": "António",
+            "expected_last": "José Marques da Silva",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "António José Marques da Silva",
+            "expected_first": "António",
+            "expected_last": "José Marques da Silva",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 72,
+        "violations": [
+          {
+            "full_name": "สมชาย วงศ์ประเสริฐ",
+            "expected_first": "สมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมชาย วงศ์ประเสริฐ",
+            "expected_first": "สมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "นายวิทยา สุขสมบูรณ์",
+            "expected_first": "นายวิทยา",
+            "expected_last": "สุขสมบูรณ์",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "นายวิทยา สุขสมบูรณ์",
+            "expected_first": "นายวิทยา",
+            "expected_last": "สุขสมบูรณ์",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 69,
+        "violations": [
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Eduardo Pinto",
+            "expected_first": "Carlos",
+            "expected_last": "Eduardo Pinto",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Fernanda Oliveira",
+            "expected_first": "Fernanda",
+            "expected_last": "Oliveira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Paulo Henrique Machado",
+            "expected_first": "Paulo",
+            "expected_last": "Henrique Machado",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Marcos Vinícius Almeida",
+            "expected_first": "Marcos",
+            "expected_last": "Vinícius Almeida",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ricardo Augusto Ferreira de Souza",
+            "expected_first": "Ricardo",
+            "expected_last": "Augusto Ferreira de Souza",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Ana Beatriz Monteiro Lima",
+            "expected_first": "Ana",
+            "expected_last": "Beatriz Monteiro Lima",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 74,
+        "violations": [
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Amira Hassan Youssef",
+            "expected_first": "Amira",
+            "expected_last": "Hassan Youssef",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 81,
+        "violations": [
+          {
+            "full_name": "Ковалёва Анна Сергеевна",
+            "expected_first": "Ковалёва",
+            "expected_last": "Анна Сергеевна",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 83,
+        "violations": [
+          {
+            "full_name": "Dra. Fernanda Oliveira",
+            "expected_first": "Dra.",
+            "expected_last": "Fernanda Oliveira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dra. Fernanda Oliveira",
+            "expected_first": "Dra.",
+            "expected_last": "Fernanda Oliveira",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Henrique da Silva",
+            "expected_first": "Carlos",
+            "expected_last": "Henrique da Silva",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Carlos Henrique da Silva",
+            "expected_first": "Carlos",
+            "expected_last": "Henrique da Silva",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 87,
+        "violations": [
+          {
+            "full_name": "Сергеев Андрей",
+            "expected_first": "Сергеев",
+            "expected_last": "Андрей",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Петрова Ольга",
+            "expected_first": "Петрова",
+            "expected_last": "Ольга",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 84,
+        "violations": [
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "สมศักดิ์ เจริญสุข",
+            "expected_first": "สมศักดิ์",
+            "expected_last": "เจริญสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 85,
+        "violations": [
+          {
+            "full_name": "นายสมชาย วงศ์ประเสริฐ",
+            "expected_first": "นายสมชาย",
+            "expected_last": "วงศ์ประเสริฐ",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "David Robert Fitzgerald-Montgomery",
+            "expected_first": "David",
+            "expected_last": "Robert Fitzgerald-Montgomery",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Eleanor Catherine Whitmore",
+            "expected_first": "Eleanor",
+            "expected_last": "Catherine Whitmore",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "ร.ต.อ. ณัฐพล ศรีสุข",
+            "expected_first": "ร.ต.อ.",
+            "expected_last": "ณัฐพล ศรีสุข",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 91,
+        "violations": [
+          {
+            "full_name": "Linda Chen",
+            "expected_first": "Linda",
+            "expected_last": "Chen",
+            "first_match": false,
+            "last_match": true
+          },
+          {
+            "full_name": "Patricia Owens",
+            "expected_first": "Patricia",
+            "expected_last": "Owens",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 92,
+        "violations": [
+          {
+            "full_name": "Alejandro Javier Mendoza Ríos",
+            "expected_first": "Alejandro",
+            "expected_last": "Javier Mendoza Ríos",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 88,
+        "violations": [
+          {
+            "full_name": "Dr. Friedrich Wilhelm Hartmann",
+            "expected_first": "Dr.",
+            "expected_last": "Friedrich Wilhelm Hartmann",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Margarethe Hartmann",
+            "expected_first": "Dr.",
+            "expected_last": "Margarethe Hartmann",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 86,
+        "violations": [
+          {
+            "full_name": "Prof. Dr. Claudia Becker",
+            "expected_first": "Prof.",
+            "expected_last": "Dr. Claudia Becker",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Prof. Dr. Thomas Neumann",
+            "expected_first": "Prof.",
+            "expected_last": "Dr. Thomas Neumann",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Markus Weber",
+            "expected_first": "Dr.",
+            "expected_last": "Markus Weber",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 89,
+        "violations": [
+          {
+            "full_name": "أحمد بن سعيد المنصوري",
+            "expected_first": "أحمد",
+            "expected_last": "بن سعيد المنصوري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "أحمد بن سعيد المنصوري",
+            "expected_first": "أحمد",
+            "expected_last": "بن سعيد المنصوري",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "نورة بنت عبدالرحمن الغامدي",
+            "expected_first": "نورة",
+            "expected_last": "بنت عبدالرحمن الغامدي",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "خالد بن محمد العتيبي",
+            "expected_first": "خالد",
+            "expected_last": "بن محمد العتيبي",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 94,
+        "violations": [
+          {
+            "full_name": "David Lin",
+            "expected_first": "David",
+            "expected_last": "Lin",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 96,
+        "violations": [
+          {
+            "full_name": "Sophie Anne Tremblay",
+            "expected_first": "Sophie",
+            "expected_last": "Anne Tremblay",
+            "first_match": true,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 100,
+        "violations": [
+          {
+            "full_name": "Dr. med. Katharina Bauer",
+            "expected_first": "Dr.",
+            "expected_last": "med. Katharina Bauer",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Hoffmann, Elisabeth Marie",
+            "expected_first": "Hoffmann,",
+            "expected_last": "Elisabeth Marie",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Friedrich Meier",
+            "expected_first": "Dr.",
+            "expected_last": "Friedrich Meier",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. med. Katharina Bauer",
+            "expected_first": "Dr.",
+            "expected_last": "med. Katharina Bauer",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Thomas Weiß",
+            "expected_first": "Thomas",
+            "expected_last": "Weiß",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 101,
+        "violations": [
+          {
+            "full_name": "Francisco Javier López Navarro",
+            "expected_first": "Francisco",
+            "expected_last": "Javier López Navarro",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      },
+      {
+        "record_id": 103,
+        "violations": [
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Dr. Claudia Westhoff",
+            "expected_first": "Dr.",
+            "expected_last": "Claudia Westhoff",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Stefan Müller",
+            "expected_first": "Stefan",
+            "expected_last": "Müller",
+            "first_match": true,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          },
+          {
+            "full_name": "Anna Müller",
+            "expected_first": "Anna",
+            "expected_last": "Müller",
+            "first_match": false,
+            "last_match": false
+          }
+        ]
+      }
+    ],
+    "_note": "Baseline implementation assumes Western 'First Last' decomposition. Methodology R11 documents 8 decomposition cases (CJK, patronymic, double-surname, etc.) requiring per-language extension. Review violations to distinguish real failures from decomposition-rule gaps."
+  },
+  "B5_canonical_type_compliance": {
+    "n_total_entities": 89411,
+    "n_canonical": 89130,
+    "compliance": 0.99685720996298,
+    "target": 1.0,
+    "pass": false,
+    "non_canonical_types_seen": {
+      "Country": 27,
+      "Tax_Identification_Number": 22,
+      "Vehicle_Registration_Number": 19,
+      "Username_Handle": 18,
+      "Middle_Name": 17,
+      "Online_Handle": 13,
+      "License_Plate": 11,
+      "License_Plate_Number": 10,
+      "Device_ID": 9,
+      "Financial_Amount": 9,
+      "Vehicle_Registration": 8,
+      "Vehicle_Identification_Number": 8,
+      "Financial_Information": 7,
+      "Device_Identifier": 6,
+      "Zip_Postal_Code": 6,
+      "Vehicle_Registration_Plate": 6,
+      "Vehicle_Plate_Number": 6,
+      "Digital_Identifier": 5,
+      "Education": 4,
+      "Union_Membership": 4
+    },
+    "n_records_with_non_canonical": 182
+  },
+  "B6_multi_mention_completeness": {
+    "n_unique_string_per_record": 61038,
+    "n_complete": 53865,
+    "completeness": 0.8824830433500442,
+    "target": 0.95,
+    "pass": false,
+    "n_records_with_missing": 1505,
+    "examples": [
+      {
+        "record_id": 1,
+        "missing": [
+          {
+            "entity_type": "State",
+            "entity_string": "Comunidad de Madrid",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 6,
+        "missing": [
+          {
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "0,8 dage pr. måned",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "01-08-2021",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "3 sygedage i indeværende kvartal (registreret 2024-02-05, 2024-03-11, 2024-03-12)",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "resterende saldo bør være 11,25 dage",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 7,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:18Z",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:19Z",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:42:20Z",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 4,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "22. 8. 2029",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 11,
+        "missing": [
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FIN-2024-88292-X",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-IN-40955",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Business_Title",
+            "entity_string": "Associate Vice President",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹24,00,000/annum",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "PriyaGuptaEMP40955Sick2Days",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FIN-2024-88293-X",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "EMP-IN-41102",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              2,
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Business_Title",
+            "entity_string": "Manager",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹21,75,000/annum",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Sickness_Day_Records",
+            "entity_string": "AmitPatelEMP41102Sick8Days",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 14,
+        "missing": [
+          {
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+886-2-2729-8801",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "法務部調查局臺北市調查處",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MJIB-TW-10587",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "chen.meiling@mjib.gov.tw",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市大安區忠孝東路四段201號8樓之2",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              1,
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Work",
+            "entity_string": "臺北市松山區南京東路五段88號15樓",
+            "occurrences_in_text": 3,
+            "mentions_emitted": 3,
+            "indices": [
+              1,
+              2,
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TPE-2019-CR-01234",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "組織犯罪防制條例第三條",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Account_Statements",
+            "entity_string": "0127-0034-8821-55",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1985年11月03日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "F234567890",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "高雄市前鎮區中華五路789號11樓",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市內湖區成功路四段167號3樓",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              3,
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+886-922-876-543",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Personal_Email_Address",
+            "entity_string": "yating.chang85@yahoo.com.tw",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "商業會計法第七十一條",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Account_Statements",
+            "entity_string": "7021-1045-3398-72",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1990年02月14日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "B345678901",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "+886-933-456-789",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "臺北市中山區林森北路310號6樓",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年04月10日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 21,
+        "missing": [
+          {
+            "entity_type": "Compensation_and_Salary",
+            "entity_string": "₹22,00,000",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 10,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月1日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月10日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TK-2024-0038455",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "詐欺",
+            "occurrences_in_text": 3,
+            "mentions_emitted": 3,
+            "indices": [
+              1,
+              2,
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月5日",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              3,
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月7日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "警視庁渋谷警察署",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "山本裕子",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Business_Title",
+            "entity_string": "巡査部長",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MPD-11287",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "y.yamamoto@keishicho.metro.tokyo.jp",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1958年11月3日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都渋谷区恵比寿南三丁目5番12号 グランドメゾン恵比寿402号室",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "080-7732-1145",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "木村太一",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "050-3188-9921",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Account_Statements",
+            "entity_string": "8901234",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              1,
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月14日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              5
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月18日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              6
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "TK-2024-0038612",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "暴行",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              2,
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月8日",
+            "occurrences_in_text": 3,
+            "mentions_emitted": 3,
+            "indices": [
+              7,
+              8,
+              9
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "警視庁池袋警察署",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "高橋誠",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "MPD-05693",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "m.takahashi@keishicho.metro.tokyo.jp",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1995年4月18日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都豊島区東池袋一丁目12番5号",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Personal",
+            "entity_string": "070-9981-2234",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Nationality",
+            "entity_string": "中国",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "AB12345678CD",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "中村浩二",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              4,
+              5
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1988年9月30日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "東京都豊島区南池袋二丁目3番8号 コーポ南池袋201号室",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "傷害罪",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月12日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              8
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "伊藤雅彦",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              5
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年2月1日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              9
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024年3月15日",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              10
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 20,
+        "missing": [
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "p.vandenberg@student.hr.nl",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "18 maart 2024",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "Oranje Fonds",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "OF-2023-4412",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "Hogeschool Rotterdam",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "TU Delft",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 24,
+        "missing": [
+          {
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 48 00",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 48 12",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "LU-EMP-12207",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 31 90",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "anders.bergstrom@svet.lu.se",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "EDU-2024-09200",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Telephone_Numbers_Work",
+            "entity_string": "+46 46 222 00 00",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 25,
+        "missing": [
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-310562",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Fagforbundet (member of LO – Landsorganisasjonen)",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "220790-XXXXX",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1990-07-22",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "Fjordveien 88B, 9020 Tromsdalen",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-118734",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Norsk Radiografforbund (NRF)",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "091292-XXXXX",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1992-12-09",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "Kvaløyvegen 3, 9100 Kvaløysletta",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "INC-2024-04821",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-095217",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "Norsk Psykologforening",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "280586-XXXXX",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1986-05-28",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "Sjøgata 21, 9006 Tromsø",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Employee_ID_Number",
+            "entity_string": "HN-227643",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Trade_Union_Membership",
+            "entity_string": "NITO (Norges Ingeniør- og Teknologorganisasjon)",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "National_Identification_Number",
+            "entity_string": "040694-XXXXX",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1994-06-04",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "Dramsvegen 7, 9009 Tromsø",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 32,
+        "missing": [
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "พญ.กัลยา ศรีสุข",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 29,
+        "missing": [
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "CUST-DK-991204",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "MPAY-7482910356",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "DK-PN-00391827465",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-18",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Last_Family_Name",
+            "entity_string": "Jensen",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Full_Name",
+            "entity_string": "Louise Mortensen",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "First_Given_Name",
+            "entity_string": "Louise",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Last_Family_Name",
+            "entity_string": "Mortensen",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 31,
+        "missing": [
+          {
+            "entity_type": "Address_Personal",
+            "entity_string": "Av. da Liberdade, 220, 1250-148 Lisboa, Portugal",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 36,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-03-15T08:43:05Z",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "3 ביוני 1992",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Nationality",
+            "entity_string": "ירדנית",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Gender",
+            "entity_string": "נקבה",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 39,
+        "missing": [
+          {
+            "entity_type": "Address_Work",
+            "entity_string": "Kurtul*** Cad. No:**",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Address_Work",
+            "entity_string": "Atatürk Mah., Çankaya/Ankara",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              2,
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Crime",
+            "entity_string": "bid rigging",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Org_Name",
+            "entity_string": "Kamu İhale Kurumu",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 50,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-02 08:22",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 46,
+        "missing": [
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "17/07/1992",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-10 09:32:47 CST",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 49,
+        "missing": [
+          {
+            "entity_type": "Date_Time",
+            "entity_string": "2024-04-17 22:03 KST",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "1992년 7월 23일",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      },
+      {
+        "record_id": 52,
+        "missing": [
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "STU-2024-09134",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "n.alshamri@ksu.edu.sa",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Age",
+            "entity_string": "٢٠ سنة",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٢٣/١١/٢٠٠٣",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              1
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Nationality",
+            "entity_string": "سعودية",
+            "occurrences_in_text": 2,
+            "mentions_emitted": 2,
+            "indices": [
+              1,
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "FAC-2019-00412",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "f.alqahtani@ksu.edu.sa",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Age",
+            "entity_string": "٤٥ سنة",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٠٢/٠٣/١٩٧٩",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              2
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "registrar@ksu.edu.sa",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Customer_Reference_Number",
+            "entity_string": "STU-2023-07650",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Work_Email_Address",
+            "entity_string": "s.alzahrani@ksu.edu.sa",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              4
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Age",
+            "entity_string": "٢٤ سنة",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          },
+          {
+            "entity_type": "Date_of_Birth",
+            "entity_string": "٠٨/٠٥/١٩٩٩",
+            "occurrences_in_text": 1,
+            "mentions_emitted": 1,
+            "indices": [
+              3
+            ],
+            "issue": "non_contiguous_indices"
+          }
+        ]
+      }
+    ]
+  },
+  "A2_per_entity_floor": {
+    "target_floor": 50,
+    "min_type_count": 60,
+    "pass": true,
+    "n_types_below_floor": 0,
+    "n_types_at_or_above_floor": 51,
+    "types_below_floor": {},
+    "all_type_counts": {
+      "Full_Name": 3192,
+      "Customer_Reference_Number": 2808,
+      "First_Given_Name": 2730,
+      "Last_Family_Name": 2718,
+      "Date_Time": 2559,
+      "Work_Email_Address": 1906,
+      "Org_Name": 1726,
+      "Date_of_Birth": 1699,
+      "Telephone_Numbers_Personal": 1571,
+      "City": 1543,
+      "Address_Personal": 1511,
+      "National_Identification_Number": 1404,
+      "Personal_Email_Address": 1175,
+      "Employee_ID_Number": 1071,
+      "Business_Title": 1059,
+      "Telephone_Numbers_Work": 770,
+      "Compensation_and_Salary": 557,
+      "Nationality": 540,
+      "Address_Work": 523,
+      "Medical_Information": 478,
+      "Credit_Card_Numbers": 405,
+      "Passport_Number": 340,
+      "Marital_Status": 283,
+      "Static_IP_Address": 271,
+      "Crime": 269,
+      "Allergy_Information": 265,
+      "Social_Media_Identifiers": 262,
+      "Location": 237,
+      "Gender": 236,
+      "Account_Statements": 206,
+      "Age": 174,
+      "State": 141,
+      "Religion": 139,
+      "PEP_Status": 91,
+      "Driving_License_Number": 90,
+      "Citizenship_Status": 80,
+      "Sickness_Day_Records": 79,
+      "Geolocation_Data": 79,
+      "Preferred_Name": 79,
+      "Place_of_Birth": 76,
+      "Sex_Orientation": 76,
+      "Country_of_Residence": 75,
+      "Performance_Assessment": 72,
+      "Password": 72,
+      "Professional_Background": 69,
+      "Political_Party": 66,
+      "Trade_Union_Membership": 65,
+      "Emergency_Contact_Details": 64,
+      "Tax_Reference_Number": 64,
+      "Building_Badge_Card_Number": 63,
+      "Disciplinary_Action": 60
+    }
+  },
+  "critical_gates_pass": false,
+  "critical_gates_breakdown": {
+    "B1_offset_accuracy": false,
+    "B2_zero_entity_rate": true,
+    "B4_triple_name_rule": false,
+    "B5_canonical_type_compliance": false,
+    "B6_multi_mention_completeness": false,
+    "A2_per_entity_floor": true
+  }
+}

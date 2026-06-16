@@ -1,0 +1,358 @@
+{
+  "n_records": 13427,
+  "A1_pattern_coverage": {
+    "patterns_exercised": 2141,
+    "catalog_size": 4127,
+    "coverage_rate": 0.5188,
+    "pass": true
+  },
+  "A2_per_entity_floor": {
+    "target_floor": 50,
+    "min_type_count": 227,
+    "max_type_count": 11912,
+    "n_types_below_floor": 0,
+    "n_types_at_or_above_floor": 51,
+    "pass": true,
+    "types_below_floor": {},
+    "all_counts": {
+      "Full_Name": 11912,
+      "Customer_Reference_Number": 10430,
+      "First_Given_Name": 10184,
+      "Last_Family_Name": 10134,
+      "Date_Time": 9382,
+      "Work_Email_Address": 7029,
+      "Org_Name": 6319,
+      "Date_of_Birth": 6183,
+      "Telephone_Numbers_Personal": 5686,
+      "City": 5572,
+      "Address_Personal": 5477,
+      "National_Identification_Number": 5063,
+      "Personal_Email_Address": 4310,
+      "Employee_ID_Number": 3900,
+      "Business_Title": 3851,
+      "Telephone_Numbers_Work": 2782,
+      "Compensation_and_Salary": 1973,
+      "Nationality": 1899,
+      "Address_Work": 1898,
+      "Medical_Information": 1725,
+      "Credit_Card_Numbers": 1549,
+      "Passport_Number": 1248,
+      "Marital_Status": 1041,
+      "Social_Media_Identifiers": 967,
+      "Allergy_Information": 960,
+      "Crime": 941,
+      "Static_IP_Address": 941,
+      "Location": 893,
+      "Gender": 835,
+      "Account_Statements": 673,
+      "Age": 635,
+      "Religion": 539,
+      "State": 535,
+      "PEP_Status": 343,
+      "Driving_License_Number": 318,
+      "Sex_Orientation": 294,
+      "Preferred_Name": 290,
+      "Sickness_Day_Records": 285,
+      "Performance_Assessment": 284,
+      "Citizenship_Status": 281,
+      "Place_of_Birth": 279,
+      "Tax_Reference_Number": 273,
+      "Password": 268,
+      "Country_of_Residence": 267,
+      "Geolocation_Data": 258,
+      "Emergency_Contact_Details": 252,
+      "Building_Badge_Card_Number": 252,
+      "Trade_Union_Membership": 249,
+      "Professional_Background": 246,
+      "Political_Party": 229,
+      "Disciplinary_Action": 227
+    }
+  },
+  "A3_language_coverage": {
+    "p1_target": 6,
+    "p1_seen": 6,
+    "p1_pass": true,
+    "p1_missing": [],
+    "p2_target": 3,
+    "p2_seen": 3,
+    "p2_pass": true,
+    "p2_missing": [],
+    "p3_target": 16,
+    "p3_seen": 16,
+    "p3_pass": true,
+    "p3_missing": [],
+    "per_language_counts": {
+      "HE": 621,
+      "DA": 620,
+      "NO": 615,
+      "ZH_TW": 601,
+      "KO": 592,
+      "AR": 568,
+      "IT": 567,
+      "SV": 561,
+      "HI": 556,
+      "FR": 543,
+      "TR": 540,
+      "PT_BR": 540,
+      "FI": 537,
+      "EN": 534,
+      "FR_CA": 531,
+      "ES": 524,
+      "TH": 520,
+      "HU": 500,
+      "RU": 500,
+      "JA": 498,
+      "CS": 496,
+      "NL": 485,
+      "ZH_CN": 463,
+      "DE": 462,
+      "PT_EU": 453
+    }
+  },
+  "A4_pairwise_axis_coverage": {
+    "n_axis_pairs": 36,
+    "mean_pairwise_coverage": 0.9819,
+    "target": ">=0.98 mean",
+    "pass": true,
+    "per_pair": {
+      "domain__format": {
+        "expected": 84,
+        "seen": 84,
+        "rate": 1.0
+      },
+      "domain__difficulty": {
+        "expected": 36,
+        "seen": 36,
+        "rate": 1.0
+      },
+      "domain__length": {
+        "expected": 48,
+        "seen": 48,
+        "rate": 1.0
+      },
+      "domain__density": {
+        "expected": 36,
+        "seen": 36,
+        "rate": 1.0
+      },
+      "domain__code_switching": {
+        "expected": 36,
+        "seen": 36,
+        "rate": 1.0
+      },
+      "domain__language": {
+        "expected": 300,
+        "seen": 300,
+        "rate": 1.0
+      },
+      "domain__adjacency": {
+        "expected": 36,
+        "seen": 36,
+        "rate": 1.0
+      },
+      "domain__co_occurrence_pattern": {
+        "expected": 192,
+        "seen": 192,
+        "rate": 1.0
+      },
+      "format__difficulty": {
+        "expected": 21,
+        "seen": 21,
+        "rate": 1.0
+      },
+      "format__length": {
+        "expected": 28,
+        "seen": 28,
+        "rate": 1.0
+      },
+      "format__density": {
+        "expected": 21,
+        "seen": 21,
+        "rate": 1.0
+      },
+      "format__code_switching": {
+        "expected": 21,
+        "seen": 21,
+        "rate": 1.0
+      },
+      "format__language": {
+        "expected": 175,
+        "seen": 175,
+        "rate": 1.0
+      },
+      "format__adjacency": {
+        "expected": 21,
+        "seen": 21,
+        "rate": 1.0
+      },
+      "format__co_occurrence_pattern": {
+        "expected": 112,
+        "seen": 112,
+        "rate": 1.0
+      },
+      "difficulty__length": {
+        "expected": 12,
+        "seen": 12,
+        "rate": 1.0
+      },
+      "difficulty__density": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "difficulty__code_switching": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "difficulty__language": {
+        "expected": 75,
+        "seen": 75,
+        "rate": 1.0
+      },
+      "difficulty__adjacency": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "difficulty__co_occurrence_pattern": {
+        "expected": 48,
+        "seen": 48,
+        "rate": 1.0
+      },
+      "length__density": {
+        "expected": 12,
+        "seen": 12,
+        "rate": 1.0
+      },
+      "length__code_switching": {
+        "expected": 12,
+        "seen": 12,
+        "rate": 1.0
+      },
+      "length__language": {
+        "expected": 100,
+        "seen": 100,
+        "rate": 1.0
+      },
+      "length__adjacency": {
+        "expected": 12,
+        "seen": 12,
+        "rate": 1.0
+      },
+      "length__co_occurrence_pattern": {
+        "expected": 64,
+        "seen": 64,
+        "rate": 1.0
+      },
+      "density__code_switching": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "density__language": {
+        "expected": 75,
+        "seen": 75,
+        "rate": 1.0
+      },
+      "density__adjacency": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "density__co_occurrence_pattern": {
+        "expected": 48,
+        "seen": 48,
+        "rate": 1.0
+      },
+      "code_switching__language": {
+        "expected": 75,
+        "seen": 75,
+        "rate": 1.0
+      },
+      "code_switching__adjacency": {
+        "expected": 9,
+        "seen": 9,
+        "rate": 1.0
+      },
+      "code_switching__co_occurrence_pattern": {
+        "expected": 48,
+        "seen": 48,
+        "rate": 1.0
+      },
+      "language__adjacency": {
+        "expected": 75,
+        "seen": 75,
+        "rate": 1.0
+      },
+      "language__co_occurrence_pattern": {
+        "expected": 400,
+        "seen": 397,
+        "rate": 0.9925
+      },
+      "adjacency__co_occurrence_pattern": {
+        "expected": 48,
+        "seen": 17,
+        "rate": 0.3542
+      }
+    }
+  },
+  "A5_behavioral_matrix_coverage": {
+    "n_entity_types_covered": 51,
+    "n_unique_entity_x_frame_combinations": 357,
+    "mean_frames_per_entity": 7.0,
+    "per_entity_frame_count": {
+      "Account_Statements": 7,
+      "Address_Personal": 7,
+      "Address_Work": 7,
+      "Age": 7,
+      "Allergy_Information": 7,
+      "Building_Badge_Card_Number": 7,
+      "Business_Title": 7,
+      "Citizenship_Status": 7,
+      "City": 7,
+      "Compensation_and_Salary": 7,
+      "Country_of_Residence": 7,
+      "Credit_Card_Numbers": 7,
+      "Crime": 7,
+      "Customer_Reference_Number": 7,
+      "Date_Time": 7,
+      "Date_of_Birth": 7,
+      "Disciplinary_Action": 7,
+      "Driving_License_Number": 7,
+      "Emergency_Contact_Details": 7,
+      "Employee_ID_Number": 7,
+      "First_Given_Name": 7,
+      "Full_Name": 7,
+      "Gender": 7,
+      "Geolocation_Data": 7,
+      "Last_Family_Name": 7,
+      "Location": 7,
+      "Marital_Status": 7,
+      "Medical_Information": 7,
+      "National_Identification_Number": 7,
+      "Nationality": 7,
+      "Org_Name": 7,
+      "PEP_Status": 7,
+      "Passport_Number": 7,
+      "Password": 7,
+      "Performance_Assessment": 7,
+      "Personal_Email_Address": 7,
+      "Place_of_Birth": 7,
+      "Political_Party": 7,
+      "Preferred_Name": 7,
+      "Professional_Background": 7,
+      "Religion": 7,
+      "Sex_Orientation": 7,
+      "Sickness_Day_Records": 7,
+      "Social_Media_Identifiers": 7,
+      "State": 7,
+      "Static_IP_Address": 7,
+      "Tax_Reference_Number": 7,
+      "Telephone_Numbers_Personal": 7,
+      "Telephone_Numbers_Work": 7,
+      "Trade_Union_Membership": 7,
+      "Work_Email_Address": 7
+    }
+  }
+}

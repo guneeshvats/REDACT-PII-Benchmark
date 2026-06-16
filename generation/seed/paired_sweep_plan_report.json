@@ -1,0 +1,85 @@
+{
+  "total_records": 890,
+  "anchor_count": 100,
+  "anchor_breakdown": {
+    "stress_test": 30,
+    "article_9": 30,
+    "non_latin": 25,
+    "co_pattern": 15
+  },
+  "sweep_counts": {
+    "text_format": 350,
+    "text_domain": 360,
+    "difficulty_x_density": 180
+  },
+  "format_sweep_coverage": {
+    "plain_text": 50,
+    "email": 50,
+    "chat_transcript": 50,
+    "ticket_worknotes": 50,
+    "json_record": 50,
+    "key_value_pairs": 50,
+    "log_entry": 50
+  },
+  "domain_sweep_coverage": {
+    "healthcare": 30,
+    "legal": 30,
+    "finance": 30,
+    "education": 30,
+    "government": 30,
+    "technology": 30,
+    "HR": 30,
+    "insurance": 30,
+    "customer_service": 30,
+    "law_enforcement": 30,
+    "social_media": 30,
+    "e_commerce": 30
+  },
+  "diff_density_sweep_coverage": {
+    "easy_x_low": 20,
+    "easy_x_medium": 20,
+    "easy_x_high": 20,
+    "medium_x_low": 20,
+    "medium_x_medium": 20,
+    "medium_x_high": 20,
+    "hard_x_low": 20,
+    "hard_x_medium": 20,
+    "hard_x_high": 20
+  },
+  "format_anchors_complete": 50,
+  "domain_anchors_complete": 30,
+  "diff_density_anchors_complete": 20,
+  "patterns_attached": 890,
+  "language_distribution": {
+    "EN": 147,
+    "TH": 66,
+    "ES": 106,
+    "DE": 133,
+    "PT_BR": 45,
+    "FR": 117,
+    "HE": 35,
+    "AR": 42,
+    "JA": 77,
+    "ZH_TW": 19,
+    "KO": 49,
+    "RU": 21,
+    "HI": 33
+  },
+  "co_pattern_distribution": {
+    "CO-015": 33,
+    "CO-003": 37,
+    "CO-011": 23,
+    "CO-006": 23,
+    "CO-008": 23,
+    "CO-002": 64,
+    "CO-014": 54,
+    "CO-009": 35,
+    "CO-004": 68,
+    "CO-013": 28,
+    "CO-001": 52,
+    "CO-007": 16,
+    "CO-005": 31,
+    "CO-012": 16,
+    "CO-010": 28
+  }
+}

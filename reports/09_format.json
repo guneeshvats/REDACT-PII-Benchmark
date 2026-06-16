@@ -1,0 +1,210 @@
+{
+  "n_records": 13427,
+  "E1_E2_E5_by_entity_type": {
+    "Credit_Card_Numbers": {
+      "checked": 2032,
+      "passed": 116,
+      "rate": 0.0571,
+      "pass": false,
+      "example_failures": [
+        {
+          "record_id": 11,
+          "entity_string": "HDFC ****4829"
+        },
+        {
+          "record_id": 10,
+          "entity_string": "末尾4829"
+        },
+        {
+          "record_id": 10,
+          "entity_string": "末尾4829"
+        },
+        {
+          "record_id": 29,
+          "entity_string": "8214"
+        },
+        {
+          "record_id": 31,
+          "entity_string": "Visa terminado em 8473"
+        },
+        {
+          "record_id": 35,
+          "entity_string": "Visa se terminant par 4821"
+        },
+        {
+          "record_id": 40,
+          "entity_string": "Visa ****8217"
+        },
+        {
+          "record_id": 47,
+          "entity_string": "4821"
+        },
+        {
+          "record_id": 45,
+          "entity_string": "8842"
+        },
+        {
+          "record_id": 48,
+          "entity_string": "****7823"
+        }
+      ]
+    },
+    "Personal_Email_Address": {
+      "checked": 5858,
+      "passed": 5553,
+      "rate": 0.9479,
+      "pass": false,
+      "example_failures": [
+        {
+          "record_id": 150,
+          "entity_string": "j***z@gmail.com"
+        },
+        {
+          "record_id": 221,
+          "entity_string": "陳美玲<chenmeiling@yahoo.com.tw>"
+        },
+        {
+          "record_id": 387,
+          "entity_string": "e.dvorakova@s***.cz"
+        },
+        {
+          "record_id": 398,
+          "entity_string": "林佳穎<linjiaying@gmail.com>"
+        },
+        {
+          "record_id": 445,
+          "entity_string": "jianghong.chen<chenjh1988@yahoo.com.tw>"
+        },
+        {
+          "record_id": 493,
+          "entity_string": "y.levi-c****@campus.huji.ac.il"
+        },
+        {
+          "record_id": 526,
+          "entity_string": "r***@gmail.com"
+        },
+        {
+          "record_id": 603,
+          "entity_string": "m***@gmail.com"
+        },
+        {
+          "record_id": 603,
+          "entity_string": "m***@gmail.com"
+        },
+        {
+          "record_id": 674,
+          "entity_string": "l.ferr****@libero.it"
+        }
+      ]
+    },
+    "Static_IP_Address": {
+      "checked": 1634,
+      "passed": 1402,
+      "rate": 0.858,
+      "pass": false,
+      "example_failures": [
+        {
+          "record_id": 77,
+          "entity_string": "192.168.44.0/24"
+        },
+        {
+          "record_id": 136,
+          "entity_string": "IP 185.92.41.17 — netname: BEZEQINT-IL — country: IL — ASN: AS12849 Hot-Net Inte"
+        },
+        {
+          "record_id": 276,
+          "entity_string": "19216801254"
+        },
+        {
+          "record_id": 299,
+          "entity_string": "https://[2001:db8:abcd::7f3e]:8443/login"
+        },
+        {
+          "record_id": 299,
+          "entity_string": "http://[fe80::1%25eth0]/config"
+        },
+        {
+          "record_id": 299,
+          "entity_string": "https://[2001:db8:85a3::8a2e]:443/secure-login"
+        },
+        {
+          "record_id": 299,
+          "entity_string": "https://[2001:db8:face:b00c::1]/verify-account"
+        },
+        {
+          "record_id": 310,
+          "entity_string": "ethanpark-thinkpad.campus.local, IP: 10.42.7.88"
+        },
+        {
+          "record_id": 379,
+          "entity_string": "monitor10telecom172telecom16telecom0telecom42telecomdashboard"
+        },
+        {
+          "record_id": 516,
+          "entity_string": "10172aboratorio25044"
+        }
+      ]
+    },
+    "Work_Email_Address": {
+      "checked": 13919,
+      "passed": 13619,
+      "rate": 0.9784,
+      "pass": true,
+      "example_failures": [
+        {
+          "record_id": 39,
+          "entity_string": "m.kap***@kaplaninsaat.com.tr"
+        },
+        {
+          "record_id": 51,
+          "entity_string": "joao.ferreira@techsolutions.pt."
+        },
+        {
+          "record_id": 51,
+          "entity_string": "joao.ferreira@techsolutions.pt."
+        },
+        {
+          "record_id": 183,
+          "entity_string": "y.kim***@emirates-invest.ae"
+        },
+        {
+          "record_id": 345,
+          "entity_string": "müşteri.hizmetleri@alisverisdunyasi.com.tr"
+        },
+        {
+          "record_id": 404,
+          "entity_string": "kundtjänst@bredband.se"
+        },
+        {
+          "record_id": 441,
+          "entity_string": "พิมพ์ชนก.ธ@technovate.co.th"
+        },
+        {
+          "record_id": 493,
+          "entity_string": "a.mizr****@huji.ac.il"
+        },
+        {
+          "record_id": 667,
+          "entity_string": "d***@leumi.co.il"
+        },
+        {
+          "record_id": 828,
+          "entity_string": "g.f***@polimi.it"
+        }
+      ]
+    }
+  },
+  "E3_iban_check": {
+    "checked": 1261,
+    "passed": 680,
+    "rate": 0.5393,
+    "pass": false
+  },
+  "E4_us_ssn_check": {
+    "checked": 566,
+    "passed": 531,
+    "rate": 0.9382,
+    "pass": false
+  },
+  "_targets": "Per methodology §6.5: >=95% compliance per checker"
+}

@@ -1,0 +1,132 @@
+{
+  "version": "v3.2-to-v4-1.0",
+  "generated_on": "2026-05-14",
+  "description": "Maps v3 CO-### named co-occurrence patterns to v4 catalog anchor patterns. Used by the sampler to translate CO-### references in the v3.2 generation prompt's R6 into combinations of v4 entity patterns. See methodology Appendix G for the full prose mapping and §G.3 for confidence levels.",
+  "source_catalog": "PII_Pattern_Catalog_v4_MASTER.md",
+  "mappings": {
+    "CO-001": {
+      "cluster_name": "Person + Email (angle brackets)",
+      "example": "Sarah Chen <s.chen@acmecorp.com>",
+      "anchor_patterns": ["FUN-088"],
+      "complementary_patterns": ["WE-046", "WE-047"],
+      "entities_involved": ["Full_Name", "Work_Email_Address"]
+    },
+    "CO-002": {
+      "cluster_name": "Person + Email + Phone (parenthesized)",
+      "example": "Sarah Chen (s.chen@corp.com, +1 (555) 234-8901)",
+      "anchor_patterns": ["FUN-088", "WE-046", "TW-002"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Work_Email_Address", "Telephone_Numbers_Work"]
+    },
+    "CO-003": {
+      "cluster_name": "Person + DOB + ID (comma chain)",
+      "example": "Maria García López, DOB 03/15/1985, MRN 78901",
+      "anchor_patterns": ["FUN-090", "DOB-094", "DOB-095", "NID-091"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Date_of_Birth", "National_Identification_Number"]
+    },
+    "CO-004": {
+      "cluster_name": "Title + Person + Org (formal)",
+      "example": "Dr. Michael Johnson, Chief Medical Officer, City General Hospital",
+      "anchor_patterns": ["BT-079", "FUN-013", "ORG-001", "ORG-044"],
+      "complementary_patterns": ["FUN-014", "FUN-016"],
+      "entities_involved": ["Business_Title", "Full_Name", "Org_Name"]
+    },
+    "CO-005": {
+      "cluster_name": "Person + Job + Org (resume style)",
+      "example": "Senior Engineer, Google (2018-2022)",
+      "anchor_patterns": ["PROF-004", "PROF-005", "PROF-008", "ORG-112"],
+      "complementary_patterns": [],
+      "entities_involved": ["Professional_Background", "Business_Title", "Org_Name", "Date_Time"]
+    },
+    "CO-006": {
+      "cluster_name": "Person + Salary",
+      "example": "John Smith earned $145K base plus $30K bonus",
+      "anchor_patterns": ["SAL-059"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Compensation_and_Salary"]
+    },
+    "CO-007": {
+      "cluster_name": "Address tight cluster",
+      "example": "742 Evergreen Terrace, Springfield, IL 62704, USA",
+      "anchor_patterns": ["AW-098", "AP-075"],
+      "complementary_patterns": [],
+      "entities_involved": ["Address_Work_or_Personal", "City", "State", "Country_of_Residence"],
+      "note": "Single span absorbing street + city + state + ZIP + country. Address adjacency-tight pattern is the realisation; nested City/State/CR spans are emitted as nesting_parent children per R11."
+    },
+    "CO-008": {
+      "cluster_name": "Email metadata block",
+      "example": "From: Sarah Chen <s.chen@corp.com>; To: John Smith <j.smith@corp.com>",
+      "anchor_patterns": ["FUN-071", "WE-060", "WE-061", "WE-062"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Work_Email_Address"]
+    },
+    "CO-009": {
+      "cluster_name": "Patient header",
+      "example": "Patient: John Smith DOB: 03/15/1985 MRN: 78901 Allergy: Penicillin",
+      "anchor_patterns": ["FUN-098", "DOB-076", "MED-077", "ALLG-051", "CRN-016", "CRN-017"],
+      "complementary_patterns": ["CRN-046"],
+      "entities_involved": ["Full_Name", "Date_of_Birth", "Medical_Information", "Allergy_Information", "Customer_Reference_Number"]
+    },
+    "CO-010": {
+      "cluster_name": "Authentication cluster",
+      "example": "User: jsmith Password: Welcome123! IP: 192.168.1.45",
+      "anchor_patterns": ["PWD-029", "PWD-030", "IP-031"],
+      "complementary_patterns": ["PWD-018"],
+      "entities_involved": ["Full_Name", "Password", "Static_IP_Address"]
+    },
+    "CO-011": {
+      "cluster_name": "Compliance cluster",
+      "example": "Name: Maria García Nationality: Spanish PEP: Yes Citizenship: Spain",
+      "anchor_patterns": ["PEP-023", "PEP-024", "PEP-025"],
+      "complementary_patterns": ["NA-003", "NA-004", "NA-024"],
+      "entities_involved": ["Full_Name", "Nationality", "Citizenship_Status", "PEP_Status", "Trade_Union_Membership"]
+    },
+    "CO-012": {
+      "cluster_name": "HR record cluster",
+      "example": "Employee: John Smith ID: EMP-4821 Title: Senior Engineer Salary: $145,000",
+      "anchor_patterns": ["EID-034", "FUN-090", "SAL-047", "BT-017"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Employee_ID_Number", "Business_Title", "Compensation_and_Salary"]
+    },
+    "CO-013": {
+      "cluster_name": "Contact card",
+      "example": "Sarah Chen, Marketing Director, sarah.chen@corp.com, +1-555-234-8901",
+      "anchor_patterns": ["FUN-070"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Business_Title", "Work_Email_Address", "Telephone_Numbers_Work"],
+      "note": "FUN-070 (email signature) is the closest single anchor. Cards may also be realised as combinations of FUN-### + BT-### + WE-### + TW-### in a tight comma-separated span."
+    },
+    "CO-014": {
+      "cluster_name": "Legal citation",
+      "example": "Defendant John Smith (DOB 07/22/1985) charged with fraud under 18 U.S.C. §1030",
+      "anchor_patterns": ["FUN-097", "DOB-075", "CRIME-058", "CRIME-059"],
+      "complementary_patterns": ["CRIME-041"],
+      "entities_involved": ["Full_Name", "Date_of_Birth", "Crime"]
+    },
+    "CO-015": {
+      "cluster_name": "Form key-value adjacency",
+      "example": "Name: John Smith Age: 35 Gender: Male Phone: 555-1234",
+      "anchor_patterns": ["FUN-066", "AG-004", "AG-049", "AG-050", "GN-046", "TW-079"],
+      "complementary_patterns": [],
+      "entities_involved": ["Full_Name", "Age", "Gender", "Telephone_Numbers_Work"]
+    }
+  },
+  "translation_for_silent_collisions": {
+    "CR-###": {
+      "v3_meaning": "Crime",
+      "v4_meaning": "Country_of_Residence",
+      "translation_rule": "If a v3 reference reads CR-###, translate to CRIME-### under v4."
+    },
+    "PA-###": {
+      "v3_meaning": "Political_Party",
+      "v4_meaning": "Passport_Number",
+      "translation_rule": "If context is Political_Party, translate to PP-### under v4; if context is Passport_Number, the reference is already v4-valid."
+    },
+    "PP-###": {
+      "v3_meaning": "Passport_Number",
+      "v4_meaning": "Political_Party",
+      "translation_rule": "If context is Passport_Number, translate to PA-### under v4."
+    }
+  }
+}

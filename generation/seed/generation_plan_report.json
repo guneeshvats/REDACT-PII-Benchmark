@@ -1,0 +1,113 @@
+{
+  "total_records": 5510,
+  "source_breakdown": {
+    "diversity_fill": 2960,
+    "floor_supplement": 2247,
+    "covering_array": 303
+  },
+  "per_entity_floor_target": 50,
+  "entities_below_floor": [],
+  "entity_count_min": 92,
+  "entity_count_max": 127,
+  "entity_count_mean": 108.0,
+  "co_pattern_min": 122,
+  "co_pattern_max": 153,
+  "behavioral_frame_distribution": {
+    "co_occurrence": 2012,
+    "isolation": 1661,
+    "instructional": 324,
+    "hypothetical": 402,
+    "partial": 426,
+    "negation": 387,
+    "cross_sentence": 298
+  },
+  "language_distribution": {
+    "ES": 213,
+    "IT": 227,
+    "TR": 217,
+    "CS": 215,
+    "KO": 240,
+    "DA": 246,
+    "NO": 245,
+    "NL": 200,
+    "FR_CA": 210,
+    "JA": 191,
+    "HI": 223,
+    "DE": 207,
+    "ZH_TW": 245,
+    "PT_EU": 188,
+    "HU": 212,
+    "SV": 223,
+    "FI": 216,
+    "PT_BR": 215,
+    "TH": 210,
+    "HE": 254,
+    "EN": 218,
+    "FR": 224,
+    "AR": 227,
+    "ZH_CN": 228,
+    "RU": 216
+  },
+  "domain_distribution": {
+    "HR": 507,
+    "legal": 443,
+    "law_enforcement": 474,
+    "social_media": 458,
+    "technology": 425,
+    "government": 465,
+    "finance": 491,
+    "customer_service": 452,
+    "education": 455,
+    "healthcare": 400,
+    "e_commerce": 482,
+    "insurance": 458
+  },
+  "format_distribution": {
+    "chat_transcript": 737,
+    "log_entry": 787,
+    "json_record": 750,
+    "email": 762,
+    "ticket_worknotes": 875,
+    "key_value_pairs": 807,
+    "plain_text": 792
+  },
+  "adjacency_distribution": {
+    "tight": 2012,
+    "none": 1760,
+    "loose": 1738
+  },
+  "pairwise_coverage_spot_checks": {
+    "language × domain": {
+      "observed": 300,
+      "expected": 300,
+      "pct": 100.0
+    },
+    "language × format": {
+      "observed": 175,
+      "expected": 175,
+      "pct": 100.0
+    },
+    "language × adjacency": {
+      "observed": 75,
+      "expected": 75,
+      "pct": 100.0
+    },
+    "domain × format": {
+      "observed": 84,
+      "expected": 84,
+      "pct": 100.0
+    },
+    "difficulty × density": {
+      "observed": 9,
+      "expected": 9,
+      "pct": 100.0
+    },
+    "length × density": {
+      "observed": 12,
+      "expected": 12,
+      "pct": 100.0
+    }
+  },
+  "patterns_attached": 5510,
+  "patterns_missing": 0
+}

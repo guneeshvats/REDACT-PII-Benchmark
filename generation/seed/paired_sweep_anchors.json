@@ -1,0 +1,4655 @@
+{
+  "anchors": [
+    {
+      "anchor_id": "ST-000",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "finance",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "02.04.1982",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang@techgmbh.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Senior Software Engineer at Deutsche Bank (anchor ST-000)",
+      "narrative": "A ticket worknotes document in finance context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-001",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "legal",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "19/11/1990",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria.garcalpez@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Baker McKenzie (anchor ST-001)",
+      "narrative": "A email document in legal context concerning Maria García López."
+    },
+    {
+      "anchor_id": "ST-002",
+      "category": "stress_test",
+      "language": "JA",
+      "axes": {
+        "domain": "HR",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1959年9月4日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@tokyobank.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Partner at Acme Corporation (anchor ST-002)",
+      "narrative": "A plain text document in HR context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "ST-003",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "10/07/1953",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria.garcalpez@lattice.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "FBI",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Marketing Director at FBI (anchor ST-003)",
+      "narrative": "A json record document in law_enforcement context concerning Maria García López."
+    },
+    {
+      "anchor_id": "ST-004",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "insurance",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-005"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "10.10.1955",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang_mller@techgmbh.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "National Insurance Co.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Marketing Director at National Insurance Co. (anchor ST-004)",
+      "narrative": "A json record document in insurance context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-005",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "government",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/06/1998",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "mgarcalpez@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Marketing Director at Federal Trade Agency (anchor ST-005)",
+      "narrative": "A json record document in government context concerning Maria García López."
+    },
+    {
+      "anchor_id": "ST-006",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "social_media",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-012"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08/03/2001",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "jsmith@lattice.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "X (formerly Twitter)",
+          "pattern_id": "ORG-019"
+        }
+      ],
+      "persona": "Senior Software Engineer at X (formerly Twitter) (anchor ST-006)",
+      "narrative": "A plain text document in social_media context concerning John Smith."
+    },
+    {
+      "anchor_id": "ST-007",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "key_value_pairs",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "13/12/1968",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria@company.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Amazon",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Amazon (anchor ST-007)",
+      "narrative": "A key value pairs document in e_commerce context concerning Maria García López."
+    },
+    {
+      "anchor_id": "ST-008",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "technology",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "13/04/1997",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah@corp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Vice President at ServiceNow Inc. (anchor ST-008)",
+      "narrative": "A email document in technology context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-009",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "finance",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-015"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "12/14/1967",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "schen@lattice.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "بنك الرياض",
+          "pattern_id": "ORG-014"
+        }
+      ],
+      "persona": "Lieutenant Colonel at بنك الرياض (anchor ST-009)",
+      "narrative": "A ticket worknotes document in finance context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-010",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "education",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27/08/1950",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah_chen@corp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Director of Engineering at ServiceNow Inc. (anchor ST-010)",
+      "narrative": "A email document in education context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-011",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "healthcare",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-010"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "26.11.1979",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang_mller@techgmbh.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Vice President at Mayo Clinic Affiliate (anchor ST-011)",
+      "narrative": "A email document in healthcare context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-012",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "HR",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/03/1978",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah.chen@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Acme Corporation (anchor ST-012)",
+      "narrative": "A plain text document in HR context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-013",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "healthcare",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/20/2005",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@acmecorp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Vice President at North Shore Hospital (anchor ST-013)",
+      "narrative": "A json record document in healthcare context concerning John Smith."
+    },
+    {
+      "anchor_id": "ST-014",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "technology",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "10.08.1980",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wmller@berlinerag.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Software Engineer at Acme Corporation (anchor ST-014)",
+      "narrative": "A json record document in technology context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-015",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/17/1951",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria_garcalpez@lattice.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Amazon",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Amazon (anchor ST-015)",
+      "narrative": "A chat transcript document in e_commerce context concerning Maria García López."
+    },
+    {
+      "anchor_id": "ST-016",
+      "category": "stress_test",
+      "language": "JA",
+      "axes": {
+        "domain": "healthcare",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "JA",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1972年4月18日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@nipponcorp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Central General Hospital",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Central General Hospital (anchor ST-016)",
+      "narrative": "A log entry document in healthcare context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "ST-017",
+      "category": "stress_test",
+      "language": "FR",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "12/08/1983",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre_dubois@paristech.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "State Police",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Chief Compliance Officer at State Police (anchor ST-017)",
+      "narrative": "A log entry document in law_enforcement context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "ST-018",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "insurance",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-008"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08.02.1964",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang@techgmbh.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "National Insurance Co.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Marketing Director at National Insurance Co. (anchor ST-018)",
+      "narrative": "A chat transcript document in insurance context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-019",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "education",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-015"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "25.12.1974",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang.mller@techgmbh.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Attending Physician at ServiceNow Inc. (anchor ST-019)",
+      "narrative": "A ticket worknotes document in education context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-020",
+      "category": "stress_test",
+      "language": "FR",
+      "axes": {
+        "domain": "HR",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "24/02/1997",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pdubois@europebanque.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Director of Engineering at Acme Corporation (anchor ST-020)",
+      "narrative": "A log entry document in HR context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "ST-021",
+      "category": "stress_test",
+      "language": "FR",
+      "axes": {
+        "domain": "healthcare",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/09/1985",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre@paristech.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Chief Compliance Officer at North Shore Hospital (anchor ST-021)",
+      "narrative": "A email document in healthcare context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "ST-022",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "customer_service",
+        "format": "key_value_pairs",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/10/1966",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah_chen@acmecorp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Attending Physician at Acme Support (anchor ST-022)",
+      "narrative": "A key value pairs document in customer_service context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-023",
+      "category": "stress_test",
+      "language": "DE",
+      "axes": {
+        "domain": "customer_service",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05.09.2002",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wmller@berlinerag.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Director of Engineering at Acme Support (anchor ST-023)",
+      "narrative": "A ticket worknotes document in customer_service context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "ST-024",
+      "category": "stress_test",
+      "language": "ES",
+      "axes": {
+        "domain": "finance",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/12/1989",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah_chen@company.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Deutsche Bank (anchor ST-024)",
+      "narrative": "A json record document in finance context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "ST-025",
+      "category": "stress_test",
+      "language": "JA",
+      "axes": {
+        "domain": "customer_service",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "JA",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1967年1月25日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@nipponcorp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Software Engineer at Acme Support (anchor ST-025)",
+      "narrative": "A json record document in customer_service context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "ST-026",
+      "category": "stress_test",
+      "language": "JA",
+      "axes": {
+        "domain": "healthcare",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-006"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1982年9月26日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@tokyobank.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Central General Hospital",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Marketing Director at Central General Hospital (anchor ST-026)",
+      "narrative": "A log entry document in healthcare context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "ST-027",
+      "category": "stress_test",
+      "language": "FR",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "light",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "15/07/1957",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre_dubois@europebanque.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Amazon",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Amazon (anchor ST-027)",
+      "narrative": "A json record document in e_commerce context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "ST-028",
+      "category": "stress_test",
+      "language": "FR",
+      "axes": {
+        "domain": "HR",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-013"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/05/1959",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre_dubois@europebanque.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Marketing Director at Acme Corporation (anchor ST-028)",
+      "narrative": "A plain text document in HR context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "ST-029",
+      "category": "stress_test",
+      "language": "EN",
+      "axes": {
+        "domain": "HR",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "very_large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "06/14/1975",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "schen@lattice.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Attending Physician at ServiceNow Inc. (anchor ST-029)",
+      "narrative": "A ticket worknotes document in HR context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "A9-000",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "finance",
+        "format": "plain_text",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04.02.1982",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang@berlinerag.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "JPMorgan Chase",
+          "pattern_id": "ORG-011"
+        },
+        {
+          "entity_type": "Sex_Orientation",
+          "entity_string": "gay",
+          "pattern_id": "SO-001"
+        }
+      ],
+      "persona": "Attending Physician at JPMorgan Chase (anchor A9-000)",
+      "narrative": "A plain text document in finance context concerning Wolfgang Müller. Article 9 element: sex_orientation = 'gay'."
+    },
+    {
+      "anchor_id": "A9-001",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "healthcare",
+        "format": "log_entry",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "19.09.1984",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wmller@techgmbh.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Central General Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "IG Metall",
+          "pattern_id": "TUM-002"
+        }
+      ],
+      "persona": "Marketing Director at Central General Hospital (anchor A9-001)",
+      "narrative": "A log entry document in healthcare context concerning Wolfgang Müller. Article 9 element: trade_union_membership = 'IG Metall'."
+    },
+    {
+      "anchor_id": "A9-002",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "healthcare",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/03/2001",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@acmecorp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "IG Metall",
+          "pattern_id": "TUM-002"
+        }
+      ],
+      "persona": "Attending Physician at North Shore Hospital (anchor A9-002)",
+      "narrative": "A log entry document in healthcare context concerning John Smith. Article 9 element: trade_union_membership = 'IG Metall'."
+    },
+    {
+      "anchor_id": "A9-003",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "healthcare",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/02/1960",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah_chen@acmecorp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Allergy_Information",
+          "entity_string": "Peanut allergy (severe)",
+          "pattern_id": "ALLG-002"
+        }
+      ],
+      "persona": "Director of Engineering at North Shore Hospital (anchor A9-003)",
+      "narrative": "A chat transcript document in healthcare context concerning Sarah Chen. Article 9 element: allergy_information = 'Peanut allergy (severe)'."
+    },
+    {
+      "anchor_id": "A9-004",
+      "category": "article_9",
+      "language": "PT_BR",
+      "axes": {
+        "domain": "government",
+        "format": "log_entry",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "PT_BR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "João Silva Santos",
+          "pattern_id": "FUN-008"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "01/01/1966",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "joo@corp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Department of Compliance",
+          "pattern_id": "ORG-004"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "FNV member",
+          "pattern_id": "TUM-008"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Department of Compliance (anchor A9-004)",
+      "narrative": "A log entry document in government context concerning João Silva Santos. Article 9 element: trade_union_membership = 'FNV member'."
+    },
+    {
+      "anchor_id": "A9-005",
+      "category": "article_9",
+      "language": "FR",
+      "axes": {
+        "domain": "healthcare",
+        "format": "key_value_pairs",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-009"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27/04/1971",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre_dubois@paristech.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Allergy_Information",
+          "entity_string": "Peanut allergy (severe)",
+          "pattern_id": "ALLG-002"
+        }
+      ],
+      "persona": "Director of Engineering at Mayo Clinic Affiliate (anchor A9-005)",
+      "narrative": "A key value pairs document in healthcare context concerning Pierre Dubois. Article 9 element: allergy_information = 'Peanut allergy (severe)'."
+    },
+    {
+      "anchor_id": "A9-006",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "healthcare",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "09/22/2005",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah.chen@nexusbank.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Central General Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Crime",
+          "entity_string": "embezzlement",
+          "pattern_id": "CRIME-020"
+        }
+      ],
+      "persona": "Senior Partner at Central General Hospital (anchor A9-006)",
+      "narrative": "A plain text document in healthcare context concerning Sarah Chen. Article 9 element: crime = 'embezzlement'."
+    },
+    {
+      "anchor_id": "A9-007",
+      "category": "article_9",
+      "language": "PT_BR",
+      "axes": {
+        "domain": "healthcare",
+        "format": "ticket_worknotes",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "PT_BR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "João Silva Santos",
+          "pattern_id": "FUN-008"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08/06/1985",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "joo@company.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "CGT membership",
+          "pattern_id": "TUM-003"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Mayo Clinic Affiliate (anchor A9-007)",
+      "narrative": "A ticket worknotes document in healthcare context concerning João Silva Santos. Article 9 element: trade_union_membership = 'CGT membership'."
+    },
+    {
+      "anchor_id": "A9-008",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "healthcare",
+        "format": "chat_transcript",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-009"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27.05.1955",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang_mller@techgmbh.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Crime",
+          "entity_string": "tax evasion",
+          "pattern_id": "CRIME-020"
+        }
+      ],
+      "persona": "Senior Software Engineer at North Shore Hospital (anchor A9-008)",
+      "narrative": "A chat transcript document in healthcare context concerning Wolfgang Müller. Article 9 element: crime = 'tax evasion'."
+    },
+    {
+      "anchor_id": "A9-009",
+      "category": "article_9",
+      "language": "AR",
+      "axes": {
+        "domain": "HR",
+        "format": "plain_text",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "AR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "أحمد بن سعيد العبدالله",
+          "pattern_id": "FUN-032"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/08/1996",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@albayan.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "Catholic",
+          "pattern_id": "RE-002"
+        }
+      ],
+      "persona": "Senior Partner at Acme Corporation (anchor A9-009)",
+      "narrative": "A plain text document in HR context concerning أحمد بن سعيد العبدالله. Article 9 element: religion = 'Catholic'."
+    },
+    {
+      "anchor_id": "A9-010",
+      "category": "article_9",
+      "language": "PT_BR",
+      "axes": {
+        "domain": "government",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "PT_BR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "João Silva Santos",
+          "pattern_id": "FUN-008"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "04/06/1990",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "joo.silvasantos@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        },
+        {
+          "entity_type": "PEP_Status",
+          "entity_string": "PEP screening: positive",
+          "pattern_id": "PEP-004"
+        }
+      ],
+      "persona": "Vice President at Federal Trade Agency (anchor A9-010)",
+      "narrative": "A email document in government context concerning João Silva Santos. Article 9 element: pep_status = 'PEP screening: positive'."
+    },
+    {
+      "anchor_id": "A9-011",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "government",
+        "format": "key_value_pairs",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "02/22/1984",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@lattice.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "Jewish",
+          "pattern_id": "RE-001"
+        }
+      ],
+      "persona": "Senior Software Engineer at Federal Trade Agency (anchor A9-011)",
+      "narrative": "A key value pairs document in government context concerning John Smith. Article 9 element: religion = 'Jewish'."
+    },
+    {
+      "anchor_id": "A9-012",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "legal",
+        "format": "key_value_pairs",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/25/1993",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@nexusbank.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "CGT membership",
+          "pattern_id": "TUM-003"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Baker McKenzie (anchor A9-012)",
+      "narrative": "A key value pairs document in legal context concerning John Smith. Article 9 element: trade_union_membership = 'CGT membership'."
+    },
+    {
+      "anchor_id": "A9-013",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "finance",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "11/04/1967",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@nexusbank.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "بنك الرياض",
+          "pattern_id": "ORG-014"
+        },
+        {
+          "entity_type": "Crime",
+          "entity_string": "tax evasion",
+          "pattern_id": "CRIME-020"
+        }
+      ],
+      "persona": "Attending Physician at بنك الرياض (anchor A9-013)",
+      "narrative": "A chat transcript document in finance context concerning John Smith. Article 9 element: crime = 'tax evasion'."
+    },
+    {
+      "anchor_id": "A9-014",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "HR",
+        "format": "ticket_worknotes",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27.02.1979",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang.mller@berlinerag.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "FNV member",
+          "pattern_id": "TUM-008"
+        }
+      ],
+      "persona": "Marketing Director at ServiceNow Inc. (anchor A9-014)",
+      "narrative": "A ticket worknotes document in HR context concerning Wolfgang Müller. Article 9 element: trade_union_membership = 'FNV member'."
+    },
+    {
+      "anchor_id": "A9-015",
+      "category": "article_9",
+      "language": "FR",
+      "axes": {
+        "domain": "healthcare",
+        "format": "json_record",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-003"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "16/08/1964",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre.dubois@europebanque.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "North Shore Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Medical_Information",
+          "entity_string": "hypertension",
+          "pattern_id": "MED-001"
+        }
+      ],
+      "persona": "Vice President at North Shore Hospital (anchor A9-015)",
+      "narrative": "A json record document in healthcare context concerning Pierre Dubois. Article 9 element: medical_information = 'hypertension'."
+    },
+    {
+      "anchor_id": "A9-016",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "HR",
+        "format": "ticket_worknotes",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-007"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "06/25/1950",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "john.smith@globaltech.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Allergy_Information",
+          "entity_string": "Penicillin (anaphylaxis)",
+          "pattern_id": "ALLG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at ServiceNow Inc. (anchor A9-016)",
+      "narrative": "A ticket worknotes document in HR context concerning John Smith. Article 9 element: allergy_information = 'Penicillin (anaphylaxis)'."
+    },
+    {
+      "anchor_id": "A9-017",
+      "category": "article_9",
+      "language": "FR",
+      "axes": {
+        "domain": "finance",
+        "format": "chat_transcript",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "28/05/1998",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre@europebanque.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "Muslim",
+          "pattern_id": "RE-001"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Deutsche Bank (anchor A9-017)",
+      "narrative": "A chat transcript document in finance context concerning Pierre Dubois. Article 9 element: religion = 'Muslim'."
+    },
+    {
+      "anchor_id": "A9-018",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "legal",
+        "format": "email",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "John Smith",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "11/13/2001",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "jsmith@acmecorp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "UAW member",
+          "pattern_id": "TUM-001"
+        }
+      ],
+      "persona": "Attending Physician at Baker McKenzie (anchor A9-018)",
+      "narrative": "A email document in legal context concerning John Smith. Article 9 element: trade_union_membership = 'UAW member'."
+    },
+    {
+      "anchor_id": "A9-019",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "HR",
+        "format": "json_record",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "07/11/1980",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria_garcalpez@northshore.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "PEP_Status",
+          "entity_string": "classified as PEP",
+          "pattern_id": "PEP-001"
+        }
+      ],
+      "persona": "Senior Partner at ServiceNow Inc. (anchor A9-019)",
+      "narrative": "A json record document in HR context concerning Maria García López. Article 9 element: pep_status = 'classified as PEP'."
+    },
+    {
+      "anchor_id": "A9-020",
+      "category": "article_9",
+      "language": "PT_BR",
+      "axes": {
+        "domain": "HR",
+        "format": "key_value_pairs",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "PT_BR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "João Silva Santos",
+          "pattern_id": "FUN-008"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "26/09/1963",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "joo_silvasantos@corp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Trade_Union_Membership",
+          "entity_string": "FNV member",
+          "pattern_id": "TUM-008"
+        }
+      ],
+      "persona": "Marketing Director at Acme Corporation (anchor A9-020)",
+      "narrative": "A key value pairs document in HR context concerning João Silva Santos. Article 9 element: trade_union_membership = 'FNV member'."
+    },
+    {
+      "anchor_id": "A9-021",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "HR",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "12.04.1970",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang@techgmbh.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Allergy_Information",
+          "entity_string": "Penicillin (anaphylaxis)",
+          "pattern_id": "ALLG-001"
+        }
+      ],
+      "persona": "Senior Partner at Acme Corporation (anchor A9-021)",
+      "narrative": "A email document in HR context concerning Wolfgang Müller. Article 9 element: allergy_information = 'Penicillin (anaphylaxis)'."
+    },
+    {
+      "anchor_id": "A9-022",
+      "category": "article_9",
+      "language": "PT_BR",
+      "axes": {
+        "domain": "HR",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "PT_BR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-006"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "João Silva Santos",
+          "pattern_id": "FUN-008"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/06/1986",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "jsilvasantos@company.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "PEP_Status",
+          "entity_string": "classified as PEP",
+          "pattern_id": "PEP-001"
+        }
+      ],
+      "persona": "Attending Physician at Acme Corporation (anchor A9-022)",
+      "narrative": "A ticket worknotes document in HR context concerning João Silva Santos. Article 9 element: pep_status = 'classified as PEP'."
+    },
+    {
+      "anchor_id": "A9-023",
+      "category": "article_9",
+      "language": "FR",
+      "axes": {
+        "domain": "HR",
+        "format": "key_value_pairs",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "19/08/1995",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre.dubois@europebanque.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "PEP_Status",
+          "entity_string": "PEP Level 1",
+          "pattern_id": "PEP-002"
+        }
+      ],
+      "persona": "Marketing Director at Acme Corporation (anchor A9-023)",
+      "narrative": "A key value pairs document in HR context concerning Pierre Dubois. Article 9 element: pep_status = 'PEP Level 1'."
+    },
+    {
+      "anchor_id": "A9-024",
+      "category": "article_9",
+      "language": "ES",
+      "axes": {
+        "domain": "HR",
+        "format": "email",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "25/09/1955",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria.garcalpez@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Allergy_Information",
+          "entity_string": "Penicillin (anaphylaxis)",
+          "pattern_id": "ALLG-001"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Acme Corporation (anchor A9-024)",
+      "narrative": "A email document in HR context concerning Maria García López. Article 9 element: allergy_information = 'Penicillin (anaphylaxis)'."
+    },
+    {
+      "anchor_id": "A9-025",
+      "category": "article_9",
+      "language": "FR",
+      "axes": {
+        "domain": "finance",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "07/10/1983",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre.dubois@europebanque.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "Buddhist",
+          "pattern_id": "RE-001"
+        }
+      ],
+      "persona": "Vice President at Deutsche Bank (anchor A9-025)",
+      "narrative": "A email document in finance context concerning Pierre Dubois. Article 9 element: religion = 'Buddhist'."
+    },
+    {
+      "anchor_id": "A9-026",
+      "category": "article_9",
+      "language": "AR",
+      "axes": {
+        "domain": "healthcare",
+        "format": "json_record",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "high",
+        "code_switching": "none",
+        "language": "AR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-011"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "أحمد بن سعيد العبدالله",
+          "pattern_id": "FUN-032"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "01/04/1985",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@riyadhbank.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Central General Hospital",
+          "pattern_id": "ORG-006"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "Jewish",
+          "pattern_id": "RE-001"
+        }
+      ],
+      "persona": "Vice President at Central General Hospital (anchor A9-026)",
+      "narrative": "A json record document in healthcare context concerning أحمد بن سعيد العبدالله. Article 9 element: religion = 'Jewish'."
+    },
+    {
+      "anchor_id": "A9-027",
+      "category": "article_9",
+      "language": "EN",
+      "axes": {
+        "domain": "legal",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08/02/1964",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "mgarcalpez@globaltech.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        },
+        {
+          "entity_type": "Religion",
+          "entity_string": "مسلم",
+          "pattern_id": "RE-015"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Baker McKenzie (anchor A9-027)",
+      "narrative": "A ticket worknotes document in legal context concerning Maria García López. Article 9 element: religion = 'مسلم'."
+    },
+    {
+      "anchor_id": "A9-028",
+      "category": "article_9",
+      "language": "DE",
+      "axes": {
+        "domain": "legal",
+        "format": "plain_text",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "09.04.1979",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang_mller@techgmbh.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Lattice Capital Partners",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "PEP_Status",
+          "entity_string": "PEP screening: positive",
+          "pattern_id": "PEP-004"
+        }
+      ],
+      "persona": "Senior Partner at Lattice Capital Partners (anchor A9-028)",
+      "narrative": "A plain text document in legal context concerning Wolfgang Müller. Article 9 element: pep_status = 'PEP screening: positive'."
+    },
+    {
+      "anchor_id": "A9-029",
+      "category": "article_9",
+      "language": "ES",
+      "axes": {
+        "domain": "legal",
+        "format": "ticket_worknotes",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "23/01/1976",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah.chen@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Lattice Capital Partners",
+          "pattern_id": "ORG-001"
+        },
+        {
+          "entity_type": "Crime",
+          "entity_string": "tax evasion",
+          "pattern_id": "CRIME-020"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Lattice Capital Partners (anchor A9-029)",
+      "narrative": "A ticket worknotes document in legal context concerning Sarah Chen. Article 9 element: crime = 'tax evasion'."
+    },
+    {
+      "anchor_id": "NL-000",
+      "category": "non_latin",
+      "language": "HI",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "HI",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "राज शर्मा",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "24/11/1969",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Shopify",
+          "pattern_id": "ORG-012"
+        }
+      ],
+      "persona": "Vice President at Shopify (anchor NL-000)",
+      "narrative": "A chat transcript document in e_commerce context concerning राज शर्मा."
+    },
+    {
+      "anchor_id": "NL-001",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "insurance",
+        "format": "email",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "TH",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "13/04/2528",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "National Insurance Co.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at National Insurance Co. (anchor NL-001)",
+      "narrative": "A email document in insurance context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-002",
+      "category": "non_latin",
+      "language": "KO",
+      "axes": {
+        "domain": "legal",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "KO",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "김민수",
+          "pattern_id": "FUN-026"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1951년 11월 14일",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@company.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        }
+      ],
+      "persona": "Attending Physician at Baker McKenzie (anchor NL-002)",
+      "narrative": "A plain text document in legal context concerning 김민수."
+    },
+    {
+      "anchor_id": "NL-003",
+      "category": "non_latin",
+      "language": "KO",
+      "axes": {
+        "domain": "healthcare",
+        "format": "ticket_worknotes",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "KO",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "김민수",
+          "pattern_id": "FUN-026"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1967년 6월 20일",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@company.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Mayo Clinic Affiliate (anchor NL-003)",
+      "narrative": "A ticket worknotes document in healthcare context concerning 김민수."
+    },
+    {
+      "anchor_id": "NL-004",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "government",
+        "format": "chat_transcript",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "TH",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "26/07/2542",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@company.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Senior Partner at Federal Trade Agency (anchor NL-004)",
+      "narrative": "A chat transcript document in government context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-005",
+      "category": "non_latin",
+      "language": "HI",
+      "axes": {
+        "domain": "finance",
+        "format": "ticket_worknotes",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "high",
+        "code_switching": "none",
+        "language": "HI",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "राज शर्मा",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "03/10/1973",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@company.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Attending Physician at Deutsche Bank (anchor NL-005)",
+      "narrative": "A ticket worknotes document in finance context concerning राज शर्मा."
+    },
+    {
+      "anchor_id": "NL-006",
+      "category": "non_latin",
+      "language": "ZH_TW",
+      "axes": {
+        "domain": "education",
+        "format": "ticket_worknotes",
+        "difficulty": "easy",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "ZH_TW",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-003"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "王偉",
+          "pattern_id": "FUN-025"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1966年10月3日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Attending Physician at Acme Corporation (anchor NL-006)",
+      "narrative": "A ticket worknotes document in education context concerning 王偉."
+    },
+    {
+      "anchor_id": "NL-007",
+      "category": "non_latin",
+      "language": "KO",
+      "axes": {
+        "domain": "insurance",
+        "format": "key_value_pairs",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "KO",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-008"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "김민수",
+          "pattern_id": "FUN-026"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1968년 5월 19일",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "National Insurance Co.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Partner at National Insurance Co. (anchor NL-007)",
+      "narrative": "A key value pairs document in insurance context concerning 김민수."
+    },
+    {
+      "anchor_id": "NL-008",
+      "category": "non_latin",
+      "language": "HE",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "chat_transcript",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "HE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "דוד כהן",
+          "pattern_id": "FUN-058"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "11/04/1987",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@company.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Shopify",
+          "pattern_id": "ORG-012"
+        }
+      ],
+      "persona": "Senior Software Engineer at Shopify (anchor NL-008)",
+      "narrative": "A chat transcript document in e_commerce context concerning דוד כהן."
+    },
+    {
+      "anchor_id": "NL-009",
+      "category": "non_latin",
+      "language": "HE",
+      "axes": {
+        "domain": "education",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "HE",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "דוד כהן",
+          "pattern_id": "FUN-058"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27/04/2002",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Marketing Director at ServiceNow Inc. (anchor NL-009)",
+      "narrative": "A json record document in education context concerning דוד כהן."
+    },
+    {
+      "anchor_id": "NL-010",
+      "category": "non_latin",
+      "language": "JA",
+      "axes": {
+        "domain": "government",
+        "format": "email",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1988年5月25日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@tokyobank.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Department of Compliance",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Department of Compliance (anchor NL-010)",
+      "narrative": "A email document in government context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "NL-011",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "education",
+        "format": "plain_text",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "TH",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "27/01/2545",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at ServiceNow Inc. (anchor NL-011)",
+      "narrative": "A plain text document in education context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-012",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "finance",
+        "format": "json_record",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "TH",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-009"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "22/07/2499",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "بنك الرياض",
+          "pattern_id": "ORG-014"
+        }
+      ],
+      "persona": "Director of Engineering at بنك الرياض (anchor NL-012)",
+      "narrative": "A json record document in finance context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-013",
+      "category": "non_latin",
+      "language": "RU",
+      "axes": {
+        "domain": "legal",
+        "format": "key_value_pairs",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "light",
+        "language": "RU",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-011"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Иван Петрович Сидоров",
+          "pattern_id": "FUN-030"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "19.12.1969",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Sullivan & Cromwell",
+          "pattern_id": "ORG-020"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Sullivan & Cromwell (anchor NL-013)",
+      "narrative": "A key value pairs document in legal context concerning Иван Петрович Сидоров."
+    },
+    {
+      "anchor_id": "NL-014",
+      "category": "non_latin",
+      "language": "KO",
+      "axes": {
+        "domain": "healthcare",
+        "format": "log_entry",
+        "difficulty": "medium",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "KO",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "김민수",
+          "pattern_id": "FUN-026"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1977년 2월 27일",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Senior Software Engineer at Mayo Clinic Affiliate (anchor NL-014)",
+      "narrative": "A log entry document in healthcare context concerning 김민수."
+    },
+    {
+      "anchor_id": "NL-015",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "insurance",
+        "format": "log_entry",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "TH",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "06/09/2540",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "National Insurance Co.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Director of Engineering at National Insurance Co. (anchor NL-015)",
+      "narrative": "A log entry document in insurance context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-016",
+      "category": "non_latin",
+      "language": "HE",
+      "axes": {
+        "domain": "finance",
+        "format": "json_record",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "HE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-013"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "דוד כהן",
+          "pattern_id": "FUN-058"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "16/01/2003",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@corp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "JPMorgan Chase",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Lieutenant Colonel at JPMorgan Chase (anchor NL-016)",
+      "narrative": "A json record document in finance context concerning דוד כהן."
+    },
+    {
+      "anchor_id": "NL-017",
+      "category": "non_latin",
+      "language": "KO",
+      "axes": {
+        "domain": "legal",
+        "format": "key_value_pairs",
+        "difficulty": "hard",
+        "length": "large",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "KO",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-010"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "김민수",
+          "pattern_id": "FUN-026"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1986년 4월 2일",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Baker McKenzie",
+          "pattern_id": "ORG-020"
+        }
+      ],
+      "persona": "Vice President at Baker McKenzie (anchor NL-017)",
+      "narrative": "A key value pairs document in legal context concerning 김민수."
+    },
+    {
+      "anchor_id": "NL-018",
+      "category": "non_latin",
+      "language": "ZH_TW",
+      "axes": {
+        "domain": "HR",
+        "format": "chat_transcript",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "ZH_TW",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "王偉",
+          "pattern_id": "FUN-025"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1974年10月15日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@corp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "ServiceNow Inc.",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Partner at ServiceNow Inc. (anchor NL-018)",
+      "narrative": "A chat transcript document in HR context concerning 王偉."
+    },
+    {
+      "anchor_id": "NL-019",
+      "category": "non_latin",
+      "language": "HE",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "email",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "light",
+        "language": "HE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-003"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "דוד כהן",
+          "pattern_id": "FUN-058"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "15/04/1979",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@company.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "State Police",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Marketing Director at State Police (anchor NL-019)",
+      "narrative": "A email document in law_enforcement context concerning דוד כהן."
+    },
+    {
+      "anchor_id": "NL-020",
+      "category": "non_latin",
+      "language": "HI",
+      "axes": {
+        "domain": "HR",
+        "format": "plain_text",
+        "difficulty": "easy",
+        "length": "small",
+        "density": "high",
+        "code_switching": "light",
+        "language": "HI",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "राज शर्मा",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "03/03/1990",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x.y@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Acme Corporation (anchor NL-020)",
+      "narrative": "A plain text document in HR context concerning राज शर्मा."
+    },
+    {
+      "anchor_id": "NL-021",
+      "category": "non_latin",
+      "language": "JA",
+      "axes": {
+        "domain": "customer_service",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "loose",
+        "co_occurrence_pattern": "none"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1968年3月22日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@tokyobank.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Attending Physician at Acme Support (anchor NL-021)",
+      "narrative": "A ticket worknotes document in customer_service context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "NL-022",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "log_entry",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "high",
+        "code_switching": "light",
+        "language": "TH",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-003"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "20/05/2530",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "FBI",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Attending Physician at FBI (anchor NL-022)",
+      "narrative": "A log entry document in law_enforcement context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-023",
+      "category": "non_latin",
+      "language": "TH",
+      "axes": {
+        "domain": "healthcare",
+        "format": "email",
+        "difficulty": "easy",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "light",
+        "language": "TH",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-015"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "สมชาย สุขสวัสดิ์",
+          "pattern_id": "FUN-059"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "02/09/2500",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@company.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Lieutenant Colonel",
+          "pattern_id": "BT-006"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Mayo Clinic Affiliate",
+          "pattern_id": "ORG-006"
+        }
+      ],
+      "persona": "Lieutenant Colonel at Mayo Clinic Affiliate (anchor NL-023)",
+      "narrative": "A email document in healthcare context concerning สมชาย สุขสวัสดิ์."
+    },
+    {
+      "anchor_id": "NL-024",
+      "category": "non_latin",
+      "language": "RU",
+      "axes": {
+        "domain": "customer_service",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "high",
+        "code_switching": "light",
+        "language": "RU",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-005"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Иван Петрович Сидоров",
+          "pattern_id": "FUN-030"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "25.06.1973",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@corp.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Software Engineer at Acme Support (anchor NL-024)",
+      "narrative": "A json record document in customer_service context concerning Иван Петрович Сидоров."
+    },
+    {
+      "anchor_id": "CO-000",
+      "category": "co_pattern",
+      "language": "FR",
+      "axes": {
+        "domain": "finance",
+        "format": "json_record",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-001"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08/01/1997",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre@paristech.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Deutsche Bank",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Director of Engineering at Deutsche Bank (anchor CO-000)",
+      "narrative": "A json record document in finance context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "CO-001",
+      "category": "co_pattern",
+      "language": "JA",
+      "axes": {
+        "domain": "social_media",
+        "format": "ticket_worknotes",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-002"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1989年11月2日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@nipponcorp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "X (formerly Twitter)",
+          "pattern_id": "ORG-019"
+        }
+      ],
+      "persona": "Chief Compliance Officer at X (formerly Twitter) (anchor CO-001)",
+      "narrative": "A ticket worknotes document in social_media context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "CO-002",
+      "category": "co_pattern",
+      "language": "EN",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "chat_transcript",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "high",
+        "code_switching": "none",
+        "language": "EN",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-003"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "05/19/1987",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria_garcalpez@nexusbank.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "State Police",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Director of Engineering at State Police (anchor CO-002)",
+      "narrative": "A chat transcript document in law_enforcement context concerning Maria García López."
+    },
+    {
+      "anchor_id": "CO-003",
+      "category": "co_pattern",
+      "language": "DE",
+      "axes": {
+        "domain": "law_enforcement",
+        "format": "log_entry",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-004"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "03.02.1978",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang_mller@techgmbh.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Director of Engineering",
+          "pattern_id": "BT-011"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "FBI",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Director of Engineering at FBI (anchor CO-003)",
+      "narrative": "A log entry document in law_enforcement context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "CO-004",
+      "category": "co_pattern",
+      "language": "ES",
+      "axes": {
+        "domain": "government",
+        "format": "plain_text",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-005"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "02/01/1960",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "mgarcalpez@corp.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Department of Compliance",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Department of Compliance (anchor CO-004)",
+      "narrative": "A plain text document in government context concerning Maria García López."
+    },
+    {
+      "anchor_id": "CO-005",
+      "category": "co_pattern",
+      "language": "ES",
+      "axes": {
+        "domain": "finance",
+        "format": "email",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-006"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Sarah Chen",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "17/04/1976",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "sarah_chen@corp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Vice President",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "بنك الرياض",
+          "pattern_id": "ORG-014"
+        }
+      ],
+      "persona": "Vice President at بنك الرياض (anchor CO-005)",
+      "narrative": "A email document in finance context concerning Sarah Chen."
+    },
+    {
+      "anchor_id": "CO-006",
+      "category": "co_pattern",
+      "language": "FR",
+      "axes": {
+        "domain": "customer_service",
+        "format": "chat_transcript",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "FR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-007"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Pierre Dubois",
+          "pattern_id": "FUN-001"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "24/07/2004",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "pierre.dubois@europebanque.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Marketing Director",
+          "pattern_id": "BT-002"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Support",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Marketing Director at Acme Support (anchor CO-006)",
+      "narrative": "A chat transcript document in customer_service context concerning Pierre Dubois."
+    },
+    {
+      "anchor_id": "CO-007",
+      "category": "co_pattern",
+      "language": "AR",
+      "axes": {
+        "domain": "social_media",
+        "format": "ticket_worknotes",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "AR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-008"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "أحمد بن سعيد العبدالله",
+          "pattern_id": "FUN-032"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "24/06/1957",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@riyadhbank.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Partner",
+          "pattern_id": "BT-005"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "X (formerly Twitter)",
+          "pattern_id": "ORG-019"
+        }
+      ],
+      "persona": "Senior Partner at X (formerly Twitter) (anchor CO-007)",
+      "narrative": "A ticket worknotes document in social_media context concerning أحمد بن سعيد العبدالله."
+    },
+    {
+      "anchor_id": "CO-008",
+      "category": "co_pattern",
+      "language": "DE",
+      "axes": {
+        "domain": "social_media",
+        "format": "json_record",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-009"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "08.05.1960",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang.mller@techgmbh.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Attending Physician",
+          "pattern_id": "BT-004"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "X (formerly Twitter)",
+          "pattern_id": "ORG-019"
+        }
+      ],
+      "persona": "Attending Physician at X (formerly Twitter) (anchor CO-008)",
+      "narrative": "A json record document in social_media context concerning Wolfgang Müller."
+    },
+    {
+      "anchor_id": "CO-009",
+      "category": "co_pattern",
+      "language": "AR",
+      "axes": {
+        "domain": "technology",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "AR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-010"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "أحمد بن سعيد العبدالله",
+          "pattern_id": "FUN-032"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "23/09/2003",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "xy@albayan.net",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Acme Corporation",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Acme Corporation (anchor CO-009)",
+      "narrative": "A email document in technology context concerning أحمد بن سعيد العبدالله."
+    },
+    {
+      "anchor_id": "CO-010",
+      "category": "co_pattern",
+      "language": "ES",
+      "axes": {
+        "domain": "e_commerce",
+        "format": "email",
+        "difficulty": "hard",
+        "length": "small",
+        "density": "high",
+        "code_switching": "none",
+        "language": "ES",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-011"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Maria García López",
+          "pattern_id": "FUN-007"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "01/01/1959",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "maria.garcalpez@corp.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Amazon",
+          "pattern_id": "ORG-001"
+        }
+      ],
+      "persona": "Senior Software Engineer at Amazon (anchor CO-010)",
+      "narrative": "A email document in e_commerce context concerning Maria García López."
+    },
+    {
+      "anchor_id": "CO-011",
+      "category": "co_pattern",
+      "language": "JA",
+      "axes": {
+        "domain": "finance",
+        "format": "chat_transcript",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-012"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1994年2月24日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@nipponcorp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "JPMorgan Chase",
+          "pattern_id": "ORG-011"
+        }
+      ],
+      "persona": "Chief Compliance Officer at JPMorgan Chase (anchor CO-011)",
+      "narrative": "A chat transcript document in finance context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "CO-012",
+      "category": "co_pattern",
+      "language": "JA",
+      "axes": {
+        "domain": "technology",
+        "format": "email",
+        "difficulty": "medium",
+        "length": "medium",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "JA",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-013"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "山田太郎",
+          "pattern_id": "FUN-020"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "1957年1月2日",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x_y@nipponcorp.org",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Stripe",
+          "pattern_id": "ORG-012"
+        }
+      ],
+      "persona": "Senior Software Engineer at Stripe (anchor CO-012)",
+      "narrative": "A email document in technology context concerning 山田太郎."
+    },
+    {
+      "anchor_id": "CO-013",
+      "category": "co_pattern",
+      "language": "AR",
+      "axes": {
+        "domain": "government",
+        "format": "ticket_worknotes",
+        "difficulty": "medium",
+        "length": "small",
+        "density": "medium",
+        "code_switching": "none",
+        "language": "AR",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-014"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "أحمد بن سعيد العبدالله",
+          "pattern_id": "FUN-032"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "09/07/1971",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "x@albayan.io",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Chief Compliance Officer",
+          "pattern_id": "BT-001"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Chief Compliance Officer at Federal Trade Agency (anchor CO-013)",
+      "narrative": "A ticket worknotes document in government context concerning أحمد بن سعيد العبدالله."
+    },
+    {
+      "anchor_id": "CO-014",
+      "category": "co_pattern",
+      "language": "DE",
+      "axes": {
+        "domain": "government",
+        "format": "plain_text",
+        "difficulty": "hard",
+        "length": "medium",
+        "density": "high",
+        "code_switching": "none",
+        "language": "DE",
+        "adjacency": "tight",
+        "co_occurrence_pattern": "CO-015"
+      },
+      "frozen_entity_values": [
+        {
+          "entity_type": "Full_Name",
+          "entity_string": "Wolfgang Müller",
+          "pattern_id": "FUN-055"
+        },
+        {
+          "entity_type": "Date_of_Birth",
+          "entity_string": "17.07.1951",
+          "pattern_id": "DOB-001"
+        },
+        {
+          "entity_type": "Work_Email_Address",
+          "entity_string": "wolfgang.mller@berlinerag.com",
+          "pattern_id": "WE-001"
+        },
+        {
+          "entity_type": "Business_Title",
+          "entity_string": "Senior Software Engineer",
+          "pattern_id": "BT-008"
+        },
+        {
+          "entity_type": "Org_Name",
+          "entity_string": "Federal Trade Agency",
+          "pattern_id": "ORG-004"
+        }
+      ],
+      "persona": "Senior Software Engineer at Federal Trade Agency (anchor CO-014)",
+      "narrative": "A plain text document in government context concerning Wolfgang Müller."
+    }
+  ],
+  "count": 100
+}
