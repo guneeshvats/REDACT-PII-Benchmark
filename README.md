@@ -1,4 +1,4 @@
-# PII-Benchmark: A Systematically Controlled Multilingual Benchmark for Personal Information Detection
+# REDACT : A Systematically Controlled Multilingual Benchmark for Personal Information Detection
 
 <p align="center">
   <strong>13,427 records &nbsp;·&nbsp; 324,078 entity annotations &nbsp;·&nbsp; 51 PII types &nbsp;·&nbsp; 25 languages &nbsp;·&nbsp; 9 scripts &nbsp;·&nbsp; 4,127 surface-form patterns</strong>
